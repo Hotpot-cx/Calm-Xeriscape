@@ -914,6 +914,39 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
   .hero h1 { font-size: 2.5rem; }
   .community-highlight { grid-template-columns: 1fr; }
 }
+
+/* Work card links */
+.work-links {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.work-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  background: var(--bg-alt);
+  color: var(--primary-deep);
+  border: 1px solid var(--border);
+  transition: all 0.3s;
+}
+
+.work-link:hover {
+  background: var(--primary);
+  color: #FFF;
+  border-color: var(--primary);
+  transform: translateY(-1px);
+}
 </style>
 </head>
 <body>
@@ -1005,12 +1038,16 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
     <div class="work-card fade-in">
       <div class="work-card-icon">🌸</div>
       <h3>乙女向 AI 创作</h3>
-      <p>沉浸式女性向 AI 内容——角色设定、剧情生成、视觉叙事。为每个细腻的情感找到属于它的故事。</p>
+      <p>沉浸式女性向 AI 内容——角色设定、剧情生成、视觉叙事。已上线独立宣传网站与小红书作品集，为每个细腻的情感找到属于它的故事。</p>
       <div class="tag-row">
         <span class="tag">乙女向</span>
         <span class="tag">AI剧情</span>
         <span class="tag">角色设计</span>
-        <span class="tag accent">已有网站</span>
+        <span class="tag accent">已上线</span>
+      </div>
+      <div class="work-links">
+        <a href="https://sylus0418.com/" target="_blank" rel="noopener" class="work-link">🌐 sylus0418.com</a>
+        <a href="https://www.xiaohongshu.com/user/profile/5f6b4ee9000000000101ce66" target="_blank" rel="noopener" class="work-link">📕 小红书作品集</a>
       </div>
     </div>
 
@@ -1018,12 +1055,15 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
     <div class="work-card fade-in">
       <div class="work-card-icon">✨</div>
       <h3>明星 CP 向创作</h3>
-      <p>以 AI 重新演绎那些让人心动的瞬间——CP 向图文、短片、互动内容，让想象在数字世界延续。</p>
+      <p>以 AI 重新演绎那些让人心动的瞬间——CP 向图文、短片、互动内容，让想象在数字世界延续。抖音持续更新中。</p>
       <div class="tag-row">
         <span class="tag">CP向</span>
         <span class="tag">AI图文</span>
         <span class="tag">短片</span>
         <span class="tag accent">持续更新</span>
+      </div>
+      <div class="work-links">
+        <a href="https://www.douyin.com/user/CMTYKIMIKK" target="_blank" rel="noopener" class="work-link">🎵 抖音 CMTYKIMIKK</a>
       </div>
     </div>
 
@@ -1076,10 +1116,10 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
         <span class="platform-name">小红书</span>
         <span class="platform-desc">作品精选 · 创作笔记</span>
       </a>
-      <a href="#" class="community-card">
-        <div class="platform-icon">💬</div>
-        <span class="platform-name">Lofter</span>
-        <span class="platform-desc">图文创作 · 同好互动</span>
+      <a class="community-card" style="cursor: default;">
+        <div class="platform-icon">💚</div>
+        <span class="platform-name">微信</span>
+        <span class="platform-desc">私域交流 · 深度连接</span>
       </a>
       <a href="#" class="community-card">
         <div class="platform-icon">🐦</div>
@@ -1112,14 +1152,14 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
     <div class="aigeo-content fade-in">
       <span class="section-label">AIGEO</span>
       <h2>AI 驱动的地理探索与优化</h2>
-      <p>AIGEO 是 AI + GEO 的融合——利用人工智能技术进行地理空间内容生成、搜索引擎地理优化，以及基于位置的智能内容策略。</p>
+      <p>AIGEO 是 AI + GEO 的融合——利用人工智能技术进行地理空间内容生成、搜索引擎地理优化，以及基于位置的智能内容策略。官方网站已上线。</p>
       <ul class="aigeo-list">
         <li>AI 视频内容 + 多平台分发策略</li>
         <li>地理位置驱动的 SEO 优化</li>
         <li>数据可视化与空间叙事</li>
-        <li>正在构建中的 AIGEO 知识体系</li>
+        <li>aganzol.com 已正式上线</li>
       </ul>
-      <a href="#" class="btn btn-primary" style="margin-top: 0.5rem;">了解更多 →</a>
+      <a href="https://aganzol.com/" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top: 0.5rem;">访问 AIGEO →</a>
     </div>
   </div>
 </section>
@@ -1188,7 +1228,7 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
       <div class="footer-social">
         <a href="#" aria-label="Bilibili" title="Bilibili">📺</a>
         <a href="#" aria-label="小红书" title="小红书">📕</a>
-        <a href="#" aria-label="Lofter" title="Lofter">💬</a>
+        <a href="#" aria-label="微信" title="微信">💚</a>
         <a href="#" aria-label="微博" title="微博">🐦</a>
         <a href="#" aria-label="Email" title="Email">✉️</a>
       </div>
