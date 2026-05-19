@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calm Xeriscape — AI Creator & AIGEO Explorer</title>
+<meta name="description" content="个人AI作品集 · 同好交流 · AIGEO学习分享 — 乙女向 / 明星CP向 AI创作">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   CSS Custom Properties — Light & Dark Themes
+   ============================================ */
+:root {
+  --bg: #FBF8F4;
+  --bg-alt: #F3EEE7;
+  --surface: #FFFFFF;
+  --surface-hover: #FAF7F2;
+  --primary: #7FAF9A;
+  --primary-soft: #B8D5C8;
+  --primary-deep: #5C8D78;
+  --accent: #C9A87C;
+  --accent-soft: #E8D5C4;
+  --accent-warm: #D4A574;
+  --text: #2C3A33;
+  --text-secondary: #6B7F74;
+  --text-muted: #99ADA2;
+  --border: rgba(127, 175, 154, 0.18);
+  --border-strong: rgba(127, 175, 154, 0.35);
+  --shadow-sm: 0 2px 12px rgba(44, 58, 51, 0.05);
+  --shadow: 0 4px 24px rgba(44, 58, 51, 0.07);
+  --shadow-lg: 0 12px 48px rgba(44, 58, 51, 0.10);
+  --radius-sm: 12px;
+  --radius: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+  --font-display: 'Fraunces', 'Noto Serif SC', 'Songti SC', serif;
+  --font-body: 'Nunito', system-ui, -apple-system, 'PingFang SC', sans-serif;
+  --noise-opacity: 0.025;
+  --blob-opacity-1: 0.50;
+  --blob-opacity-2: 0.35;
+  --blob-opacity-3: 0.28;
+  --transition-theme: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-theme="dark"] {
+  --bg: #1A2320;
+  --bg-alt: #1F2A26;
+  --surface: #232D29;
+  --surface-hover: #2A3530;
+  --primary: #8FC4AF;
+  --primary-soft: #5C8D78;
+  --primary-deep: #7FAF9A;
+  --accent: #D4B896;
+  --accent-soft: #4A3D30;
+  --accent-warm: #C9A87C;
+  --text: #E8EDEA;
+  --text-secondary: #98AFA4;
+  --text-muted: #5C7065;
+  --border: rgba(143, 196, 175, 0.12);
+  --border-strong: rgba(143, 196, 175, 0.25);
+  --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.12);
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+  --shadow-lg: 0 12px 48px rgba(0, 0, 0, 0.25);
+  --noise-opacity: 0.04;
+  --blob-opacity-1: 0.30;
+  --blob-opacity-2: 0.20;
+  --blob-opacity-3: 0.16;
+}
+
+/* ============================================
+   Base & Reset
+   ============================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  transition: background-color var(--transition-theme), color var(--transition-theme);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Global noise texture overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10000;
+  opacity: var(--noise-opacity);
+  transition: opacity var(--transition-theme);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+}
+
+/* ============================================
+   Typography
+   ============================================ */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(3rem, 7vw, 5.5rem); }
+h2 { font-size: clamp(2rem, 4.5vw, 3.2rem); }
+h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--primary-deep);
+  margin-bottom: 1rem;
+}
+
+.section-label::before {
+  content: '';
+  display: block;
+  width: 1.5rem;
+  height: 1.5px;
+  background: var(--primary-deep);
+  border-radius: 1px;
+}
+
+/* ============================================
+   Theme Toggle
+   ============================================ */
+.theme-toggle {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 1000;
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-full);
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.theme-toggle:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow);
+  transform: scale(1.05);
+}
+
+.theme-toggle .icon-sun,
+.theme-toggle .icon-moon {
+  position: absolute;
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-theme="light"] .theme-toggle .icon-moon { opacity: 1; transform: rotate(0deg); }
+[data-theme="light"] .theme-toggle .icon-sun { opacity: 0; transform: rotate(90deg); }
+[data-theme="dark"] .theme-toggle .icon-moon { opacity: 0; transform: rotate(-90deg); }
+[data-theme="dark"] .theme-toggle .icon-sun { opacity: 1; transform: rotate(0deg); }
+
+/* ============================================
+   Navigation
+   ============================================ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 900;
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav.scrolled {
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 0.75rem 2rem;
+}
+
+.nav a {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 100%;
+  height: 1.5px;
+  background: var(--primary);
+  border-radius: 1px;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav a:hover { color: var(--primary-deep); }
+.nav a:hover::after { transform: translateX(-50%) scaleX(1); }
+
+.nav-brand {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text) !important;
+  margin-right: 1rem;
+}
+
+/* ============================================
+   Section Shared
+   ============================================ */
+.section {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header h2 {
+  margin-bottom: 0.75rem;
+}
+
+.section-header .section-label {
+  margin-bottom: 1.25rem;
+}
+
+.section-header p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   Hero Section
+   ============================================ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+/* Organic fluid blob background */
+.hero-organic {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-organic svg {
+  width: 100%;
+  height: 100%;
+}
+
+.blob {
+  animation: floatBlob 20s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.blob:nth-child(2) { animation-delay: -7s; animation-duration: 25s; }
+.blob:nth-child(3) { animation-delay: -14s; animation-duration: 22s; }
+.blob:nth-child(4) { animation-delay: -3s; animation-duration: 28s; }
+
+@keyframes floatBlob {
+  0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  25% { transform: translate(3%, -2%) rotate(3deg) scale(1.04); }
+  50% { transform: translate(-1%, 1%) rotate(-2deg) scale(0.97); }
+  75% { transform: translate(2%, 2%) rotate(1deg) scale(1.02); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--primary-deep);
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+  margin-bottom: 1.25rem;
+  font-weight: 400;
+}
+
+.hero h1 .italic {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--accent-warm);
+}
+
+.hero-tagline {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  max-width: 460px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.8;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  border: none;
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #FFFFFF;
+  box-shadow: 0 4px 20px rgba(127, 175, 154, 0.30);
+}
+
+.btn-primary:hover {
+  background: var(--primary-deep);
+  box-shadow: 0 6px 28px rgba(127, 175, 154, 0.40);
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1.5px solid var(--border-strong);
+}
+
+.btn-ghost:hover {
+  border-color: var(--primary);
+  background: var(--surface);
+  transform: translateY(-2px);
+}
+
+.hero-scroll-hint {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  animation: bounceHint 2s ease-in-out infinite;
+}
+
+@keyframes bounceHint {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ============================================
+   Organic Wave Dividers
+   ============================================ */
+.wave-divider {
+  position: relative;
+  height: 80px;
+  overflow: hidden;
+}
+
+.wave-divider svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* ============================================
+   Works / Portfolio Section
+   ============================================ */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1.75rem;
+}
+
+.work-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  padding: 2.5rem 2rem;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.work-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--accent-warm));
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.work-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-strong);
+}
+
+.work-card:hover::before { opacity: 1; }
+
+.work-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--primary-soft), var(--accent-soft));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.work-card h3 {
+  margin-bottom: 0.6rem;
+  font-size: 1.35rem;
+}
+
+.work-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.work-card .tag-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  background: var(--bg-alt);
+  color: var(--primary-deep);
+  border: 1px solid var(--border);
+}
+
+.tag.accent {
+  color: var(--accent-warm);
+  background: var(--accent-soft);
+  border-color: transparent;
+}
+
+.work-card-soon {
+  background: var(--bg-alt);
+  border-style: dashed;
+}
+
+.work-card-soon .badge-soon {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-warm);
+  background: var(--accent-soft);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+}
+
+/* ============================================
+   Community Section
+   ============================================ */
+.community-highlight {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.community-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  text-decoration: none;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.community-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  border-color: var(--primary);
+}
+
+.community-card .platform-icon {
+  font-size: 2rem;
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-full);
+  background: var(--bg-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.community-card .platform-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.community-card .platform-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* ============================================
+   AIGEO Section
+   ============================================ */
+.aigeo-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.aigeo-visual {
+  position: relative;
+  aspect-ratio: 4/3;
+  background: var(--bg-alt);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aigeo-visual svg {
+  width: 70%;
+  height: 70%;
+}
+
+.aigeo-visual .flow-circle {
+  fill: none;
+  stroke: var(--primary);
+  stroke-width: 1.5;
+  opacity: 0.5;
+  animation: pulseCircle 4s ease-in-out infinite;
+}
+
+.aigeo-visual .flow-circle:nth-child(2) { animation-delay: -2s; stroke: var(--accent-warm); }
+.aigeo-visual .flow-circle:nth-child(3) { animation-delay: -1s; stroke: var(--primary-soft); }
+
+@keyframes pulseCircle {
+  0%, 100% { r: 45; opacity: 0.5; }
+  50% { r: 65; opacity: 0.2; }
+}
+
+.aigeo-content h2 { margin-bottom: 1.25rem; }
+
+.aigeo-content p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.aigeo-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+.aigeo-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.aigeo-list li::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--primary);
+  flex-shrink: 0;
+}
+
+/* ============================================
+   About Section
+   ============================================ */
+.about-layout {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.about-avatar-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.about-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--primary-soft), var(--accent-soft), var(--primary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.about-avatar::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: var(--radius-full);
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, var(--primary), var(--accent-warm)) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.about-badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.about-badge {
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: var(--bg-alt);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+.about-badge.highlight {
+  background: var(--primary-soft);
+  color: var(--primary-deep);
+  border-color: transparent;
+}
+
+.about-text h2 { margin-bottom: 1rem; }
+
+.about-text p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.about-text .highlight-text {
+  color: var(--primary-deep);
+  font-weight: 500;
+}
+
+.about-stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.about-stat {
+  text-align: center;
+}
+
+.about-stat .stat-num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--primary-deep);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.about-stat .stat-label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.footer {
+  background: var(--bg-alt);
+  padding: 4rem 2rem 2rem;
+  border-top: 1px solid var(--border);
+  transition: background var(--transition-theme);
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3rem;
+  align-items: start;
+}
+
+.footer-brand h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-brand p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.footer-social a {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-full);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: var(--text-secondary);
+  transition: all 0.3s;
+}
+
+.footer-social a:hover {
+  background: var(--primary);
+  color: #FFF;
+  border-color: var(--primary);
+  transform: translateY(-3px);
+}
+
+.footer-links {
+  display: flex;
+  gap: 3rem;
+}
+
+.footer-col h4 {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.footer-col a {
+  display: block;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s;
+}
+
+.footer-col a:hover { color: var(--primary-deep); }
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 2rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ============================================
+   Scroll Animations
+   ============================================ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 768px) {
+  .section { padding: 4rem 1.25rem; }
+  .nav { gap: 1.25rem; padding: 1rem 1.25rem; }
+  .nav a { font-size: 0.78rem; }
+  .nav-brand { font-size: 0.95rem; margin-right: 0; }
+
+  .aigeo-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .aigeo-visual { order: -1; aspect-ratio: 1/1; }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  .about-stats { justify-content: center; }
+  .about-avatar-area { margin: 0 auto; }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .footer-links { gap: 1.5rem; }
+  .works-grid { grid-template-columns: 1fr; }
+  .community-highlight { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .nav { gap: 0.75rem; }
+  .nav a { font-size: 0.72rem; }
+  .hero h1 { font-size: 2.5rem; }
+  .community-highlight { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- Theme Toggle -->
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">
+  <span class="icon-sun">☀️</span>
+  <span class="icon-moon">🌙</span>
+</button>
+
+<!-- Navigation -->
+<nav class="nav" id="nav">
+  <a href="#hero" class="nav-brand">Calm Xeriscape</a>
+  <a href="#works">作品</a>
+  <a href="#community">同好</a>
+  <a href="#aigeo">AIGEO</a>
+  <a href="#about">关于</a>
+  <a href="#contact">联系</a>
+</nav>
+
+<!-- ============================================ -->
+<!-- Hero -->
+<!-- ============================================ -->
+<section class="hero" id="hero">
+  <div class="hero-organic">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <filter id="fluidFilter" x="-20%" y="-20%" width="140%" height="140%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="4" seed="3" result="noise"/>
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="40" xChannelSelector="R" yChannelSelector="G"/>
+        </filter>
+        <linearGradient id="blobGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#7FAF9A" stop-opacity="var(--blob-opacity-1)"/>
+          <stop offset="100%" stop-color="#C9A87C" stop-opacity="var(--blob-opacity-2)"/>
+        </linearGradient>
+        <linearGradient id="blobGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#C9A87C" stop-opacity="var(--blob-opacity-2)"/>
+          <stop offset="100%" stop-color="#B8D5C8" stop-opacity="var(--blob-opacity-1)"/>
+        </linearGradient>
+        <linearGradient id="blobGrad3" x1="0%" y1="100%" x2="50%" y2="0%">
+          <stop offset="0%" stop-color="#7FAF9A" stop-opacity="var(--blob-opacity-3)"/>
+          <stop offset="100%" stop-color="#E8D5C4" stop-opacity="var(--blob-opacity-2)"/>
+        </linearGradient>
+      </defs>
+      <circle class="blob" cx="15%" cy="25%" r="260" fill="url(#blobGrad1)" filter="url(#fluidFilter)"/>
+      <circle class="blob" cx="75%" cy="65%" r="320" fill="url(#blobGrad2)" filter="url(#fluidFilter)"/>
+      <ellipse class="blob" cx="55%" cy="20%" rx="200" ry="160" fill="url(#blobGrad3)" filter="url(#fluidFilter)"/>
+      <circle class="blob" cx="85%" cy="15%" r="140" fill="url(#blobGrad1)" filter="url(#fluidFilter)"/>
+    </svg>
+  </div>
+
+  <div class="hero-content fade-in">
+    <p class="hero-eyebrow">Personal AI Creator & AIGEO Explorer</p>
+    <h1>Calm <span class="italic">Xeriscape</span></h1>
+    <p class="hero-tagline">
+      在 AI 的边界种一片绿洲。<br>乙女向 · 明星CP向 · AIGEO 探索。
+    </p>
+    <div class="hero-actions">
+      <a href="#works" class="btn btn-primary">浏览作品</a>
+      <a href="#community" class="btn btn-ghost">进入同好圈</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll-hint">
+    <span>探索</span>
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v8M4 8l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+</section>
+
+<!-- Organic Wave Divider -->
+<div class="wave-divider">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+    <path d="M0 40 C 240 80, 480 0, 720 30 C 960 60, 1200 10, 1440 40 L 1440 80 L 0 80 Z" fill="var(--bg-alt)" opacity="0.5"/>
+  </svg>
+</div>
+
+<!-- ============================================ -->
+<!-- Works -->
+<!-- ============================================ -->
+<section class="section" id="works">
+  <div class="section-header fade-in">
+    <span class="section-label">作品集</span>
+    <h2>AI 创作与项目</h2>
+    <p>从乙女向到明星 CP 向，每一个作品都是 AI 与情感的碰撞</p>
+  </div>
+
+  <div class="works-grid">
+    <!-- 乙女向 -->
+    <div class="work-card fade-in">
+      <div class="work-card-icon">🌸</div>
+      <h3>乙女向 AI 创作</h3>
+      <p>沉浸式女性向 AI 内容——角色设定、剧情生成、视觉叙事。为每个细腻的情感找到属于它的故事。</p>
+      <div class="tag-row">
+        <span class="tag">乙女向</span>
+        <span class="tag">AI剧情</span>
+        <span class="tag">角色设计</span>
+        <span class="tag accent">已有网站</span>
+      </div>
+    </div>
+
+    <!-- 明星CP向 -->
+    <div class="work-card fade-in">
+      <div class="work-card-icon">✨</div>
+      <h3>明星 CP 向创作</h3>
+      <p>以 AI 重新演绎那些让人心动的瞬间——CP 向图文、短片、互动内容，让想象在数字世界延续。</p>
+      <div class="tag-row">
+        <span class="tag">CP向</span>
+        <span class="tag">AI图文</span>
+        <span class="tag">短片</span>
+        <span class="tag accent">持续更新</span>
+      </div>
+    </div>
+
+    <!-- 机油网站项目 -->
+    <div class="work-card fade-in">
+      <div class="work-card-icon">🛢️</div>
+      <h3>机油品牌网站</h3>
+      <p>企业级产品网站——结合 AI 视频与多平台宣发策略，为机油品牌构建完整的数字化传播体系。</p>
+      <div class="tag-row">
+        <span class="tag">品牌网站</span>
+        <span class="tag">AI视频</span>
+        <span class="tag">多平台宣发</span>
+      </div>
+    </div>
+
+    <!-- 明星CP网站预告 -->
+    <div class="work-card work-card-soon fade-in">
+      <span class="badge-soon">即将上线</span>
+      <div class="work-card-icon">🚀</div>
+      <h3>明星 CP 向网站</h3>
+      <p>专为 CP 内容打造的独立平台——更好的展示方式，更完整的叙事体验。敬请期待。</p>
+      <div class="tag-row">
+        <span class="tag">网站</span>
+        <span class="tag">CP向</span>
+        <span class="tag accent">计划中</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- Community -->
+<!-- ============================================ -->
+<section class="section" id="community" style="background: var(--bg-alt); max-width: none; padding-left: 0; padding-right: 0; transition: background var(--transition-theme);">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+    <div class="section-header fade-in">
+      <span class="section-label">同好交流</span>
+      <h2>找到属于你的同频</h2>
+      <p>天蝎 + INTJ 的创作空间——在这里与志同道合的人相遇</p>
+    </div>
+
+    <div class="community-highlight fade-in">
+      <a href="#" class="community-card">
+        <div class="platform-icon">📺</div>
+        <span class="platform-name">Bilibili</span>
+        <span class="platform-desc">AI 创作视频 · 日常分享</span>
+      </a>
+      <a href="#" class="community-card">
+        <div class="platform-icon">📕</div>
+        <span class="platform-name">小红书</span>
+        <span class="platform-desc">作品精选 · 创作笔记</span>
+      </a>
+      <a href="#" class="community-card">
+        <div class="platform-icon">💬</div>
+        <span class="platform-name">Lofter</span>
+        <span class="platform-desc">图文创作 · 同好互动</span>
+      </a>
+      <a href="#" class="community-card">
+        <div class="platform-icon">🐦</div>
+        <span class="platform-name">微博</span>
+        <span class="platform-desc">实时动态 · 热点交流</span>
+      </a>
+      <a href="#" class="community-card">
+        <div class="platform-icon">🎵</div>
+        <span class="platform-name">抖音</span>
+        <span class="platform-desc">AI 短视频 · 创意内容</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- AIGEO -->
+<!-- ============================================ -->
+<section class="section" id="aigeo">
+  <div class="aigeo-layout">
+    <div class="aigeo-visual fade-in">
+      <svg viewBox="0 0 200 200">
+        <circle class="flow-circle" cx="100" cy="100" r="45"/>
+        <circle class="flow-circle" cx="100" cy="100" r="55"/>
+        <circle class="flow-circle" cx="100" cy="100" r="65"/>
+        <circle cx="100" cy="100" r="8" fill="var(--primary)"/>
+      </svg>
+    </div>
+
+    <div class="aigeo-content fade-in">
+      <span class="section-label">AIGEO</span>
+      <h2>AI 驱动的地理探索与优化</h2>
+      <p>AIGEO 是 AI + GEO 的融合——利用人工智能技术进行地理空间内容生成、搜索引擎地理优化，以及基于位置的智能内容策略。</p>
+      <ul class="aigeo-list">
+        <li>AI 视频内容 + 多平台分发策略</li>
+        <li>地理位置驱动的 SEO 优化</li>
+        <li>数据可视化与空间叙事</li>
+        <li>正在构建中的 AIGEO 知识体系</li>
+      </ul>
+      <a href="#" class="btn btn-primary" style="margin-top: 0.5rem;">了解更多 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- About -->
+<!-- ============================================ -->
+<section class="section" id="about" style="background: var(--bg-alt); max-width: none; padding-left: 0; padding-right: 0; transition: background var(--transition-theme);">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+    <div class="section-header fade-in">
+      <span class="section-label">关于我</span>
+      <h2>Calm & Focused</h2>
+    </div>
+
+    <div class="about-layout">
+      <div class="about-avatar-area fade-in">
+        <div class="about-avatar">♏</div>
+        <div class="about-badges">
+          <span class="about-badge highlight">天蝎座</span>
+          <span class="about-badge">INTJ</span>
+          <span class="about-badge">93年</span>
+        </div>
+      </div>
+
+      <div class="about-text fade-in">
+        <h3>你好，我是 Calm Xeriscape</h3>
+        <p>
+          一个在 AI 与创作边界行走的<span class="highlight-text">天蝎座 INTJ</span>。
+          用冷静的策略思维和炽热的创作欲望，在数字荒漠中构建属于自己的绿洲。
+        </p>
+        <p>
+          从乙女向 AI 内容到明星 CP 向创作，从品牌网站建设到 AIGEO 探索——
+          每一件事都是对"<span class="highlight-text">AI 能做些什么有趣的事</span>"的回答。
+        </p>
+        <p>
+          如果你也喜欢这些方向，欢迎来同好圈子里聊聊天。
+        </p>
+
+        <div class="about-stats">
+          <div class="about-stat">
+            <div class="stat-num">∞</div>
+            <div class="stat-label">好奇心</div>
+          </div>
+          <div class="about-stat">
+            <div class="stat-num">AI</div>
+            <div class="stat-label">创作方式</div>
+          </div>
+          <div class="about-stat">
+            <div class="stat-num">93'</div>
+            <div class="stat-label">天蝎INTJ</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- Footer -->
+<!-- ============================================ -->
+<footer class="footer" id="contact">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>Calm Xeriscape</h3>
+      <p>AI 创作者的静谧绿洲 — 同好相聚，灵感生长</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Bilibili" title="Bilibili">📺</a>
+        <a href="#" aria-label="小红书" title="小红书">📕</a>
+        <a href="#" aria-label="Lofter" title="Lofter">💬</a>
+        <a href="#" aria-label="微博" title="微博">🐦</a>
+        <a href="#" aria-label="Email" title="Email">✉️</a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>作品</h4>
+        <a href="#works">乙女向</a>
+        <a href="#works">明星 CP 向</a>
+        <a href="#works">品牌网站</a>
+      </div>
+      <div class="footer-col">
+        <h4>探索</h4>
+        <a href="#aigeo">AIGEO</a>
+        <a href="#community">同好圈</a>
+        <a href="#about">关于我</a>
+      </div>
+      <div class="footer-col">
+        <h4>联系</h4>
+        <a href="#">合作咨询</a>
+        <a href="#">友情链接</a>
+        <a href="#">RSS</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Calm Xeriscape. Built with calm focus.</p>
+  </div>
+</footer>
+
+<!-- ============================================ -->
+<!-- Scripts -->
+<!-- ============================================ -->
+<script>
+// Theme Toggle
+function toggleTheme() {
+  const html = document.documentElement;
+  const current = html.getAttribute('data-theme');
+  const next = current === 'light' ? 'dark' : 'light';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+}
+
+// Load saved theme
+(function() {
+  const saved = localStorage.getItem('theme');
+  if (saved) {
+    document.documentElement.setAttribute('data-theme', saved);
+  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+})();
+
+// Navigation scroll effect
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 80);
+});
+
+// Scroll-triggered fade-in animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Make hero visible immediately
+document.querySelector('.hero-content').classList.add('visible');
+</script>
+
+</body>
+</html>
