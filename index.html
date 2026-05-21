@@ -664,6 +664,152 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
   flex-shrink: 0;
 }
 
+/* AIGEO — Expanded Stats, Features & Achievements */
+.aigeo-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.aigeo-stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.aigeo-stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+  border-color: var(--border-strong);
+}
+
+.aigeo-stat-card .stat-number {
+  font-family: var(--font-display);
+  font-size: 2.3rem;
+  color: var(--primary-deep);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
+.aigeo-stat-card .stat-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.aigeo-stat-card .stat-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 0.4rem;
+  line-height: 1.5;
+}
+
+.aigeo-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.aigeo-feature-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.aigeo-feature-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.aigeo-feature-card .feature-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.aigeo-feature-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.aigeo-feature-card p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.aigeo-schema-showcase {
+  margin-top: 2.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2rem 1.5rem;
+}
+
+.aigeo-schema-showcase h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  margin-bottom: 0.35rem;
+}
+
+.aigeo-schema-showcase .schema-subtitle {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.schema-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.schema-tag {
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: var(--primary-soft);
+  color: var(--primary-deep);
+}
+
+.schema-tag.soon {
+  background: var(--accent-soft);
+  color: var(--accent-warm);
+  border: 1px dashed var(--accent-warm);
+  opacity: 0.75;
+}
+
+.aigeo-cta-row {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.aigeo-cta-note {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* Responsive for AIGEO section */
+@media (max-width: 768px) {
+  .aigeo-stats-row { grid-template-columns: repeat(2, 1fr); }
+  .aigeo-feature-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .aigeo-stats-row { grid-template-columns: 1fr; }
+}
+
 /* ============================================
    About Section
    ============================================ */
@@ -1142,24 +1288,143 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
   <div class="aigeo-layout">
     <div class="aigeo-visual fade-in">
       <svg viewBox="0 0 200 200">
-        <circle class="flow-circle" cx="100" cy="100" r="45"/>
-        <circle class="flow-circle" cx="100" cy="100" r="55"/>
-        <circle class="flow-circle" cx="100" cy="100" r="65"/>
-        <circle cx="100" cy="100" r="8" fill="var(--primary)"/>
+        <!-- Central hub -->
+        <circle cx="100" cy="100" r="12" fill="var(--primary)" opacity="0.9"/>
+        <circle class="flow-circle" cx="100" cy="100" r="30"/>
+        <circle class="flow-circle" cx="100" cy="100" r="50"/>
+        <circle class="flow-circle" cx="100" cy="100" r="70"/>
+        <!-- Orbiting platform nodes -->
+        <circle cx="100" cy="30" r="5" fill="var(--accent-warm)" opacity="0.8">
+          <animate attributeName="cy" values="30;28;30" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="155" cy="55" r="4.5" fill="var(--primary)" opacity="0.7">
+          <animate attributeName="cy" values="55;53;55" dur="3.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="155" cy="145" r="5" fill="var(--accent-warm)" opacity="0.8">
+          <animate attributeName="cy" values="145;143;145" dur="4s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="100" cy="170" r="4" fill="var(--primary)" opacity="0.7">
+          <animate attributeName="cy" values="170;168;170" dur="3.2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="45" cy="145" r="5" fill="var(--accent-warm)" opacity="0.8">
+          <animate attributeName="cy" values="145;143;145" dur="3.8s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="45" cy="55" r="4.5" fill="var(--primary)" opacity="0.7">
+          <animate attributeName="cy" values="55;53;55" dur="3.3s" repeatCount="indefinite"/>
+        </circle>
+        <!-- Connection lines -->
+        <line x1="100" y1="88" x2="100" y2="35" stroke="var(--border-strong)" stroke-width="0.8" opacity="0.5"/>
+        <line x1="112" y1="88" x2="150" y2="58" stroke="var(--border-strong)" stroke-width="0.8" opacity="0.5"/>
+        <line x1="112" y1="112" x2="150" y2="142" stroke="var(--border-strong)" stroke-width="0.8" opacity="0.5"/>
+        <line x1="100" y1="112" x2="100" y2="165" stroke="var(--border-strong)" stroke-width="0.8" opacity="0.5"/>
+        <line x1="88" y1="112" x2="50" y2="142" stroke="var(--border-strong)" stroke-width="0.8" opacity="0.5"/>
+        <line x1="88" y1="88" x2="50" y2="58" stroke="var(--border-strong)" stroke-width="0.8" opacity="0.5"/>
       </svg>
     </div>
 
     <div class="aigeo-content fade-in">
       <span class="section-label">AIGEO</span>
-      <h2>AI 驱动的地理探索与优化</h2>
-      <p>AIGEO 是 AI + GEO 的融合——利用人工智能技术进行地理空间内容生成、搜索引擎地理优化，以及基于位置的智能内容策略。官方网站已上线。</p>
+      <h2>AI 时代的品牌可见度建设</h2>
+      <p>AIGEO（AI Generated Engine Optimization）是面向 AI 搜索引擎的品牌可见度体系——通过<strong>官网结构化数据</strong>与<strong>多平台内容矩阵</strong>双轨并行，让品牌在 ChatGPT、DeepSeek、Kimi、豆包等 AI 引擎中被准确引用和推荐。</p>
       <ul class="aigeo-list">
-        <li>AI 视频内容 + 多平台分发策略</li>
-        <li>地理位置驱动的 SEO 优化</li>
-        <li>数据可视化与空间叙事</li>
-        <li>aganzol.com 已正式上线</li>
+        <li>官网 Schema.org 结构化数据 —— 让 AI 读懂品牌语义</li>
+        <li>6 平台矩阵号内容分发 —— 抖音 / B站 / 小红书 / 视频号 / 快手 / 官网</li>
+        <li>7 大 AI 来源监测追踪 —— 量化 AIGEO 建设成效</li>
       </ul>
-      <a href="https://aganzol.com/" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top: 0.5rem;">访问 AIGEO →</a>
+      <a href="https://aganzol.com/" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top: 0.5rem;">访问 AIGEO 官网 →</a>
+    </div>
+  </div>
+
+  <!-- Core Advantages — Stats Row -->
+  <div class="aigeo-stats-row">
+    <div class="aigeo-stat-card fade-in">
+      <div class="stat-number">11/13</div>
+      <div class="stat-label">Schema 类型覆盖</div>
+      <div class="stat-desc">结构化数据类型行业领先，远超同行业平均的 2–3 种</div>
+    </div>
+    <div class="aigeo-stat-card fade-in">
+      <div class="stat-number">64+</div>
+      <div class="stat-label">SSG 官网页面</div>
+      <div class="stat-desc">JSON 数据层驱动，内容扩展效率高，全站结构化输出</div>
+    </div>
+    <div class="aigeo-stat-card fade-in">
+      <div class="stat-number">75+</div>
+      <div class="stat-label">产品 SKU 全参数化</div>
+      <div class="stat-desc">Product + PropertyValue Schema，每个产品独立语义标注</div>
+    </div>
+    <div class="aigeo-stat-card fade-in">
+      <div class="stat-number">464</div>
+      <div class="stat-label">车型适配条目</div>
+      <div class="stat-desc">Car Schema 覆盖，命中「XX车用什么机油」AI 长尾查询</div>
+    </div>
+    <div class="aigeo-stat-card fade-in">
+      <div class="stat-number">10</div>
+      <div class="stat-label">AI 视频素材就绪</div>
+      <div class="stat-desc">10 支视频 → 6 平台分发 → 95+ 条跨平台内容，品牌词全域覆盖</div>
+    </div>
+    <div class="aigeo-stat-card fade-in">
+      <div class="stat-number">7</div>
+      <div class="stat-label">AI 来源追踪</div>
+      <div class="stat-desc">ChatGPT / DeepSeek / Kimi / 豆包 / 文心 / 通义 / Perplexity 全监测</div>
+    </div>
+  </div>
+
+  <!-- Distinctive Features -->
+  <div class="aigeo-feature-grid">
+    <div class="aigeo-feature-card fade-in">
+      <div class="feature-icon">🏗️</div>
+      <h4>双轨并行策略</h4>
+      <p><strong>轨道 A · 官网基建：</strong>Schema.org 结构化数据 + 知识图谱 + SEO 技术基础，构建 AI 可读的品牌权威锚点。<br><strong>轨道 B · 矩阵号分发：</strong>抖音/B站/小红书/视频号/快手/百度 6 平台内容矩阵，让 AI 从多源发现品牌。</p>
+    </div>
+    <div class="aigeo-feature-card fade-in">
+      <div class="feature-icon">🔄</div>
+      <h4>多平台内容飞轮</h4>
+      <p>10 支 AI 视频作为种子内容 → 各平台二次创作（图文笔记 / 长视频 / 公众号文章 / 问答）→ 95+ 条跨平台内容。多源一致性信号强化品牌实体在 AI 中的认知权重。</p>
+    </div>
+    <div class="aigeo-feature-card fade-in">
+      <div class="feature-icon">🎯</div>
+      <h4>竞品对比页精准截获</h4>
+      <p>对美孚1号、嘉实多极护、壳牌超凡喜力等主流产品建立结构化对比页，Table + Article + FAQPage 三 Schema 组合，精准命中「XX vs XX 机油」类 AI 长尾查询。</p>
+    </div>
+    <div class="aigeo-feature-card fade-in">
+      <div class="feature-icon">🔗</div>
+      <h4>跨平台实体链接</h4>
+      <p>各平台内容统一指向官网，通过 sameAs 属性建立品牌实体互认。视频中心页 → 产品详情页 → 车型适配页 → 知识百科页四向互链，碎片在各平台、权威在官网。</p>
+    </div>
+    <div class="aigeo-feature-card fade-in">
+      <div class="feature-icon">📊</div>
+      <h4>AITracker 数据闭环</h4>
+      <p>自建 GEO 监测框架，可识别 7 个 AI 来源的引用情况。管理端仪表盘实时追踪品牌词提及率、品类词引用率、AI 来源流量占比，量化每一次 AIGEO 优化的实际效果。</p>
+    </div>
+    <div class="aigeo-feature-card fade-in">
+      <div class="feature-icon">🚗</div>
+      <h4>车型适配长尾覆盖</h4>
+      <p>464 条车型适配数据（汉兰达/凯美瑞/迈腾/A6/雅阁/CR-V 等热门车型），每个车型页独立 Car Schema 标注，命中「XX车用什么机油」这类高意图 AI 搜索查询。</p>
+    </div>
+  </div>
+
+  <!-- Schema Achievement Showcase -->
+  <div class="aigeo-schema-showcase fade-in">
+    <h3>Schema.org 结构化数据覆盖矩阵</h3>
+    <p class="schema-subtitle">Schema 是 AI 搜索引擎理解页面语义的核心协议。已部署 11 种类型，覆盖率在同行业中处于领先位置。</p>
+    <div class="schema-tags">
+      <span class="schema-tag">FAQPage · 46条问答</span>
+      <span class="schema-tag">Organization + WebSite</span>
+      <span class="schema-tag">BreadcrumbList · 全站</span>
+      <span class="schema-tag">Product + PropertyValue</span>
+      <span class="schema-tag">Article · 知识页</span>
+      <span class="schema-tag">HowTo · 养护步骤</span>
+      <span class="schema-tag">DefinedTermSet · 50+术语</span>
+      <span class="schema-tag">Dataset · 检测报告库</span>
+      <span class="schema-tag">Table · 竞品对比</span>
+      <span class="schema-tag">Car · 车型适配</span>
+      <span class="schema-tag">Review / ItemList</span>
+      <span class="schema-tag soon">VideoObject · 即将上线</span>
+      <span class="schema-tag soon">AggregateRating · 规划中</span>
+    </div>
+    <div class="aigeo-cta-row">
+      <a href="https://aganzol.com/" target="_blank" rel="noopener" class="btn btn-primary">查看完整案例 →</a>
+      <span class="aigeo-cta-note">aganzol.com · 24 周 6 阶段 · 从基建到规模化</span>
     </div>
   </div>
 </section>
