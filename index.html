@@ -1108,7 +1108,9 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
   <a href="#hero" class="nav-brand">Calm Xeriscape</a>
   <a href="#works">作品</a>
   <a href="#community">同好</a>
+  <a href="#kb">知识库</a>
   <a href="#aigeo">AIGEO</a>
+  <a href="#workbench">工作台</a>
   <a href="#about">关于</a>
   <a href="#contact">联系</a>
 </nav>
@@ -1282,6 +1284,73 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
 </section>
 
 <!-- ============================================ -->
+<!-- Knowledge Base -->
+<!-- ============================================ -->
+<section class="section" id="kb" style="max-width: 1200px;">
+  <div class="section-header fade-in">
+    <span class="section-label">知识库</span>
+    <h2>Knowledge Base</h2>
+    <p style="font-size: 1.05rem; color: var(--text-secondary); max-width: 620px; margin-top: 1rem;">
+      一个<strong>由 LLM 主动维护的持久化 Wiki</strong>。LLM 在每次对话后增量地将信息编译进 Wiki，交叉引用、矛盾标记、主题综合被提前完成，知识库随时间复合增长。
+    </p>
+  </div>
+
+  <!-- Architecture -->
+  <div class="kb-arch fade-in" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-top: 3rem;">
+    <div class="kb-card" style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; transition: all 0.3s ease;">
+      <div style="font-size: 1.5rem; margin-bottom: 0.75rem;">📥</div>
+      <h4 style="font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 0.5rem;">收录 · Ingest</h4>
+      <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7;">
+        你扔进新的资料、文章、截图或想法，AI 读取后提取关键信息，更新相关实体页面，修订主题摘要，标记矛盾发现。
+      </p>
+    </div>
+    <div class="kb-card" style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; transition: all 0.3s ease;">
+      <div style="font-size: 1.5rem; margin-bottom: 0.75rem;">🔍</div>
+      <h4 style="font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 0.5rem;">查询 · Query</h4>
+      <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7;">
+        你提问，AI 在 Wiki 内搜索、读取、综合，给出带引用的回答。好的答案、对比分析、新发现的关联，写入 Wiki。
+      </p>
+    </div>
+    <div class="kb-card" style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; transition: all 0.3s ease;">
+      <div style="font-size: 1.5rem; margin-bottom: 0.75rem;">🧹</div>
+      <h4 style="font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 0.5rem;">巡检 · Lint</h4>
+      <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7;">
+        定期健康检查：页面间的矛盾、被新信息取代的过时主张、孤页、数据缺口。AI 找出问题并修复。
+      </p>
+    </div>
+  </div>
+
+  <!-- Structure -->
+  <div class="fade-in" style="margin-top: 3rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2.25rem; display: flex; flex-wrap: wrap; gap: 3rem; align-items: flex-start;">
+    <div style="flex: 1; min-width: 240px;">
+      <div class="section-label" style="margin-bottom: 1rem;">三层架构</div>
+      <div style="display: flex; flex-direction: column; gap: 0.9rem;">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <span style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: var(--accent-warm); flex-shrink: 0;"></span>
+          <span style="font-size: 0.92rem;"><code style="background: var(--bg-alt); padding: 0.15em 0.5em; border-radius: 6px; font-size: 0.85em;">_raw/</code> 原始资料（不可变，AI 只读）</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <span style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: var(--primary); flex-shrink: 0;"></span>
+          <span style="font-size: 0.92rem;">wiki 页面 · AI 生成与维护的 Markdown</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <span style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: var(--primary-deep); flex-shrink: 0;"></span>
+          <span style="font-size: 0.92rem;"><code style="background: var(--bg-alt); padding: 0.15em 0.5em; border-radius: 6px; font-size: 0.85em;">CLAUDE.md</code> 维护规范</span>
+        </div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 240px;">
+      <div class="section-label" style="margin-bottom: 1rem;">活跃项目</div>
+      <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.6rem;">
+        <li style="font-size: 0.92rem; color: var(--text-secondary);">📋 阿甘佐品牌中心 — 机油品牌官网 + SEO + AIGEO</li>
+        <li style="font-size: 0.92rem; color: var(--text-secondary);">🎬 AIGEO 短视频矩阵 — Seedance 2.0 口播</li>
+        <li style="font-size: 0.92rem; color: var(--text-secondary);">🌿 Calm Xeriscape — 个人网站</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
 <!-- AIGEO -->
 <!-- ============================================ -->
 <section class="section" id="aigeo">
@@ -1430,6 +1499,85 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
 </section>
 
 <!-- ============================================ -->
+<!-- AIGEO Workbench -->
+<!-- ============================================ -->
+<section class="section" id="workbench" style="background: var(--bg-alt); max-width: none; padding-left: 0; padding-right: 0; transition: background var(--transition-theme);">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+    <div class="section-header fade-in">
+      <span class="section-label">AIGEO Workbench</span>
+      <h2>AI 时代的品牌工作台</h2>
+      <p style="font-size: 1.05rem; color: var(--text-secondary); max-width: 620px; margin-top: 1rem;">
+        一套完整的 AIGEO 落地工具链——从品牌调研到 AI 引擎监测，12 步 SOP 管线覆盖全流程。
+      </p>
+    </div>
+
+    <!-- Preview Screenshot -->
+    <div class="fade-in" style="margin-top: 2.5rem;">
+      <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg);">
+        <div style="display: flex; align-items: center; gap: 8px; padding: 12px 20px; background: var(--bg); border-bottom: 1px solid var(--border);">
+          <span style="width: 10px; height: 10px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 0 4px var(--primary-soft);"></span>
+          <span style="font-size: 13px; font-weight: 600;">AIGEO Workbench</span>
+          <span style="font-size: 11px; color: var(--text-muted); margin-left: auto;">阿甘佐品牌中心 · 12 步管线</span>
+        </div>
+        <img src="workbench-preview.png" alt="AIGEO Workbench 界面预览" style="width: 100%; height: auto; display: block;">
+      </div>
+    </div>
+
+    <!-- 12-Step Pipeline -->
+    <div class="fade-in" style="margin-top: 3rem;">
+      <div class="section-label" style="margin-bottom: 1.5rem;">12 步 SOP 管线</div>
+      <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; font-size: 0.8rem;">
+        <div style="padding: 12px 10px; background: var(--primary-soft); border-radius: var(--radius-sm); text-align: center; font-weight: 600; font-size: 0.78rem;">
+          <div style="font-size: 0.7rem; color: var(--primary-deep); margin-bottom: 2px;">✓</div>
+          ① 调研
+        </div>
+        <div style="padding: 12px 10px; background: var(--accent-soft); border-radius: var(--radius-sm); text-align: center; font-weight: 600; font-size: 0.78rem;">
+          <div style="font-size: 0.7rem; color: var(--accent-warm); margin-bottom: 2px;">⟳</div>
+          ② 选词
+        </div>
+        <div style="padding: 12px 10px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); text-align: center; font-weight: 600; font-size: 0.78rem; color: var(--text-muted);">③ 选方法</div>
+        <div style="padding: 12px 10px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); text-align: center; font-weight: 600; font-size: 0.78rem; color: var(--text-muted);">④ 拓展词</div>
+        <div style="padding: 12px 10px; background: var(--primary-soft); border-radius: var(--radius-sm); text-align: center; font-weight: 600; font-size: 0.78rem;">
+          <div style="font-size: 0.7rem; color: var(--primary-deep); margin-bottom: 2px;">✓</div>
+          ⑤ 企业画像
+        </div>
+        <div style="padding: 12px 10px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); text-align: center; font-weight: 600; font-size: 0.78rem; color: var(--text-muted);">⑥ 知识库</div>
+        <div style="padding: 12px 10px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); text-align: center; font-weight: 600; font-size: 0.78rem; color: var(--text-muted);">⑦ 创作指令</div>
+        <div style="padding: 12px 10px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); text-align: center; font-weight: 600; font-size: 0.78rem; color: var(--text-muted);">⑧ 制作文章</div>
+        <div style="padding: 12px 10px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); text-align: center; font-weight: 600; font-size: 0.78rem; color: var(--text-muted);">⑨ 检查文章</div>
+        <div style="padding: 12px 10px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); text-align: center; font-weight: 600; font-size: 0.78rem; color: var(--text-muted);">⑩ 投稿发布</div>
+        <div style="padding: 12px 10px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); text-align: center; font-weight: 600; font-size: 0.78rem; color: var(--text-muted);">⑪ 查收录</div>
+        <div style="padding: 12px 10px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); text-align: center; font-weight: 600; font-size: 0.78rem; color: var(--text-muted);">⑫ 看报表</div>
+      </div>
+    </div>
+
+    <!-- Key Metrics Cards -->
+    <div class="fade-in" style="margin-top: 3rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
+      <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem;">
+        <div style="font-size: 0.78rem; font-weight: 600; color: var(--text-muted); letter-spacing: 0.05em; margin-bottom: 0.75rem;">AI 引擎品牌提及率</div>
+        <div style="font-size: 2.2rem; font-weight: 700; letter-spacing: -0.02em; color: var(--accent-warm);">3/7</div>
+        <div style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.35rem;">正面推荐 3 个引擎 · 平均准确率 56%</div>
+      </div>
+      <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem;">
+        <div style="font-size: 0.78rem; font-weight: 600; color: var(--text-muted); letter-spacing: 0.05em; margin-bottom: 0.75rem;">候选关键词</div>
+        <div style="font-size: 2.2rem; font-weight: 700; letter-spacing: -0.02em; color: var(--primary-deep);">8</div>
+        <div style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.35rem;">8 个待评估 · 已抓取 8 条用户问题</div>
+      </div>
+      <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem;">
+        <div style="font-size: 0.78rem; font-weight: 600; color: var(--text-muted); letter-spacing: 0.05em; margin-bottom: 0.75rem;">管线进度</div>
+        <div style="font-size: 2.2rem; font-weight: 700; letter-spacing: -0.02em;">2<span style="font-size: 1rem; color: var(--text-muted);">/12</span></div>
+        <div style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.35rem;">步骤①⑤已完成 · ②进行中</div>
+      </div>
+      <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem;">
+        <div style="font-size: 0.78rem; font-weight: 600; color: var(--text-muted); letter-spacing: 0.05em; margin-bottom: 0.75rem;">监测引擎</div>
+        <div style="font-size: 2.2rem; font-weight: 700; letter-spacing: -0.02em; color: var(--primary-deep);">7</div>
+        <div style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.35rem;">ChatGPT · DeepSeek · Kimi · 豆包 · 通义 · 文心 · 智谱</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
 <!-- About -->
 <!-- ============================================ -->
 <section class="section" id="about" style="background: var(--bg-alt); max-width: none; padding-left: 0; padding-right: 0; transition: background var(--transition-theme);">
@@ -1508,7 +1656,9 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
       </div>
       <div class="footer-col">
         <h4>探索</h4>
+        <a href="#kb">知识库</a>
         <a href="#aigeo">AIGEO</a>
+        <a href="#workbench">工作台</a>
         <a href="#community">同好圈</a>
         <a href="#about">关于我</a>
       </div>
