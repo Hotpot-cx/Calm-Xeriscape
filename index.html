@@ -5,6 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Calm Xeriscape — AI Creator & AIGEO Explorer</title>
 <meta name="description" content="个人AI作品集 · 同好交流 · AIGEO学习分享 — 乙女向 / 明星CP向 AI创作">
+<meta name="keywords" content="AI创作,乙女向,CP向,AIGEO,个人网站,Calm Xeriscape">
+<meta name="author" content="Calm Xeriscape">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Calm Xeriscape — AI Creator & AIGEO Explorer">
+<meta property="og:description" content="个人AI作品集 · 同好交流 · AIGEO学习分享 — 乙女向 / 明星CP向 AI创作">
+<meta property="og:type" content="website">
+<meta property="og:image" content="workbench-preview.png">
+<meta property="og:locale" content="zh_CN">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Calm Xeriscape — AI Creator & AIGEO Explorer">
+<meta name="twitter:description" content="个人AI作品集 · 同好交流 · AIGEO学习分享 — 乙女向 / 明星CP向 AI创作">
+<meta name="twitter:image" content="workbench-preview.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -247,6 +264,20 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
+}
+
+.section-alt {
+  background: var(--bg-alt);
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+  transition: background var(--transition-theme);
+}
+
+.section-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .section-header {
@@ -590,6 +621,107 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
 }
 
 /* ============================================
+   Knowledge Base Section
+   ============================================ */
+.kb-arch {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+
+.kb-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  transition: all 0.3s ease;
+}
+
+.kb-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.kb-card .kb-card-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.kb-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.kb-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.kb-structure {
+  margin-top: 3rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.kb-structure-col {
+  flex: 1;
+  min-width: 240px;
+}
+
+.kb-layer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.kb-layer-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.92rem;
+}
+
+.kb-layer-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.kb-layer-dot.dot-amber { background: var(--accent-warm); }
+.kb-layer-dot.dot-green { background: var(--primary); }
+.kb-layer-dot.dot-deep { background: var(--primary-deep); }
+
+.kb-layer-code {
+  background: var(--bg-alt);
+  padding: 0.15em 0.5em;
+  border-radius: 6px;
+  font-size: 0.85em;
+}
+
+.kb-project-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.kb-project-list li {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+}
+
+/* ============================================
    AIGEO Section
    ============================================ */
 .aigeo-layout {
@@ -808,6 +940,143 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
 
 @media (max-width: 480px) {
   .aigeo-stats-row { grid-template-columns: 1fr; }
+}
+
+/* ============================================
+   AIGEO Workbench Section
+   ============================================ */
+.wb-preview {
+  margin-top: 2.5rem;
+}
+
+.wb-preview-frame {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.wb-preview-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.wb-preview-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 0 4px var(--primary-soft);
+}
+
+.wb-preview-bar span {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.wb-preview-bar .wb-preview-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+.wb-preview-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.wb-pipeline {
+  margin-top: 3rem;
+}
+
+.wb-pipeline .wb-pipeline-title {
+  margin-bottom: 1.5rem;
+}
+
+.wb-pipeline-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  font-size: 0.8rem;
+}
+
+.wb-step {
+  padding: 12px 10px;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.78rem;
+}
+
+.wb-step .wb-step-mark {
+  font-size: 0.7rem;
+  margin-bottom: 2px;
+}
+
+.wb-step.done {
+  background: var(--primary-soft);
+}
+
+.wb-step.done .wb-step-mark { color: var(--primary-deep); }
+
+.wb-step.active {
+  background: var(--accent-soft);
+}
+
+.wb-step.active .wb-step-mark { color: var(--accent-warm); }
+
+.wb-step.pending {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.wb-metrics {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.wb-metric-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+.wb-metric-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.wb-metric-value {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.wb-metric-value.val-accent { color: var(--accent-warm); }
+.wb-metric-value.val-primary { color: var(--primary-deep); }
+
+.wb-metric-value .wb-metric-sub {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.wb-metric-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-top: 0.35rem;
 }
 
 /* ============================================
@@ -1245,8 +1514,8 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
 <!-- ============================================ -->
 <!-- Community -->
 <!-- ============================================ -->
-<section class="section" id="community" style="background: var(--bg-alt); max-width: none; padding-left: 0; padding-right: 0; transition: background var(--transition-theme);">
-  <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+<section class="section section-alt" id="community">
+  <div class="section-wrap">
     <div class="section-header fade-in">
       <span class="section-label">同好交流</span>
       <h2>找到属于你的同频</h2>
@@ -1254,12 +1523,12 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
     </div>
 
     <div class="community-highlight fade-in">
-      <a href="#" class="community-card">
+      <a href="https://space.bilibili.com/6553521?spm_id_from=333.337.0.0" target="_blank" rel="noopener" class="community-card">
         <div class="platform-icon">📺</div>
         <span class="platform-name">Bilibili</span>
         <span class="platform-desc">AI 创作视频 · 日常分享</span>
       </a>
-      <a href="#" class="community-card">
+      <a href="https://www.xiaohongshu.com/user/profile/5f6b4ee9000000000101ce66" target="_blank" rel="noopener" class="community-card">
         <div class="platform-icon">📕</div>
         <span class="platform-name">小红书</span>
         <span class="platform-desc">作品精选 · 创作笔记</span>
@@ -1269,12 +1538,12 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
         <span class="platform-name">微信</span>
         <span class="platform-desc">私域交流 · 深度连接</span>
       </a>
-      <a href="#" class="community-card">
+      <a href="https://weibo.com/u/3119537657" target="_blank" rel="noopener" class="community-card">
         <div class="platform-icon">🐦</div>
         <span class="platform-name">微博</span>
         <span class="platform-desc">实时动态 · 热点交流</span>
       </a>
-      <a href="#" class="community-card">
+      <a href="https://v.douyin.com/-PXSQ8X9oos/" target="_blank" rel="noopener" class="community-card">
         <div class="platform-icon">🎵</div>
         <span class="platform-name">抖音</span>
         <span class="platform-desc">AI 短视频 · 创意内容</span>
@@ -1286,65 +1555,85 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
 <!-- ============================================ -->
 <!-- Knowledge Base -->
 <!-- ============================================ -->
-<section class="section" id="kb" style="max-width: 1200px;">
+<section class="section" id="kb">
   <div class="section-header fade-in">
-    <span class="section-label">知识库</span>
-    <h2>Knowledge Base</h2>
-    <p style="font-size: 1.05rem; color: var(--text-secondary); max-width: 620px; margin-top: 1rem;">
-      一个<strong>由 LLM 主动维护的持久化 Wiki</strong>。LLM 在每次对话后增量地将信息编译进 Wiki，交叉引用、矛盾标记、主题综合被提前完成，知识库随时间复合增长。
-    </p>
+    <span class="section-label">Hanako 知识库</span>
+    <h2>Hanako KB</h2>
+    <p>一套<strong>由 LLM 主动维护的持久化 Wiki 系统</strong>。每次对话后，AI 增量地将信息编译进 Markdown 页面——交叉引用自动建立、矛盾标记提前暴露、主题综合持续精炼，知识随时间复合增长。</p>
   </div>
 
   <!-- Architecture -->
-  <div class="kb-arch fade-in" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-top: 3rem;">
-    <div class="kb-card" style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; transition: all 0.3s ease;">
-      <div style="font-size: 1.5rem; margin-bottom: 0.75rem;">📥</div>
-      <h4 style="font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 0.5rem;">收录 · Ingest</h4>
-      <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7;">
-        你扔进新的资料、文章、截图或想法，AI 读取后提取关键信息，更新相关实体页面，修订主题摘要，标记矛盾发现。
-      </p>
+  <div class="kb-arch fade-in">
+    <div class="kb-card">
+      <div class="kb-card-icon">📥</div>
+      <h4>收录 · Ingest</h4>
+      <p>你扔进新的资料、文章、截图或想法，AI 读取后提取关键信息，更新相关实体页面，修订主题摘要，标记矛盾发现。</p>
     </div>
-    <div class="kb-card" style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; transition: all 0.3s ease;">
-      <div style="font-size: 1.5rem; margin-bottom: 0.75rem;">🔍</div>
-      <h4 style="font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 0.5rem;">查询 · Query</h4>
-      <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7;">
-        你提问，AI 在 Wiki 内搜索、读取、综合，给出带引用的回答。好的答案、对比分析、新发现的关联，写入 Wiki。
-      </p>
+    <div class="kb-card">
+      <div class="kb-card-icon">🔍</div>
+      <h4>查询 · Query</h4>
+      <p>你提问，AI 在 Wiki 内搜索、读取、综合，给出带引用的回答。好的答案、对比分析、新发现的关联，写入 Wiki。</p>
     </div>
-    <div class="kb-card" style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; transition: all 0.3s ease;">
-      <div style="font-size: 1.5rem; margin-bottom: 0.75rem;">🧹</div>
-      <h4 style="font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 0.5rem;">巡检 · Lint</h4>
-      <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7;">
-        定期健康检查：页面间的矛盾、被新信息取代的过时主张、孤页、数据缺口。AI 找出问题并修复。
-      </p>
+    <div class="kb-card">
+      <div class="kb-card-icon">🧹</div>
+      <h4>巡检 · Lint</h4>
+      <p>定期健康检查：页面间的矛盾、被新信息取代的过时主张、孤页、数据缺口。AI 找出问题并修复。</p>
     </div>
   </div>
 
   <!-- Structure -->
-  <div class="fade-in" style="margin-top: 3rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2.25rem; display: flex; flex-wrap: wrap; gap: 3rem; align-items: flex-start;">
-    <div style="flex: 1; min-width: 240px;">
-      <div class="section-label" style="margin-bottom: 1rem;">三层架构</div>
-      <div style="display: flex; flex-direction: column; gap: 0.9rem;">
-        <div style="display: flex; align-items: center; gap: 0.75rem;">
-          <span style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: var(--accent-warm); flex-shrink: 0;"></span>
-          <span style="font-size: 0.92rem;"><code style="background: var(--bg-alt); padding: 0.15em 0.5em; border-radius: 6px; font-size: 0.85em;">_raw/</code> 原始资料（不可变，AI 只读）</span>
+  <div class="kb-structure fade-in">
+    <div class="kb-structure-col">
+      <div class="section-label">目录结构</div>
+      <div class="kb-layer-list">
+        <div class="kb-layer-item">
+          <span class="kb-layer-dot dot-amber"></span>
+          <span><code class="kb-layer-code">_raw/</code> 原始资料（不可变，AI 只读）</span>
         </div>
-        <div style="display: flex; align-items: center; gap: 0.75rem;">
-          <span style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: var(--primary); flex-shrink: 0;"></span>
-          <span style="font-size: 0.92rem;">wiki 页面 · AI 生成与维护的 Markdown</span>
+        <div class="kb-layer-item">
+          <span class="kb-layer-dot dot-green"></span>
+          <span><code class="kb-layer-code">30_Personal/</code> 个人项目 · 含本网站条目</span>
         </div>
-        <div style="display: flex; align-items: center; gap: 0.75rem;">
-          <span style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: var(--primary-deep); flex-shrink: 0;"></span>
-          <span style="font-size: 0.92rem;"><code style="background: var(--bg-alt); padding: 0.15em 0.5em; border-radius: 6px; font-size: 0.85em;">CLAUDE.md</code> 维护规范</span>
+        <div class="kb-layer-item">
+          <span class="kb-layer-dot dot-deep"></span>
+          <span><code class="kb-layer-code">CLAUDE.md</code> 维护规范</span>
         </div>
       </div>
     </div>
-    <div style="flex: 1; min-width: 240px;">
-      <div class="section-label" style="margin-bottom: 1rem;">活跃项目</div>
-      <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.6rem;">
-        <li style="font-size: 0.92rem; color: var(--text-secondary);">📋 阿甘佐品牌中心 — 机油品牌官网 + SEO + AIGEO</li>
-        <li style="font-size: 0.92rem; color: var(--text-secondary);">🎬 AIGEO 短视频矩阵 — Seedance 2.0 口播</li>
-        <li style="font-size: 0.92rem; color: var(--text-secondary);">🌿 Calm Xeriscape — 个人网站</li>
+    <div class="kb-structure-col">
+      <div class="section-label">活跃项目</div>
+      <ul class="kb-project-list">
+        <li>📋 阿甘佐品牌中心 — 机油品牌官网 + SEO + AIGEO</li>
+        <li>🎬 AIGEO 短视频矩阵 — Seedance 2.0 口播</li>
+        <li>🌿 Calm Xeriscape — 个人网站 · 清新·个性·舒适</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Calm Xeriscape Entry -->
+  <div class="kb-structure fade-in" style="margin-top: 1.5rem;">
+    <div class="kb-structure-col">
+      <div class="section-label">🌿 本网站条目</div>
+      <div class="kb-layer-list">
+        <div class="kb-layer-item">
+          <span class="kb-layer-dot dot-green"></span>
+          <span>品牌方向：清新 · 个性 · 舒适</span>
+        </div>
+        <div class="kb-layer-item">
+          <span class="kb-layer-dot dot-green"></span>
+          <span>设计语言：Maya Lin — 克制、有机流体、正念美学</span>
+        </div>
+        <div class="kb-layer-item">
+          <span class="kb-layer-dot dot-green"></span>
+          <span>配色：薄荷鼠尾草绿 × 暖沙杏色</span>
+        </div>
+      </div>
+    </div>
+    <div class="kb-structure-col">
+      <div class="section-label">关联项目</div>
+      <ul class="kb-project-list">
+        <li>🔗 与阿甘佐品牌中心 — 审美经验交叉使用</li>
+        <li>🔗 与 AIGEO 短视频矩阵 — 设计语言影响视频视觉</li>
       </ul>
     </div>
   </div>
@@ -1501,77 +1790,78 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
 <!-- ============================================ -->
 <!-- AIGEO Workbench -->
 <!-- ============================================ -->
-<section class="section" id="workbench" style="background: var(--bg-alt); max-width: none; padding-left: 0; padding-right: 0; transition: background var(--transition-theme);">
-  <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+<section class="section" id="workbench">
+  <div class="section-wrap">
     <div class="section-header fade-in">
       <span class="section-label">AIGEO Workbench</span>
       <h2>AI 时代的品牌工作台</h2>
-      <p style="font-size: 1.05rem; color: var(--text-secondary); max-width: 620px; margin-top: 1rem;">
-        一套完整的 AIGEO 落地工具链——从品牌调研到 AI 引擎监测，12 步 SOP 管线覆盖全流程。
-      </p>
+      <p>一套完整的 AIGEO 落地工具链——从品牌调研到 AI 引擎监测，12 步 SOP 管线覆盖全流程。</p>
     </div>
 
     <!-- Preview Screenshot -->
-    <div class="fade-in" style="margin-top: 2.5rem;">
-      <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg);">
-        <div style="display: flex; align-items: center; gap: 8px; padding: 12px 20px; background: var(--bg); border-bottom: 1px solid var(--border);">
-          <span style="width: 10px; height: 10px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 0 4px var(--primary-soft);"></span>
-          <span style="font-size: 13px; font-weight: 600;">AIGEO Workbench</span>
-          <span style="font-size: 11px; color: var(--text-muted); margin-left: auto;">阿甘佐品牌中心 · 12 步管线</span>
+    <div class="wb-preview fade-in">
+      <div class="wb-preview-frame">
+        <div class="wb-preview-bar">
+          <span class="wb-preview-dot"></span>
+          <span>AIGEO Workbench</span>
+          <span class="wb-preview-sub">阿甘佐品牌中心 · 12 步管线</span>
         </div>
-        <img src="workbench-preview.png" alt="AIGEO Workbench 界面预览" style="width: 100%; height: auto; display: block;">
+        <picture>
+          <source srcset="workbench-preview.webp" type="image/webp">
+          <img src="workbench-preview.png" alt="AIGEO Workbench 界面预览" class="wb-preview-img">
+        </picture>
       </div>
     </div>
 
     <!-- 12-Step Pipeline -->
-    <div class="fade-in" style="margin-top: 3rem;">
-      <div class="section-label" style="margin-bottom: 1.5rem;">12 步 SOP 管线</div>
-      <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; font-size: 0.8rem;">
-        <div style="padding: 12px 10px; background: var(--primary-soft); border-radius: var(--radius-sm); text-align: center; font-weight: 600; font-size: 0.78rem;">
-          <div style="font-size: 0.7rem; color: var(--primary-deep); margin-bottom: 2px;">✓</div>
+    <div class="wb-pipeline fade-in">
+      <div class="section-label wb-pipeline-title">12 步 SOP 管线</div>
+      <div class="wb-pipeline-grid">
+        <div class="wb-step done">
+          <div class="wb-step-mark">✓</div>
           ① 调研
         </div>
-        <div style="padding: 12px 10px; background: var(--accent-soft); border-radius: var(--radius-sm); text-align: center; font-weight: 600; font-size: 0.78rem;">
-          <div style="font-size: 0.7rem; color: var(--accent-warm); margin-bottom: 2px;">⟳</div>
+        <div class="wb-step active">
+          <div class="wb-step-mark">⟳</div>
           ② 选词
         </div>
-        <div style="padding: 12px 10px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); text-align: center; font-weight: 600; font-size: 0.78rem; color: var(--text-muted);">③ 选方法</div>
-        <div style="padding: 12px 10px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); text-align: center; font-weight: 600; font-size: 0.78rem; color: var(--text-muted);">④ 拓展词</div>
-        <div style="padding: 12px 10px; background: var(--primary-soft); border-radius: var(--radius-sm); text-align: center; font-weight: 600; font-size: 0.78rem;">
-          <div style="font-size: 0.7rem; color: var(--primary-deep); margin-bottom: 2px;">✓</div>
+        <div class="wb-step pending">③ 选方法</div>
+        <div class="wb-step pending">④ 拓展词</div>
+        <div class="wb-step done">
+          <div class="wb-step-mark">✓</div>
           ⑤ 企业画像
         </div>
-        <div style="padding: 12px 10px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); text-align: center; font-weight: 600; font-size: 0.78rem; color: var(--text-muted);">⑥ 知识库</div>
-        <div style="padding: 12px 10px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); text-align: center; font-weight: 600; font-size: 0.78rem; color: var(--text-muted);">⑦ 创作指令</div>
-        <div style="padding: 12px 10px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); text-align: center; font-weight: 600; font-size: 0.78rem; color: var(--text-muted);">⑧ 制作文章</div>
-        <div style="padding: 12px 10px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); text-align: center; font-weight: 600; font-size: 0.78rem; color: var(--text-muted);">⑨ 检查文章</div>
-        <div style="padding: 12px 10px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); text-align: center; font-weight: 600; font-size: 0.78rem; color: var(--text-muted);">⑩ 投稿发布</div>
-        <div style="padding: 12px 10px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); text-align: center; font-weight: 600; font-size: 0.78rem; color: var(--text-muted);">⑪ 查收录</div>
-        <div style="padding: 12px 10px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); text-align: center; font-weight: 600; font-size: 0.78rem; color: var(--text-muted);">⑫ 看报表</div>
+        <div class="wb-step pending">⑥ 知识库</div>
+        <div class="wb-step pending">⑦ 创作指令</div>
+        <div class="wb-step pending">⑧ 制作文章</div>
+        <div class="wb-step pending">⑨ 检查文章</div>
+        <div class="wb-step pending">⑩ 投稿发布</div>
+        <div class="wb-step pending">⑪ 查收录</div>
+        <div class="wb-step pending">⑫ 看报表</div>
       </div>
     </div>
 
     <!-- Key Metrics Cards -->
-    <div class="fade-in" style="margin-top: 3rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
-      <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem;">
-        <div style="font-size: 0.78rem; font-weight: 600; color: var(--text-muted); letter-spacing: 0.05em; margin-bottom: 0.75rem;">AI 引擎品牌提及率</div>
-        <div style="font-size: 2.2rem; font-weight: 700; letter-spacing: -0.02em; color: var(--accent-warm);">3/7</div>
-        <div style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.35rem;">正面推荐 3 个引擎 · 平均准确率 56%</div>
+    <div class="wb-metrics fade-in">
+      <div class="wb-metric-card">
+        <div class="wb-metric-label">AI 引擎品牌提及率</div>
+        <div class="wb-metric-value val-accent">3/7</div>
+        <div class="wb-metric-desc">正面推荐 3 个引擎 · 平均准确率 56%</div>
       </div>
-      <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem;">
-        <div style="font-size: 0.78rem; font-weight: 600; color: var(--text-muted); letter-spacing: 0.05em; margin-bottom: 0.75rem;">候选关键词</div>
-        <div style="font-size: 2.2rem; font-weight: 700; letter-spacing: -0.02em; color: var(--primary-deep);">8</div>
-        <div style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.35rem;">8 个待评估 · 已抓取 8 条用户问题</div>
+      <div class="wb-metric-card">
+        <div class="wb-metric-label">候选关键词</div>
+        <div class="wb-metric-value val-primary">8</div>
+        <div class="wb-metric-desc">8 个待评估 · 已抓取 8 条用户问题</div>
       </div>
-      <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem;">
-        <div style="font-size: 0.78rem; font-weight: 600; color: var(--text-muted); letter-spacing: 0.05em; margin-bottom: 0.75rem;">管线进度</div>
-        <div style="font-size: 2.2rem; font-weight: 700; letter-spacing: -0.02em;">2<span style="font-size: 1rem; color: var(--text-muted);">/12</span></div>
-        <div style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.35rem;">步骤①⑤已完成 · ②进行中</div>
+      <div class="wb-metric-card">
+        <div class="wb-metric-label">管线进度</div>
+        <div class="wb-metric-value">2<span class="wb-metric-sub">/12</span></div>
+        <div class="wb-metric-desc">步骤①⑤已完成 · ②进行中</div>
       </div>
-      <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem;">
-        <div style="font-size: 0.78rem; font-weight: 600; color: var(--text-muted); letter-spacing: 0.05em; margin-bottom: 0.75rem;">监测引擎</div>
-        <div style="font-size: 2.2rem; font-weight: 700; letter-spacing: -0.02em; color: var(--primary-deep);">7</div>
-        <div style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.35rem;">ChatGPT · DeepSeek · Kimi · 豆包 · 通义 · 文心 · 智谱</div>
+      <div class="wb-metric-card">
+        <div class="wb-metric-label">监测引擎</div>
+        <div class="wb-metric-value val-primary">7</div>
+        <div class="wb-metric-desc">ChatGPT · DeepSeek · Kimi · 豆包 · 通义 · 文心 · 智谱</div>
       </div>
     </div>
   </div>
@@ -1580,8 +1870,8 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
 <!-- ============================================ -->
 <!-- About -->
 <!-- ============================================ -->
-<section class="section" id="about" style="background: var(--bg-alt); max-width: none; padding-left: 0; padding-right: 0; transition: background var(--transition-theme);">
-  <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+<section class="section section-alt" id="about">
+  <div class="section-wrap">
     <div class="section-header fade-in">
       <span class="section-label">关于我</span>
       <h2>Calm & Focused</h2>
@@ -1639,10 +1929,10 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
       <h3>Calm Xeriscape</h3>
       <p>AI 创作者的静谧绿洲 — 同好相聚，灵感生长</p>
       <div class="footer-social">
-        <a href="#" aria-label="Bilibili" title="Bilibili">📺</a>
-        <a href="#" aria-label="小红书" title="小红书">📕</a>
+        <a href="https://space.bilibili.com/6553521?spm_id_from=333.337.0.0" target="_blank" rel="noopener" aria-label="Bilibili" title="Bilibili">📺</a>
+        <a href="https://www.xiaohongshu.com/user/profile/5f6b4ee9000000000101ce66" target="_blank" rel="noopener" aria-label="小红书" title="小红书">📕</a>
         <a href="#" aria-label="微信" title="微信">💚</a>
-        <a href="#" aria-label="微博" title="微博">🐦</a>
+        <a href="https://weibo.com/u/3119537657" target="_blank" rel="noopener" aria-label="微博" title="微博">🐦</a>
         <a href="#" aria-label="Email" title="Email">✉️</a>
       </div>
     </div>
@@ -1664,9 +1954,7 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
       </div>
       <div class="footer-col">
         <h4>联系</h4>
-        <a href="#">合作咨询</a>
-        <a href="#">友情链接</a>
-        <a href="#">RSS</a>
+        <a href="mailto:952723391@qq.com">合作咨询</a>
       </div>
     </div>
   </div>
