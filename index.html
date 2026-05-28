@@ -568,6 +568,57 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
 }
 
 /* ============================================
+   Works Screenshot Showcase
+   ============================================ */
+.showcase-section {
+  margin-top: 3rem;
+}
+
+.showcase-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.showcase-row.single {
+  grid-template-columns: 1fr;
+}
+
+.showcase-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.showcase-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.showcase-card .showcase-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.showcase-card .showcase-caption {
+  padding: 0.75rem 1.25rem;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+.showcase-card.mobile {
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+/* ============================================
    Community Section
    ============================================ */
 .community-highlight {
@@ -1321,6 +1372,8 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
   .footer-links { gap: 1.5rem; }
   .works-grid { grid-template-columns: 1fr; }
   .community-highlight { grid-template-columns: repeat(2, 1fr); }
+  .showcase-row { grid-template-columns: 1fr; }
+  .showcase-card.mobile { max-width: 260px; }
 }
 
 @media (max-width: 480px) {
@@ -1506,6 +1559,27 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
         <span class="tag">网站</span>
         <span class="tag">CP向</span>
         <span class="tag accent">计划中</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screenshot Showcase -->
+  <div class="showcase-section fade-in">
+    <span class="section-label">视觉快照</span>
+    <div class="showcase-row">
+      <div class="showcase-card">
+        <img src="1.png" alt="小红书作品集截图" class="showcase-img" loading="lazy">
+        <div class="showcase-caption">小红书 · 作品集精选</div>
+      </div>
+      <div class="showcase-card mobile">
+        <img src="3.png" alt="乙女网站手机端截图" class="showcase-img" loading="lazy">
+        <div class="showcase-caption">sylus0418.com · 手机端</div>
+      </div>
+    </div>
+    <div class="showcase-row single" style="margin-top: 1.25rem;">
+      <div class="showcase-card">
+        <img src="2.png" alt="乙女网站桌面端截图" class="showcase-img" loading="lazy">
+        <div class="showcase-caption">sylus0418.com · 桌面端</div>
       </div>
     </div>
   </div>
