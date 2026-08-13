@@ -3,1438 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Calm Xeriscape — AI Creator & AIGEO Explorer</title>
-<meta name="description" content="个人AI作品集 · 同好交流 · AIGEO学习分享 — 乙女向 / 明星CP向 AI创作">
-<meta name="keywords" content="AI创作,乙女向,CP向,AIGEO,个人网站,Calm Xeriscape">
+<title>Calm Xeriscape — AI Creator · AIGEO Explorer · 阿甘佐机油数字化</title>
+<meta name="description" content="个人网站 · AI 创作 · AIGEO 实践 · 机油品牌数字化 — 阿甘佐机油官网 (aganzol.com) 与 AIGEO 工作台，AI 短剧《锋刃欲擒》与同好创作社区">
+<meta name="keywords" content="阿甘佐,机油,aganzol,AIGEO,AI创作,AI短剧,锋刃欲擒,个人网站,Calm Xeriscape,工作台">
 <meta name="author" content="Calm Xeriscape">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
 
 <!-- Open Graph -->
-<meta property="og:title" content="Calm Xeriscape — AI Creator & AIGEO Explorer">
-<meta property="og:description" content="个人AI作品集 · 同好交流 · AIGEO学习分享 — 乙女向 / 明星CP向 AI创作">
+<meta property="og:title" content="Calm Xeriscape — AI Creator · AIGEO Explorer · 阿甘佐机油数字化">
+<meta property="og:description" content="个人网站 · AI 创作 · AIGEO 实践 · 机油品牌数字化 — 阿甘佐机油官网与 AIGEO 工作台">
 <meta property="og:type" content="website">
 <meta property="og:image" content="workbench-preview.png">
 <meta property="og:locale" content="zh_CN">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Calm Xeriscape — AI Creator & AIGEO Explorer">
-<meta name="twitter:description" content="个人AI作品集 · 同好交流 · AIGEO学习分享 — 乙女向 / 明星CP向 AI创作">
+<meta name="twitter:title" content="Calm Xeriscape — AI Creator · AIGEO Explorer · 阿甘佐机油数字化">
+<meta name="twitter:description" content="个人网站 · AI 创作 · AIGEO 实践 · 机油品牌数字化 — 阿甘佐机油官网与 AIGEO 工作台">
 <meta name="twitter:image" content="workbench-preview.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<style>
-/* ============================================
-   CSS Custom Properties — Light & Dark Themes
-   ============================================ */
-:root {
-  --bg: #FBF8F4;
-  --bg-alt: #F3EEE7;
-  --surface: #FFFFFF;
-  --surface-hover: #FAF7F2;
-  --primary: #7FAF9A;
-  --primary-soft: #B8D5C8;
-  --primary-deep: #5C8D78;
-  --accent: #C9A87C;
-  --accent-soft: #E8D5C4;
-  --accent-warm: #D4A574;
-  --text: #2C3A33;
-  --text-secondary: #6B7F74;
-  --text-muted: #99ADA2;
-  --border: rgba(127, 175, 154, 0.18);
-  --border-strong: rgba(127, 175, 154, 0.35);
-  --shadow-sm: 0 2px 12px rgba(44, 58, 51, 0.05);
-  --shadow: 0 4px 24px rgba(44, 58, 51, 0.07);
-  --shadow-lg: 0 12px 48px rgba(44, 58, 51, 0.10);
-  --radius-sm: 12px;
-  --radius: 16px;
-  --radius-lg: 24px;
-  --radius-xl: 32px;
-  --radius-full: 9999px;
-  --font-display: 'Fraunces', 'Noto Serif SC', 'Songti SC', serif;
-  --font-body: 'Nunito', system-ui, -apple-system, 'PingFang SC', sans-serif;
-  --noise-opacity: 0.025;
-  --blob-opacity-1: 0.50;
-  --blob-opacity-2: 0.35;
-  --blob-opacity-3: 0.28;
-  --transition-theme: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-[data-theme="dark"] {
-  --bg: #1A2320;
-  --bg-alt: #1F2A26;
-  --surface: #232D29;
-  --surface-hover: #2A3530;
-  --primary: #8FC4AF;
-  --primary-soft: #5C8D78;
-  --primary-deep: #7FAF9A;
-  --accent: #D4B896;
-  --accent-soft: #4A3D30;
-  --accent-warm: #C9A87C;
-  --text: #E8EDEA;
-  --text-secondary: #98AFA4;
-  --text-muted: #5C7065;
-  --border: rgba(143, 196, 175, 0.12);
-  --border-strong: rgba(143, 196, 175, 0.25);
-  --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.12);
-  --shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
-  --shadow-lg: 0 12px 48px rgba(0, 0, 0, 0.25);
-  --noise-opacity: 0.04;
-  --blob-opacity-1: 0.30;
-  --blob-opacity-2: 0.20;
-  --blob-opacity-3: 0.16;
-}
-
-/* ============================================
-   Base & Reset
-   ============================================ */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
-}
-
-body {
-  font-family: var(--font-body);
-  background-color: var(--bg);
-  color: var(--text);
-  line-height: 1.7;
-  transition: background-color var(--transition-theme), color var(--transition-theme);
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* Global noise texture overlay */
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 10000;
-  opacity: var(--noise-opacity);
-  transition: opacity var(--transition-theme);
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-}
-
-/* ============================================
-   Typography
-   ============================================ */
-h1, h2, h3, h4 {
-  font-family: var(--font-display);
-  font-weight: 400;
-  line-height: 1.15;
-  letter-spacing: -0.01em;
-}
-
-h1 { font-size: clamp(3rem, 7vw, 5.5rem); }
-h2 { font-size: clamp(2rem, 4.5vw, 3.2rem); }
-h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
-
-.section-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--primary-deep);
-  margin-bottom: 1rem;
-}
-
-.section-label::before {
-  content: '';
-  display: block;
-  width: 1.5rem;
-  height: 1.5px;
-  background: var(--primary-deep);
-  border-radius: 1px;
-}
-
-/* ============================================
-   Theme Toggle
-   ============================================ */
-.theme-toggle {
-  position: fixed;
-  top: 1.5rem;
-  right: 1.5rem;
-  z-index: 1000;
-  width: 46px;
-  height: 46px;
-  border-radius: var(--radius-full);
-  background: var(--surface);
-  border: 1.5px solid var(--border);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-  box-shadow: var(--shadow-sm);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
-.theme-toggle:hover {
-  border-color: var(--primary);
-  box-shadow: var(--shadow);
-  transform: scale(1.05);
-}
-
-.theme-toggle .icon-sun,
-.theme-toggle .icon-moon {
-  position: absolute;
-  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-[data-theme="light"] .theme-toggle .icon-moon { opacity: 1; transform: rotate(0deg); }
-[data-theme="light"] .theme-toggle .icon-sun { opacity: 0; transform: rotate(90deg); }
-[data-theme="dark"] .theme-toggle .icon-moon { opacity: 0; transform: rotate(-90deg); }
-[data-theme="dark"] .theme-toggle .icon-sun { opacity: 1; transform: rotate(0deg); }
-
-/* ============================================
-   Navigation
-   ============================================ */
-.nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 900;
-  padding: 1.25rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2.5rem;
-  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.nav.scrolled {
-  background: var(--surface);
-  box-shadow: var(--shadow-sm);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  padding: 0.75rem 2rem;
-}
-
-.nav a {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-  text-decoration: none;
-  letter-spacing: 0.03em;
-  transition: color 0.3s;
-  position: relative;
-}
-
-.nav a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 50%;
-  transform: translateX(-50%) scaleX(0);
-  width: 100%;
-  height: 1.5px;
-  background: var(--primary);
-  border-radius: 1px;
-  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.nav a:hover { color: var(--primary-deep); }
-.nav a:hover::after { transform: translateX(-50%) scaleX(1); }
-
-.nav-brand {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: var(--text) !important;
-  margin-right: 1rem;
-}
-
-/* ============================================
-   Section Shared
-   ============================================ */
-.section {
-  padding: 6rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-}
-
-.section-alt {
-  background: var(--bg-alt);
-  max-width: none;
-  padding-left: 0;
-  padding-right: 0;
-  transition: background var(--transition-theme);
-}
-
-.section-wrap {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.section-header h2 {
-  margin-bottom: 0.75rem;
-}
-
-.section-header .section-label {
-  margin-bottom: 1.25rem;
-}
-
-.section-header p {
-  color: var(--text-secondary);
-  font-size: 1.05rem;
-  max-width: 480px;
-  margin: 0 auto;
-}
-
-/* ============================================
-   Hero Section
-   ============================================ */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  padding: 2rem;
-  overflow: hidden;
-}
-
-/* Organic fluid blob background */
-.hero-organic {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.hero-organic svg {
-  width: 100%;
-  height: 100%;
-}
-
-.blob {
-  animation: floatBlob 20s ease-in-out infinite;
-  transform-origin: center;
-}
-
-.blob:nth-child(2) { animation-delay: -7s; animation-duration: 25s; }
-.blob:nth-child(3) { animation-delay: -14s; animation-duration: 22s; }
-.blob:nth-child(4) { animation-delay: -3s; animation-duration: 28s; }
-
-@keyframes floatBlob {
-  0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
-  25% { transform: translate(3%, -2%) rotate(3deg) scale(1.04); }
-  50% { transform: translate(-1%, 1%) rotate(-2deg) scale(0.97); }
-  75% { transform: translate(2%, 2%) rotate(1deg) scale(1.02); }
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  max-width: 800px;
-}
-
-.hero-eyebrow {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--primary-deep);
-  margin-bottom: 1.5rem;
-}
-
-.hero h1 {
-  margin-bottom: 1.25rem;
-  font-weight: 400;
-}
-
-.hero h1 .italic {
-  font-style: italic;
-  font-weight: 300;
-  color: var(--accent-warm);
-}
-
-.hero-tagline {
-  font-size: 1.15rem;
-  color: var(--text-secondary);
-  max-width: 460px;
-  margin: 0 auto 2.5rem;
-  line-height: 1.8;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.85rem 1.75rem;
-  border-radius: var(--radius-full);
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-decoration: none;
-  letter-spacing: 0.02em;
-  cursor: pointer;
-  border: none;
-  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.btn-primary {
-  background: var(--primary);
-  color: #FFFFFF;
-  box-shadow: 0 4px 20px rgba(127, 175, 154, 0.30);
-}
-
-.btn-primary:hover {
-  background: var(--primary-deep);
-  box-shadow: 0 6px 28px rgba(127, 175, 154, 0.40);
-  transform: translateY(-2px);
-}
-
-.btn-ghost {
-  background: transparent;
-  color: var(--text);
-  border: 1.5px solid var(--border-strong);
-}
-
-.btn-ghost:hover {
-  border-color: var(--primary);
-  background: var(--surface);
-  transform: translateY(-2px);
-}
-
-.hero-scroll-hint {
-  position: absolute;
-  bottom: 2.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--text-muted);
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  animation: bounceHint 2s ease-in-out infinite;
-}
-
-@keyframes bounceHint {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(8px); }
-}
-
-/* ============================================
-   Organic Wave Dividers
-   ============================================ */
-.wave-divider {
-  position: relative;
-  height: 80px;
-  overflow: hidden;
-}
-
-.wave-divider svg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-/* ============================================
-   Works / Portfolio Section
-   ============================================ */
-.works-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 1.75rem;
-}
-
-.work-card {
-  background: var(--surface);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border);
-  padding: 2.5rem 2rem;
-  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-  position: relative;
-  overflow: hidden;
-}
-
-.work-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--primary), var(--accent-warm));
-  opacity: 0;
-  transition: opacity 0.4s;
-}
-
-.work-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--border-strong);
-}
-
-.work-card:hover::before { opacity: 1; }
-
-.work-card-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: var(--radius);
-  background: linear-gradient(135deg, var(--primary-soft), var(--accent-soft));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  margin-bottom: 1.25rem;
-}
-
-.work-card h3 {
-  margin-bottom: 0.6rem;
-  font-size: 1.35rem;
-}
-
-.work-card p {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.7;
-  margin-bottom: 1.25rem;
-}
-
-.work-card .tag-row {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.tag {
-  display: inline-block;
-  padding: 0.3rem 0.8rem;
-  border-radius: var(--radius-full);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  background: var(--bg-alt);
-  color: var(--primary-deep);
-  border: 1px solid var(--border);
-}
-
-.tag.accent {
-  color: var(--accent-warm);
-  background: var(--accent-soft);
-  border-color: transparent;
-}
-
-.work-card-soon {
-  background: var(--bg-alt);
-  border-style: dashed;
-}
-
-.work-card-soon .badge-soon {
-  position: absolute;
-  top: 1.25rem;
-  right: 1.25rem;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--accent-warm);
-  background: var(--accent-soft);
-  padding: 0.25rem 0.75rem;
-  border-radius: var(--radius-full);
-}
-
-/* ============================================
-   Works Screenshot Showcase
-   ============================================ */
-.showcase-section {
-  margin-top: 3rem;
-}
-
-.showcase-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
-  margin-top: 1.25rem;
-}
-
-.showcase-row.single {
-  grid-template-columns: 1fr;
-}
-
-.showcase-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.showcase-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-lg);
-}
-
-.showcase-card .showcase-img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.showcase-card .showcase-caption {
-  padding: 0.75rem 1.25rem;
-  font-size: 0.82rem;
-  color: var(--text-secondary);
-  font-weight: 500;
-  text-align: center;
-  border-top: 1px solid var(--border);
-}
-
-.showcase-card.mobile {
-  max-width: 320px;
-  margin: 0 auto;
-}
-
-/* ============================================
-   Community Section
-   ============================================ */
-.community-highlight {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1.25rem;
-  margin-top: 2rem;
-}
-
-.community-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 2rem 1.5rem;
-  text-align: center;
-  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-  text-decoration: none;
-  color: var(--text);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.community-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow);
-  border-color: var(--primary);
-}
-
-.community-card .platform-icon {
-  font-size: 2rem;
-  width: 60px;
-  height: 60px;
-  border-radius: var(--radius-full);
-  background: var(--bg-alt);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.community-card .platform-name {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 500;
-}
-
-.community-card .platform-desc {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-}
-
-/* ============================================
-   Knowledge Base Section
-   ============================================ */
-.kb-arch {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.25rem;
-  margin-top: 3rem;
-}
-
-.kb-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.75rem;
-  transition: all 0.3s ease;
-}
-
-.kb-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow);
-}
-
-.kb-card .kb-card-icon {
-  font-size: 1.5rem;
-  margin-bottom: 0.75rem;
-}
-
-.kb-card h4 {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  margin-bottom: 0.5rem;
-}
-
-.kb-card p {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  line-height: 1.7;
-}
-
-.kb-structure {
-  margin-top: 3rem;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 2.25rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3rem;
-  align-items: flex-start;
-}
-
-.kb-structure-col {
-  flex: 1;
-  min-width: 240px;
-}
-
-.kb-layer-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.9rem;
-}
-
-.kb-layer-item {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 0.92rem;
-}
-
-.kb-layer-dot {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.kb-layer-dot.dot-amber { background: var(--accent-warm); }
-.kb-layer-dot.dot-green { background: var(--primary); }
-.kb-layer-dot.dot-deep { background: var(--primary-deep); }
-
-.kb-layer-code {
-  background: var(--bg-alt);
-  padding: 0.15em 0.5em;
-  border-radius: 6px;
-  font-size: 0.85em;
-}
-
-.kb-project-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-
-.kb-project-list li {
-  font-size: 0.92rem;
-  color: var(--text-secondary);
-}
-
-/* ============================================
-   AIGEO Section
-   ============================================ */
-.aigeo-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
-}
-
-.aigeo-visual {
-  position: relative;
-  aspect-ratio: 4/3;
-  background: var(--bg-alt);
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.aigeo-visual svg {
-  width: 70%;
-  height: 70%;
-}
-
-.aigeo-visual .flow-circle {
-  fill: none;
-  stroke: var(--primary);
-  stroke-width: 1.5;
-  opacity: 0.5;
-  animation: pulseCircle 4s ease-in-out infinite;
-}
-
-.aigeo-visual .flow-circle:nth-child(2) { animation-delay: -2s; stroke: var(--accent-warm); }
-.aigeo-visual .flow-circle:nth-child(3) { animation-delay: -1s; stroke: var(--primary-soft); }
-
-@keyframes pulseCircle {
-  0%, 100% { r: 45; opacity: 0.5; }
-  50% { r: 65; opacity: 0.2; }
-}
-
-.aigeo-content h2 { margin-bottom: 1.25rem; }
-
-.aigeo-content p {
-  color: var(--text-secondary);
-  margin-bottom: 1rem;
-  line-height: 1.8;
-}
-
-.aigeo-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin: 1.5rem 0;
-}
-
-.aigeo-list li {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-}
-
-.aigeo-list li::before {
-  content: '';
-  width: 8px;
-  height: 8px;
-  border-radius: var(--radius-full);
-  background: var(--primary);
-  flex-shrink: 0;
-}
-
-/* AIGEO — Expanded Stats, Features & Achievements */
-.aigeo-stats-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin-top: 2.5rem;
-}
-
-.aigeo-stat-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.75rem 1.5rem;
-  text-align: center;
-  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.aigeo-stat-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow);
-  border-color: var(--border-strong);
-}
-
-.aigeo-stat-card .stat-number {
-  font-family: var(--font-display);
-  font-size: 2.3rem;
-  color: var(--primary-deep);
-  line-height: 1;
-  margin-bottom: 0.3rem;
-}
-
-.aigeo-stat-card .stat-label {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  font-weight: 600;
-}
-
-.aigeo-stat-card .stat-desc {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  margin-top: 0.4rem;
-  line-height: 1.5;
-}
-
-.aigeo-feature-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
-  margin-top: 2.5rem;
-}
-
-.aigeo-feature-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.75rem;
-  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.aigeo-feature-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow);
-}
-
-.aigeo-feature-card .feature-icon {
-  font-size: 1.5rem;
-  margin-bottom: 0.75rem;
-}
-
-.aigeo-feature-card h4 {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  margin-bottom: 0.5rem;
-}
-
-.aigeo-feature-card p {
-  font-size: 0.88rem;
-  color: var(--text-secondary);
-  line-height: 1.65;
-}
-
-.aigeo-schema-showcase {
-  margin-top: 2.5rem;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 2rem 2rem 1.5rem;
-}
-
-.aigeo-schema-showcase h3 {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  margin-bottom: 0.35rem;
-}
-
-.aigeo-schema-showcase .schema-subtitle {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  margin-bottom: 1.25rem;
-}
-
-.schema-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.schema-tag {
-  padding: 0.35rem 0.85rem;
-  border-radius: var(--radius-full);
-  font-size: 0.78rem;
-  font-weight: 600;
-  background: var(--primary-soft);
-  color: var(--primary-deep);
-}
-
-.schema-tag.soon {
-  background: var(--accent-soft);
-  color: var(--accent-warm);
-  border: 1px dashed var(--accent-warm);
-  opacity: 0.75;
-}
-
-.aigeo-cta-row {
-  margin-top: 2.5rem;
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.aigeo-cta-note {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-}
-
-/* Responsive for AIGEO section */
-@media (max-width: 768px) {
-  .aigeo-stats-row { grid-template-columns: repeat(2, 1fr); }
-  .aigeo-feature-grid { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 480px) {
-  .aigeo-stats-row { grid-template-columns: 1fr; }
-}
-
-/* ============================================
-   AIGEO Workbench Section
-   ============================================ */
-.wb-preview {
-  margin-top: 2.5rem;
-}
-
-.wb-preview-frame {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-}
-
-.wb-preview-bar {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
-}
-
-.wb-preview-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--primary);
-  box-shadow: 0 0 0 4px var(--primary-soft);
-}
-
-.wb-preview-bar span {
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.wb-preview-bar .wb-preview-sub {
-  font-size: 11px;
-  color: var(--text-muted);
-  margin-left: auto;
-}
-
-.wb-preview-img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.wb-pipeline {
-  margin-top: 3rem;
-}
-
-.wb-pipeline .wb-pipeline-title {
-  margin-bottom: 1.5rem;
-}
-
-.wb-pipeline-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 8px;
-  font-size: 0.8rem;
-}
-
-.wb-step {
-  padding: 12px 10px;
-  border-radius: var(--radius-sm);
-  text-align: center;
-  font-weight: 600;
-  font-size: 0.78rem;
-}
-
-.wb-step .wb-step-mark {
-  font-size: 0.7rem;
-  margin-bottom: 2px;
-}
-
-.wb-step.done {
-  background: var(--primary-soft);
-}
-
-.wb-step.done .wb-step-mark { color: var(--primary-deep); }
-
-.wb-step.active {
-  background: var(--accent-soft);
-}
-
-.wb-step.active .wb-step-mark { color: var(--accent-warm); }
-
-.wb-step.pending {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  color: var(--text-muted);
-}
-
-.wb-metrics {
-  margin-top: 3rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-}
-
-.wb-metric-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.5rem;
-}
-
-.wb-metric-label {
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  letter-spacing: 0.05em;
-  margin-bottom: 0.75rem;
-}
-
-.wb-metric-value {
-  font-size: 2.2rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
-.wb-metric-value.val-accent { color: var(--accent-warm); }
-.wb-metric-value.val-primary { color: var(--primary-deep); }
-
-.wb-metric-value .wb-metric-sub {
-  font-size: 1rem;
-  color: var(--text-muted);
-}
-
-.wb-metric-desc {
-  font-size: 0.82rem;
-  color: var(--text-secondary);
-  margin-top: 0.35rem;
-}
-
-/* ============================================
-   About Section
-   ============================================ */
-.about-layout {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 3rem;
-  align-items: start;
-}
-
-.about-avatar-area {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.about-avatar {
-  width: 140px;
-  height: 140px;
-  border-radius: var(--radius-full);
-  background: linear-gradient(135deg, var(--primary-soft), var(--accent-soft), var(--primary));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3.5rem;
-  box-shadow: var(--shadow);
-  position: relative;
-}
-
-.about-avatar::after {
-  content: '';
-  position: absolute;
-  inset: -4px;
-  border-radius: var(--radius-full);
-  border: 2px solid transparent;
-  background: linear-gradient(135deg, var(--primary), var(--accent-warm)) border-box;
-  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-}
-
-.about-badges {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.about-badge {
-  padding: 0.35rem 0.9rem;
-  border-radius: var(--radius-full);
-  font-size: 0.78rem;
-  font-weight: 600;
-  background: var(--bg-alt);
-  color: var(--text-secondary);
-  border: 1px solid var(--border);
-}
-
-.about-badge.highlight {
-  background: var(--primary-soft);
-  color: var(--primary-deep);
-  border-color: transparent;
-}
-
-.about-text h2 { margin-bottom: 1rem; }
-
-.about-text p {
-  color: var(--text-secondary);
-  line-height: 1.8;
-  margin-bottom: 1rem;
-}
-
-.about-text .highlight-text {
-  color: var(--primary-deep);
-  font-weight: 500;
-}
-
-.about-stats {
-  display: flex;
-  gap: 2rem;
-  margin-top: 1.5rem;
-}
-
-.about-stat {
-  text-align: center;
-}
-
-.about-stat .stat-num {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  color: var(--primary-deep);
-  line-height: 1;
-  margin-bottom: 0.25rem;
-}
-
-.about-stat .stat-label {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  letter-spacing: 0.05em;
-}
-
-/* ============================================
-   Footer
-   ============================================ */
-.footer {
-  background: var(--bg-alt);
-  padding: 4rem 2rem 2rem;
-  border-top: 1px solid var(--border);
-  transition: background var(--transition-theme);
-}
-
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 3rem;
-  align-items: start;
-}
-
-.footer-brand h3 {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.footer-brand p {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-}
-
-.footer-social {
-  display: flex;
-  gap: 0.75rem;
-  margin-top: 1.25rem;
-}
-
-.footer-social a {
-  width: 42px;
-  height: 42px;
-  border-radius: var(--radius-full);
-  background: var(--surface);
-  border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  text-decoration: none;
-  color: var(--text-secondary);
-  transition: all 0.3s;
-}
-
-.footer-social a:hover {
-  background: var(--primary);
-  color: #FFF;
-  border-color: var(--primary);
-  transform: translateY(-3px);
-}
-
-.footer-links {
-  display: flex;
-  gap: 3rem;
-}
-
-.footer-col h4 {
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-secondary);
-  margin-bottom: 1rem;
-}
-
-.footer-col a {
-  display: block;
-  color: var(--text-muted);
-  text-decoration: none;
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-  transition: color 0.3s;
-}
-
-.footer-col a:hover { color: var(--primary-deep); }
-
-.footer-bottom {
-  max-width: 1200px;
-  margin: 2rem auto 0;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border);
-  text-align: center;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-
-/* ============================================
-   Scroll Animations
-   ============================================ */
-.fade-in {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ============================================
-   Responsive
-   ============================================ */
-@media (max-width: 768px) {
-  .section { padding: 4rem 1.25rem; }
-  .nav { gap: 1.25rem; padding: 1rem 1.25rem; }
-  .nav a { font-size: 0.78rem; }
-  .nav-brand { font-size: 0.95rem; margin-right: 0; }
-
-  .aigeo-layout {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  .aigeo-visual { order: -1; aspect-ratio: 1/1; }
-
-  .about-layout {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    text-align: center;
-  }
-  .about-stats { justify-content: center; }
-  .about-avatar-area { margin: 0 auto; }
-
-  .footer-inner {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  .footer-links { gap: 1.5rem; }
-  .works-grid { grid-template-columns: 1fr; }
-  .community-highlight { grid-template-columns: repeat(2, 1fr); }
-  .showcase-row { grid-template-columns: 1fr; }
-  .showcase-card.mobile { max-width: 260px; }
-}
-
-@media (max-width: 480px) {
-  .nav { gap: 0.75rem; }
-  .nav a { font-size: 0.72rem; }
-  .hero h1 { font-size: 2.5rem; }
-  .community-highlight { grid-template-columns: 1fr; }
-}
-
-/* Work card links */
-.work-links {
-  display: flex;
-  gap: 0.6rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--border);
-}
-
-.work-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  padding: 0.4rem 0.85rem;
-  border-radius: var(--radius-full);
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-decoration: none;
-  letter-spacing: 0.02em;
-  background: var(--bg-alt);
-  color: var(--primary-deep);
-  border: 1px solid var(--border);
-  transition: all 0.3s;
-}
-
-.work-link:hover {
-  background: var(--primary);
-  color: #FFF;
-  border-color: var(--primary);
-  transform: translateY(-1px);
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Theme Toggle -->
-<button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">
-  <span class="icon-sun">☀️</span>
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题" title="切换主题">
   <span class="icon-moon">🌙</span>
+  <span class="icon-sun">☀️</span>
 </button>
 
-<!-- Navigation -->
 <nav class="nav" id="nav">
   <a href="#hero" class="nav-brand">Calm Xeriscape</a>
-  <a href="#works">作品</a>
-  <a href="#community">同好</a>
-  <a href="#kb">知识库</a>
+  <a href="#aganzuo">阿甘佐机油</a>
   <a href="#aigeo">AIGEO</a>
   <a href="#workbench">工作台</a>
+  <a href="#kb">知识库</a>
+  <a href="#works">作品</a>
+  <a href="#community">同好</a>
   <a href="#about">关于</a>
-  <a href="#contact">联系</a>
+  <a href="resume.html">简历</a>
 </nav>
 
 <!-- ============================================ -->
@@ -1469,14 +78,15 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
   </div>
 
   <div class="hero-content fade-in">
-    <p class="hero-eyebrow">Personal AI Creator & AIGEO Explorer</p>
+    <p class="hero-eyebrow">Personal AI Creator · AIGEO Explorer · 机油品牌数字化</p>
     <h1>Calm <span class="italic">Xeriscape</span></h1>
     <p class="hero-tagline">
-      在 AI 的边界种一片绿洲。<br>乙女向 · 明星CP向 · AIGEO 探索。
+      在 AI 的边界种一片绿洲。<br>
+      阿甘佐机油官网 · AIGEO 工作台 · AI 短剧与同好创作。
     </p>
     <div class="hero-actions">
-      <a href="#works" class="btn btn-primary">浏览作品</a>
-      <a href="#community" class="btn btn-ghost">进入同好圈</a>
+      <a href="http://aganzol.com/" target="_blank" rel="noopener" class="btn btn-primary">阿甘佐机油官网 →</a>
+      <a href="#workbench" class="btn btn-ghost">AIGEO 工作台</a>
     </div>
   </div>
 
@@ -1494,221 +104,199 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
 </div>
 
 <!-- ============================================ -->
-<!-- Works -->
+<!-- Featured Projects -->
 <!-- ============================================ -->
-<section class="section" id="works">
+<section class="section" id="featured">
   <div class="section-header fade-in">
-    <span class="section-label">作品集</span>
-    <h2>AI 创作与项目</h2>
-    <p>从乙女向到明星 CP 向，每一个作品都是 AI 与情感的碰撞</p>
+    <span class="section-label">重点项目 · Featured</span>
+    <h2>正在做的事</h2>
+    <p>阿甘佐机油官网与 AIGEO 工作台是当前的核心实践，AI 短剧与同好创作是持续的创作线。</p>
   </div>
 
-  <div class="works-grid">
-    <!-- 乙女向 -->
-    <div class="work-card fade-in">
-      <div class="work-card-icon">🌸</div>
-      <h3>乙女向 AI 创作</h3>
-      <p>沉浸式女性向 AI 内容——角色设定、剧情生成、视觉叙事。已上线独立宣传网站与小红书作品集，为每个细腻的情感找到属于它的故事。</p>
-      <div class="tag-row">
-        <span class="tag">乙女向</span>
-        <span class="tag">AI剧情</span>
-        <span class="tag">角色设计</span>
-        <span class="tag accent">已上线</span>
+  <div class="featured-grid">
+    <!-- 阿甘佐机油品牌中心 -->
+    <div class="featured-card oil fade-in">
+      <div class="featured-icon">🛢️</div>
+      <h3>阿甘佐机油品牌中心</h3>
+      <p>纯 4+5 类全合成机油品牌官网——车型适配、知识百科、认证数据全结构化。让 AI 搜索真正读懂「真全合成」。</p>
+      <div class="featured-stats">
+        <div class="featured-stat"><b>4+5类</b><span>PAO + 酯 · 0% 三类油</span></div>
+        <div class="featured-stat"><b>-66°C</b><span>倾点 USP</span></div>
+        <div class="featured-stat"><b>28省</b><span>120+ 城市渠道</span></div>
       </div>
-      <div class="work-links">
-        <a href="https://sylus0418.com/" target="_blank" rel="noopener" class="work-link">🌐 sylus0418.com</a>
-        <a href="https://www.xiaohongshu.com/user/profile/5f6b4ee9000000000101ce66" target="_blank" rel="noopener" class="work-link">📕 小红书作品集</a>
-      </div>
+      <a href="http://aganzol.com/" target="_blank" rel="noopener" class="btn btn-primary">访问官网 aganzol.com →</a>
     </div>
 
-    <!-- 明星CP向 -->
-    <div class="work-card fade-in">
-      <div class="work-card-icon">✨</div>
-      <h3>明星 CP 向创作</h3>
-      <p>以 AI 重新演绎那些让人心动的瞬间——CP 向图文、短片、互动内容，让想象在数字世界延续。抖音持续更新中。</p>
-      <div class="tag-row">
-        <span class="tag">CP向</span>
-        <span class="tag">AI图文</span>
-        <span class="tag">短片</span>
-        <span class="tag accent">持续更新</span>
+    <!-- AIGEO -->
+    <div class="featured-card fade-in">
+      <div class="featured-icon">🧠</div>
+      <h3>AIGEO 品牌可见度</h3>
+      <p>官网结构化数据 + 多平台内容矩阵双轨并行，让品牌在 ChatGPT、DeepSeek、Kimi、豆包等 AI 引擎中被准确引用。</p>
+      <div class="featured-stats">
+        <div class="featured-stat"><b>11</b><span>类 Schema 覆盖</span></div>
+        <div class="featured-stat"><b>464</b><span>车型适配条目</span></div>
+        <div class="featured-stat"><b>7</b><span>大 AI 来源监测</span></div>
       </div>
-      <div class="work-links">
-        <a href="https://www.douyin.com/user/CMTYKIMIKK" target="_blank" rel="noopener" class="work-link">🎵 抖音 CMTYKIMIKK</a>
-      </div>
+      <a href="#aigeo" class="btn btn-ghost">了解更多 →</a>
     </div>
 
-    <!-- 机油网站项目 -->
-    <div class="work-card fade-in">
-      <div class="work-card-icon">🛢️</div>
-      <h3>机油品牌网站</h3>
-      <p>企业级产品网站——结合 AI 视频与多平台宣发策略，为机油品牌构建完整的数字化传播体系。</p>
-      <div class="tag-row">
-        <span class="tag">品牌网站</span>
-        <span class="tag">AI视频</span>
-        <span class="tag">多平台宣发</span>
+    <!-- AIGEO Workbench -->
+    <div class="featured-card fade-in">
+      <div class="featured-icon">🛠️</div>
+      <h3>AIGEO Workbench</h3>
+      <p>12 步 SOP 内容管线工作台：调研、选词、创作、合规、9 平台自动发布、AI 引用监测——全流程已交付。</p>
+      <div class="featured-stats">
+        <div class="featured-stat"><b>12/12</b><span>SOP 步骤完成</span></div>
+        <div class="featured-stat"><b>36</b><span>项自动化测试</span></div>
+        <div class="featured-stat"><b>9</b><span>平台自动发布</span></div>
       </div>
-    </div>
-
-    <!-- 明星CP网站预告 -->
-    <div class="work-card work-card-soon fade-in">
-      <span class="badge-soon">即将上线</span>
-      <div class="work-card-icon">🚀</div>
-      <h3>明星 CP 向网站</h3>
-      <p>专为 CP 内容打造的独立平台——更好的展示方式，更完整的叙事体验。敬请期待。</p>
-      <div class="tag-row">
-        <span class="tag">网站</span>
-        <span class="tag">CP向</span>
-        <span class="tag accent">计划中</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Screenshot Showcase -->
-  <div class="showcase-section fade-in">
-    <span class="section-label">视觉快照</span>
-    <div class="showcase-row">
-      <div class="showcase-card">
-        <img src="1.png" alt="小红书作品集截图" class="showcase-img" loading="lazy">
-        <div class="showcase-caption">小红书 · 作品集精选</div>
-      </div>
-      <div class="showcase-card mobile">
-        <img src="3.png" alt="乙女网站手机端截图" class="showcase-img" loading="lazy">
-        <div class="showcase-caption">sylus0418.com · 手机端</div>
-      </div>
-    </div>
-    <div class="showcase-row single" style="margin-top: 1.25rem;">
-      <div class="showcase-card">
-        <img src="2.png" alt="乙女网站桌面端截图" class="showcase-img" loading="lazy">
-        <div class="showcase-caption">sylus0418.com · 桌面端</div>
-      </div>
+      <a href="#workbench" class="btn btn-ghost">查看工作台 →</a>
     </div>
   </div>
 </section>
 
 <!-- ============================================ -->
-<!-- Community -->
+<!-- Aganzuo · 机油品牌中心 -->
 <!-- ============================================ -->
-<section class="section section-alt" id="community">
+<section class="section section-alt" id="aganzuo">
   <div class="section-wrap">
     <div class="section-header fade-in">
-      <span class="section-label">同好交流</span>
-      <h2>找到属于你的同频</h2>
-      <p>天蝎 + INTJ 的创作空间——在这里与志同道合的人相遇</p>
+      <span class="section-label">阿甘佐 · 机油品牌中心</span>
+      <h2>把「真全合成」讲给 AI 听</h2>
+      <p>阿甘佐（AGANZOL）坚持只做纯 4+5 类全合成机油。从官网结构化数据到多平台内容矩阵，建立品牌在 AI 搜索中的权威。</p>
     </div>
 
-    <div class="community-highlight fade-in">
-      <a href="https://space.bilibili.com/6553521?spm_id_from=333.337.0.0" target="_blank" rel="noopener" class="community-card">
-        <div class="platform-icon">📺</div>
-        <span class="platform-name">Bilibili</span>
-        <span class="platform-desc">AI 创作视频 · 日常分享</span>
-      </a>
-      <a href="https://www.xiaohongshu.com/user/profile/5f6b4ee9000000000101ce66" target="_blank" rel="noopener" class="community-card">
-        <div class="platform-icon">📕</div>
-        <span class="platform-name">小红书</span>
-        <span class="platform-desc">作品精选 · 创作笔记</span>
-      </a>
-      <a class="community-card" style="cursor: default;">
-        <div class="platform-icon">💚</div>
-        <span class="platform-name">微信</span>
-        <span class="platform-desc">私域交流 · 深度连接</span>
-      </a>
-      <a href="https://weibo.com/u/3119537657" target="_blank" rel="noopener" class="community-card">
-        <div class="platform-icon">🐦</div>
-        <span class="platform-name">微博</span>
-        <span class="platform-desc">实时动态 · 热点交流</span>
-      </a>
-      <a href="https://v.douyin.com/-PXSQ8X9oos/" target="_blank" rel="noopener" class="community-card">
-        <div class="platform-icon">🎵</div>
-        <span class="platform-name">抖音</span>
-        <span class="platform-desc">AI 短视频 · 创意内容</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================ -->
-<!-- Knowledge Base -->
-<!-- ============================================ -->
-<section class="section" id="kb">
-  <div class="section-header fade-in">
-    <span class="section-label">Hanako 知识库</span>
-    <h2>Hanako KB</h2>
-    <p>一套<strong>由 LLM 主动维护的持久化 Wiki 系统</strong>。每次对话后，AI 增量地将信息编译进 Markdown 页面——交叉引用自动建立、矛盾标记提前暴露、主题综合持续精炼，知识随时间复合增长。</p>
-  </div>
-
-  <!-- Architecture -->
-  <div class="kb-arch fade-in">
-    <div class="kb-card">
-      <div class="kb-card-icon">📥</div>
-      <h4>收录 · Ingest</h4>
-      <p>你扔进新的资料、文章、截图或想法，AI 读取后提取关键信息，更新相关实体页面，修订主题摘要，标记矛盾发现。</p>
-    </div>
-    <div class="kb-card">
-      <div class="kb-card-icon">🔍</div>
-      <h4>查询 · Query</h4>
-      <p>你提问，AI 在 Wiki 内搜索、读取、综合，给出带引用的回答。好的答案、对比分析、新发现的关联，写入 Wiki。</p>
-    </div>
-    <div class="kb-card">
-      <div class="kb-card-icon">🧹</div>
-      <h4>巡检 · Lint</h4>
-      <p>定期健康检查：页面间的矛盾、被新信息取代的过时主张、孤页、数据缺口。AI 找出问题并修复。</p>
-    </div>
-  </div>
-
-  <!-- Structure -->
-  <div class="kb-structure fade-in">
-    <div class="kb-structure-col">
-      <div class="section-label">目录结构</div>
-      <div class="kb-layer-list">
-        <div class="kb-layer-item">
-          <span class="kb-layer-dot dot-amber"></span>
-          <span><code class="kb-layer-code">_raw/</code> 原始资料（不可变，AI 只读）</span>
-        </div>
-        <div class="kb-layer-item">
-          <span class="kb-layer-dot dot-green"></span>
-          <span><code class="kb-layer-code">30_Personal/</code> 个人项目 · 含本网站条目</span>
-        </div>
-        <div class="kb-layer-item">
-          <span class="kb-layer-dot dot-deep"></span>
-          <span><code class="kb-layer-code">CLAUDE.md</code> 维护规范</span>
+    <div class="aganzuo-banner fade-in">
+      <div class="aganzuo-logo">🛢️</div>
+      <div>
+        <h3>纯 4+5 类全合成 · 重新定义国产高性能润滑</h3>
+        <p>PAO Max 3.5 + 多元醇酯，0% 三类油添加。参数透明、事实说话——这是阿甘佐的品牌叙事，也是 AIGEO 内容创作的统一锚点。</p>
+        <div class="aganzuo-contact">
+          <span>📞 400-110-7660</span>
+          <span>✉️ <a href="mailto:aganzol@163.com">aganzol@163.com</a></span>
+          <span>📍 中国 · 大连</span>
         </div>
       </div>
+      <a href="http://aganzol.com/" target="_blank" rel="noopener" class="btn btn-primary">访问官网 →</a>
     </div>
-    <div class="kb-structure-col">
-      <div class="section-label">活跃项目</div>
-      <ul class="kb-project-list">
-        <li>📋 阿甘佐品牌中心 — 机油品牌官网 + SEO + AIGEO</li>
-        <li>🎬 AIGEO 短视频矩阵 — Seedance 2.0 口播</li>
-        <li>🌿 Calm Xeriscape — 个人网站 · 清新·个性·舒适</li>
-      </ul>
-    </div>
-  </div>
 
-  <!-- Calm Xeriscape Entry -->
-  <div class="kb-structure fade-in" style="margin-top: 1.5rem;">
-    <div class="kb-structure-col">
-      <div class="section-label">🌿 本网站条目</div>
-      <div class="kb-layer-list">
-        <div class="kb-layer-item">
-          <span class="kb-layer-dot dot-green"></span>
-          <span>品牌方向：清新 · 个性 · 舒适</span>
-        </div>
-        <div class="kb-layer-item">
-          <span class="kb-layer-dot dot-green"></span>
-          <span>设计语言：Maya Lin — 克制、有机流体、正念美学</span>
-        </div>
-        <div class="kb-layer-item">
-          <span class="kb-layer-dot dot-green"></span>
-          <span>配色：薄荷鼠尾草绿 × 暖沙杏色</span>
-        </div>
+    <!-- 技术护城河 -->
+    <div class="aigeo-stats-row">
+      <div class="aigeo-stat-card fade-in">
+        <div class="stat-number">2017</div>
+        <div class="stat-label">品牌创立</div>
+        <div class="stat-desc">总部中国·大连，2018 年研发中心投入运营</div>
+      </div>
+      <div class="aigeo-stat-card fade-in">
+        <div class="stat-number">4+5类</div>
+        <div class="stat-label">基础油体系</div>
+        <div class="stat-desc">PAO Max 3.5 + 多元醇酯，0% 三类油添加</div>
+      </div>
+      <div class="aigeo-stat-card fade-in">
+        <div class="stat-number">-66°C</div>
+        <div class="stat-label">倾点 USP</div>
+        <div class="stat-desc">低温流动性核心指标，高于常规三类油</div>
+      </div>
+      <div class="aigeo-stat-card fade-in">
+        <div class="stat-number">175+</div>
+        <div class="stat-label">粘度指数</div>
+        <div class="stat-desc">分子级性能优势，非营销话术</div>
+      </div>
+      <div class="aigeo-stat-card fade-in">
+        <div class="stat-number">28省</div>
+        <div class="stat-label">渠道网络</div>
+        <div class="stat-desc">120+ 城市线下门店 · 5 大电商平台全渠道</div>
+      </div>
+      <div class="aigeo-stat-card fade-in">
+        <div class="stat-number">15000km</div>
+        <div class="stat-label">换油周期</div>
+        <div class="stat-desc">长效养护，蒸发损失 NOACK &lt;8%</div>
       </div>
     </div>
-    <div class="kb-structure-col">
-      <div class="section-label">关联项目</div>
-      <ul class="kb-project-list">
-        <li>🔗 与阿甘佐品牌中心 — 审美经验交叉使用</li>
-        <li>🔗 与 AIGEO 短视频矩阵 — 设计语言影响视频视觉</li>
-      </ul>
+
+    <!-- 认证体系 -->
+    <div class="fade-in" style="margin-top: 2.5rem;">
+      <div class="section-label">认证体系</div>
+      <div class="cert-row">
+        <span class="cert-badge">API SP</span>
+        <span class="cert-badge">API SQ <span class="cert-soon">在途</span></span>
+        <span class="cert-badge">ILSAC GF-6A</span>
+        <span class="cert-badge">ACEA C3</span>
+        <span class="cert-badge">ACEA C6 <span class="cert-soon">在途</span></span>
+        <span class="cert-badge">VW 504/507</span>
+        <span class="cert-badge">VW 502/505</span>
+        <span class="cert-badge">BMW LL-04</span>
+        <span class="cert-badge">MB 229.51</span>
+        <span class="cert-badge">Porsche A40</span>
+        <span class="cert-badge">GM Dexos1 Gen3</span>
+      </div>
+    </div>
+
+    <!-- 品牌故事 -->
+    <div class="brand-story">
+      <div class="brand-chapter fade-in">
+        <div class="chapter-period">2016 – 2021 · 隐忍者</div>
+        <h4>行业磨刀，OEM 淬炼品控</h4>
+        <p>创始团队拥有 15 年润滑油行业积累，2018-2022 服务 135 个品牌，累计销售额 7000 万+。做品牌之前，先做供应链和品控。</p>
+      </div>
+      <div class="brand-chapter fade-in">
+        <div class="chapter-period">2022 · 破壁者</div>
+        <h4>断腕放弃矿物油代工</h4>
+        <p>砍掉 OEM 矿物油业务，所有资源只做真全合成。618 单场破百万——用产品力完成第一次破圈。</p>
+      </div>
+      <div class="brand-chapter fade-in">
+        <div class="chapter-period">2023 – 至今 · 定义者</div>
+        <h4>PAO Max 3.5 · 从爆款到品牌</h4>
+        <p>全系 API SP / ACEA C3·C6 升级，官网 Schema 化、车型适配与知识百科全覆盖——把技术护城河翻译成 AI 能读懂的语言。</p>
+      </div>
+    </div>
+
+    <!-- 数字化现状 -->
+    <div class="aigeo-layout fade-in" style="margin-top: 3rem;">
+      <div class="aigeo-content">
+        <span class="section-label">数字化现状</span>
+        <h2>官网是权威锚点，矩阵是触达面</h2>
+        <p>阿甘佐的数字化体系围绕「让 AI 准确引用品牌」构建：官网沉淀结构化事实，矩阵号放大品牌声量，数据监测形成反馈闭环。</p>
+        <ul class="aigeo-list">
+          <li>官网部署 11 类 Schema.org 结构化数据，远超同行业平均 2–3 种</li>
+          <li>464 条车型适配数据，独立 Car Schema 命中「XX车用什么机油」长尾查询</li>
+          <li>知识百科 50+ 术语页，DefinedTermSet 语义标注</li>
+          <li>AI 视频矩阵 95+ 条跨平台内容，多源一致性强化品牌实体</li>
+        </ul>
+        <a href="http://aganzol.com/" target="_blank" rel="noopener" class="btn btn-primary">查看完整案例 →</a>
+      </div>
+      <div class="aigeo-visual fade-in">
+        <svg viewBox="0 0 200 200">
+          <circle cx="100" cy="100" r="12" fill="var(--primary)" opacity="0.9"/>
+          <circle class="flow-circle" cx="100" cy="100" r="30"/>
+          <circle class="flow-circle" cx="100" cy="100" r="50"/>
+          <circle class="flow-circle" cx="100" cy="100" r="70"/>
+          <circle cx="100" cy="30" r="5" fill="var(--accent-warm)" opacity="0.8">
+            <animate attributeName="cy" values="30;28;30" dur="3s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="155" cy="55" r="4.5" fill="var(--primary)" opacity="0.7">
+            <animate attributeName="cy" values="55;53;55" dur="3.5s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="155" cy="145" r="5" fill="var(--accent-warm)" opacity="0.8">
+            <animate attributeName="cy" values="145;143;145" dur="4s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="100" cy="170" r="4" fill="var(--primary)" opacity="0.7">
+            <animate attributeName="cy" values="170;168;170" dur="3.2s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="45" cy="145" r="5" fill="var(--accent-warm)" opacity="0.8">
+            <animate attributeName="cy" values="145;143;145" dur="3.8s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="45" cy="55" r="4.5" fill="var(--primary)" opacity="0.7">
+            <animate attributeName="cy" values="55;53;55" dur="3.3s" repeatCount="indefinite"/>
+          </circle>
+          <line x1="100" y1="88" x2="100" y2="35" stroke="var(--border-strong)" stroke-width="0.8" opacity="0.5"/>
+          <line x1="112" y1="88" x2="150" y2="58" stroke="var(--border-strong)" stroke-width="0.8" opacity="0.5"/>
+          <line x1="112" y1="112" x2="150" y2="142" stroke="var(--border-strong)" stroke-width="0.8" opacity="0.5"/>
+          <line x1="100" y1="112" x2="100" y2="165" stroke="var(--border-strong)" stroke-width="0.8" opacity="0.5"/>
+          <line x1="88" y1="112" x2="50" y2="142" stroke="var(--border-strong)" stroke-width="0.8" opacity="0.5"/>
+          <line x1="88" y1="88" x2="50" y2="58" stroke="var(--border-strong)" stroke-width="0.8" opacity="0.5"/>
+        </svg>
+      </div>
     </div>
   </div>
 </section>
@@ -1720,12 +308,10 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
   <div class="aigeo-layout">
     <div class="aigeo-visual fade-in">
       <svg viewBox="0 0 200 200">
-        <!-- Central hub -->
         <circle cx="100" cy="100" r="12" fill="var(--primary)" opacity="0.9"/>
         <circle class="flow-circle" cx="100" cy="100" r="30"/>
         <circle class="flow-circle" cx="100" cy="100" r="50"/>
         <circle class="flow-circle" cx="100" cy="100" r="70"/>
-        <!-- Orbiting platform nodes -->
         <circle cx="100" cy="30" r="5" fill="var(--accent-warm)" opacity="0.8">
           <animate attributeName="cy" values="30;28;30" dur="3s" repeatCount="indefinite"/>
         </circle>
@@ -1744,7 +330,6 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
         <circle cx="45" cy="55" r="4.5" fill="var(--primary)" opacity="0.7">
           <animate attributeName="cy" values="55;53;55" dur="3.3s" repeatCount="indefinite"/>
         </circle>
-        <!-- Connection lines -->
         <line x1="100" y1="88" x2="100" y2="35" stroke="var(--border-strong)" stroke-width="0.8" opacity="0.5"/>
         <line x1="112" y1="88" x2="150" y2="58" stroke="var(--border-strong)" stroke-width="0.8" opacity="0.5"/>
         <line x1="112" y1="112" x2="150" y2="142" stroke="var(--border-strong)" stroke-width="0.8" opacity="0.5"/>
@@ -1763,7 +348,7 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
         <li>6 平台矩阵号内容分发 —— 抖音 / B站 / 小红书 / 视频号 / 快手 / 官网</li>
         <li>7 大 AI 来源监测追踪 —— 量化 AIGEO 建设成效</li>
       </ul>
-      <a href="https://aganzol.com/" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top: 0.5rem;">访问 AIGEO 官网 →</a>
+      <a href="http://aganzol.com/" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top: 0.5rem;">访问 AIGEO 官网 →</a>
     </div>
   </div>
 
@@ -1772,7 +357,7 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
     <div class="aigeo-stat-card fade-in">
       <div class="stat-number">11/13</div>
       <div class="stat-label">Schema 类型覆盖</div>
-      <div class="stat-desc">结构化数据类型行业领先，远超同行业平均的 2–3 种</div>
+      <div class="stat-desc">已部署 11 类结构化数据，行业领先，远超平均 2–3 种</div>
     </div>
     <div class="aigeo-stat-card fade-in">
       <div class="stat-number">64+</div>
@@ -1855,7 +440,7 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
       <span class="schema-tag soon">AggregateRating · 规划中</span>
     </div>
     <div class="aigeo-cta-row">
-      <a href="https://aganzol.com/" target="_blank" rel="noopener" class="btn btn-primary">查看完整案例 →</a>
+      <a href="http://aganzol.com/" target="_blank" rel="noopener" class="btn btn-primary">查看完整案例 →</a>
       <span class="aigeo-cta-note">aganzol.com · 24 周 6 阶段 · 从基建到规模化</span>
     </div>
   </div>
@@ -1869,74 +454,393 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
     <div class="section-header fade-in">
       <span class="section-label">AIGEO Workbench</span>
       <h2>AI 时代的品牌工作台</h2>
-      <p>一套完整的 AIGEO 落地工具链——从品牌调研到 AI 引擎监测，12 步 SOP 管线覆盖全流程。</p>
+      <p>一套完整的 AIGEO 落地工具链——12 步 SOP 覆盖调研、选词、创作、合规、发布、监测到报表的完整闭环，KPI 已交付、路线图提前完成。</p>
     </div>
 
-    <!-- Preview Screenshot -->
-    <div class="wb-preview fade-in">
-      <div class="wb-preview-frame">
-        <div class="wb-preview-bar">
-          <span class="wb-preview-dot"></span>
-          <span>AIGEO Workbench</span>
-          <span class="wb-preview-sub">阿甘佐品牌中心 · 12 步管线</span>
-        </div>
-        <picture>
-          <source srcset="workbench-preview.webp" type="image/webp">
-          <img src="workbench-preview.png" alt="AIGEO Workbench 界面预览" class="wb-preview-img">
-        </picture>
+    <!-- Workbench Screenshot Showcase -->
+    <div class="wb-showcase fade-in">
+      <div class="section-label wb-showcase-title">界面预览 · 6 屏工作台</div>
+      <div class="wb-showcase-grid">
+        <figure class="wb-shot">
+          <img src="工作台1.png" alt="AIGEO Workbench 截图 1" loading="lazy">
+        </figure>
+        <figure class="wb-shot">
+          <img src="工作台2.png" alt="AIGEO Workbench 截图 2" loading="lazy">
+        </figure>
+        <figure class="wb-shot">
+          <img src="工作台3.png" alt="AIGEO Workbench 截图 3" loading="lazy">
+        </figure>
+        <figure class="wb-shot">
+          <img src="工作台4.png" alt="AIGEO Workbench 截图 4" loading="lazy">
+        </figure>
+        <figure class="wb-shot">
+          <img src="工作台5.png" alt="AIGEO Workbench 截图 5" loading="lazy">
+        </figure>
+        <figure class="wb-shot">
+          <img src="工作台6.png" alt="AIGEO Workbench 截图 6" loading="lazy">
+        </figure>
+      </div>
+    </div>
+
+    <!-- Core Capabilities -->
+    <div class="aigeo-feature-grid fade-in">
+      <div class="aigeo-feature-card">
+        <div class="feature-icon">🔍</div>
+        <h4>多引擎调研</h4>
+        <p>8 大 AI 引擎交叉查询（ChatGPT / DeepSeek / Kimi / 豆包等），信源分析 + 竞品对比 + 企业微信告警配置，调研结论直接进入选词环节。</p>
+      </div>
+      <div class="aigeo-feature-card">
+        <div class="feature-icon">✍️</div>
+        <h4>四层 Prompt 创作</h4>
+        <p>7 套文章模板 × 四层 Prompt 结构，知识库条目拼装 + 指纹过期检测，云端/本地标识别，创作与品牌 profile 全局联动。</p>
+      </div>
+      <div class="aigeo-feature-card">
+        <div class="feature-icon">✅</div>
+        <h4>合规自动扫描 v2</h4>
+        <p>7 维度检查：夸大表述、禁词、平台敏感词、标题正文一致性、段落与标题长度、平台字数适配。违规红黄即时标注，确认即流转。</p>
+      </div>
+      <div class="aigeo-feature-card">
+        <div class="feature-icon">🚀</div>
+        <h4>一键批量发布</h4>
+        <p>Playwright 9 平台自动发布引擎，小红书 / 抖音 / 快手 / 视频号 Skill 格式化，3 状态卡片 + 定时发布 + 复制按钮，配图与视频渲染一体化。</p>
+      </div>
+      <div class="aigeo-feature-card">
+        <div class="feature-icon">📡</div>
+        <h4>收录监测告警</h4>
+        <p>浏览器逐平台查询收录，2 小时自动监控，企业微信告警触发，查询历史持久化（loginStatus），收录结果反哺知识库。</p>
+      </div>
+      <div class="aigeo-feature-card">
+        <div class="feature-icon">📈</div>
+        <h4>报表与 ROI</h4>
+        <p>指标卡片 + 平台排名 / 收录趋势 / 占比图表，五级 ROI 检测，零收录与覆盖率诊断，基线对比 + GEO 投入产出关联，支持 CSV / 报告导出。</p>
       </div>
     </div>
 
     <!-- 12-Step Pipeline -->
     <div class="wb-pipeline fade-in">
-      <div class="section-label wb-pipeline-title">12 步 SOP 管线</div>
+      <div class="section-label wb-pipeline-title">12 步 SOP 管线 · 全部完成</div>
       <div class="wb-pipeline-grid">
-        <div class="wb-step done">
-          <div class="wb-step-mark">✓</div>
-          ① 调研
+        <div class="wb-step done"><div class="wb-step-mark">✓</div>① 调研</div>
+        <div class="wb-step done"><div class="wb-step-mark">✓</div>② 选词</div>
+        <div class="wb-step done"><div class="wb-step-mark">✓</div>③ 选方法</div>
+        <div class="wb-step done"><div class="wb-step-mark">✓</div>④ 拓展词</div>
+        <div class="wb-step done"><div class="wb-step-mark">✓</div>⑤ 企业画像</div>
+        <div class="wb-step done"><div class="wb-step-mark">✓</div>⑥ 知识库</div>
+        <div class="wb-step done"><div class="wb-step-mark">✓</div>⑦ 创作指令</div>
+        <div class="wb-step done"><div class="wb-step-mark">✓</div>⑧ 制作文章</div>
+        <div class="wb-step done"><div class="wb-step-mark">✓</div>⑨ 检查文章</div>
+        <div class="wb-step done"><div class="wb-step-mark">✓</div>⑩ 投稿发布</div>
+        <div class="wb-step done"><div class="wb-step-mark">✓</div>⑪ 查收录</div>
+        <div class="wb-step done"><div class="wb-step-mark">✓</div>⑫ 看报表</div>
+      </div>
+    </div>
+
+    <!-- Learning & Ops Memory -->
+    <div class="wb-learning fade-in">
+      <div class="section-label wb-learning-title">持续学习与运营记忆 · 2026-08 更新</div>
+      <div class="wb-learning-grid">
+        <div class="wb-learning-card">
+          <div class="feature-icon">🔁</div>
+          <h4>收录回流</h4>
+          <p>步骤⑪收录结果关联文章用过的知识条目，累计引用贡献分，反哺步骤⑧按权重拼装 Prompt。</p>
         </div>
-        <div class="wb-step active">
-          <div class="wb-step-mark">⟳</div>
-          ② 选词
+        <div class="wb-learning-card">
+          <div class="feature-icon">🧠</div>
+          <h4>审核沉淀</h4>
+          <p>步骤⑨保留 / 修改 / 驳回记录沉淀为运营者偏好摘要，写入创作指令——越用越懂你的风格。</p>
         </div>
-        <div class="wb-step pending">③ 选方法</div>
-        <div class="wb-step pending">④ 拓展词</div>
-        <div class="wb-step done">
-          <div class="wb-step-mark">✓</div>
-          ⑤ 企业画像
+        <div class="wb-learning-card">
+          <div class="feature-icon">📚</div>
+          <h4>信源入库</h4>
+          <p>步骤⑫引用信源一键纳入知识库权威来源模块，数据资产随内容生产持续积累。</p>
         </div>
-        <div class="wb-step pending">⑥ 知识库</div>
-        <div class="wb-step pending">⑦ 创作指令</div>
-        <div class="wb-step pending">⑧ 制作文章</div>
-        <div class="wb-step pending">⑨ 检查文章</div>
-        <div class="wb-step pending">⑩ 投稿发布</div>
-        <div class="wb-step pending">⑪ 查收录</div>
-        <div class="wb-step pending">⑫ 看报表</div>
+        <div class="wb-learning-card">
+          <div class="feature-icon">☁️</div>
+          <h4>状态上云</h4>
+          <p>localStorage 进度 / 选中态 / 草案迁移至 Supabase，短期上下文与永久记忆分层。</p>
+        </div>
+        <div class="wb-learning-card">
+          <div class="feature-icon">🛡️</div>
+          <h4>知识保鲜</h4>
+          <p>条目级过期 / 冲突扫描，pgvector 检索结合收录反馈做 rerank，知识库保持新鲜。</p>
+        </div>
       </div>
     </div>
 
     <!-- Key Metrics Cards -->
     <div class="wb-metrics fade-in">
       <div class="wb-metric-card">
-        <div class="wb-metric-label">AI 引擎品牌提及率</div>
-        <div class="wb-metric-value val-accent">3/7</div>
-        <div class="wb-metric-desc">正面推荐 3 个引擎 · 平均准确率 56%</div>
+        <div class="wb-metric-label">SOP 管线交付</div>
+        <div class="wb-metric-value val-accent">12<span class="wb-metric-sub">/12</span></div>
+        <div class="wb-metric-desc">KPI 已交付 · Roadmap 提前完成</div>
       </div>
       <div class="wb-metric-card">
-        <div class="wb-metric-label">候选关键词</div>
-        <div class="wb-metric-value val-primary">8</div>
-        <div class="wb-metric-desc">8 个待评估 · 已抓取 8 条用户问题</div>
+        <div class="wb-metric-label">自动化测试</div>
+        <div class="wb-metric-value val-primary">36</div>
+        <div class="wb-metric-desc">Vitest · 5 个测试套件全绿</div>
       </div>
       <div class="wb-metric-card">
-        <div class="wb-metric-label">管线进度</div>
-        <div class="wb-metric-value">2<span class="wb-metric-sub">/12</span></div>
-        <div class="wb-metric-desc">步骤①⑤已完成 · ②进行中</div>
+        <div class="wb-metric-label">自动发布引擎</div>
+        <div class="wb-metric-value">9</div>
+        <div class="wb-metric-desc">Playwright · 9 平台批量自动发布</div>
       </div>
       <div class="wb-metric-card">
-        <div class="wb-metric-label">监测引擎</div>
+        <div class="wb-metric-label">AI 来源监测</div>
         <div class="wb-metric-value val-primary">7</div>
         <div class="wb-metric-desc">ChatGPT · DeepSeek · Kimi · 豆包 · 通义 · 文心 · 智谱</div>
       </div>
+    </div>
+
+    <!-- Tech Stack -->
+    <div class="wb-tech-row fade-in">
+      <span class="tag">Next.js 16</span>
+      <span class="tag">React 19</span>
+      <span class="tag">TypeScript</span>
+      <span class="tag">Supabase</span>
+      <span class="tag">Playwright</span>
+      <span class="tag">DeepSeek v4-flash</span>
+      <span class="tag">shadcn/ui</span>
+      <span class="tag">Tailwind CSS</span>
+      <span class="tag">Vitest</span>
+      <span class="tag">Electron 33</span>
+      <span class="tag accent">PWA 可安装</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- Knowledge Base -->
+<!-- ============================================ -->
+<section class="section section-alt" id="kb">
+  <div class="section-wrap">
+    <div class="section-header fade-in">
+      <span class="section-label">知识库 · Hanako KB</span>
+      <h2>由 AI 维护的持久化 Wiki</h2>
+      <p>基于 LLM Wiki 方法论——AI 在每次对话后增量地把信息编译进 Wiki，而不是每次查询时重新推理。</p>
+    </div>
+
+    <div class="kb-arch">
+      <div class="kb-card fade-in">
+        <div class="kb-card-icon">📥</div>
+        <h4>收录 · Ingest</h4>
+        <p>你扔进新的资料、文章、截图或想法，AI 读取后提取关键信息，更新相关实体页面，修订主题摘要，标记矛盾发现。</p>
+      </div>
+      <div class="kb-card fade-in">
+        <div class="kb-card-icon">🔍</div>
+        <h4>查询 · Query</h4>
+        <p>你提问，AI 在 Wiki 内搜索、读取、综合，给出带引用的回答。好的答案、对比分析、新发现的关联，写入 Wiki。</p>
+      </div>
+      <div class="kb-card fade-in">
+        <div class="kb-card-icon">🧹</div>
+        <h4>巡检 · Lint</h4>
+        <p>定期健康检查：页面间的矛盾、被新信息取代的过时主张、孤页、数据缺口。AI 找出问题并修复。</p>
+      </div>
+    </div>
+
+    <!-- Structure -->
+    <div class="kb-structure fade-in">
+      <div class="kb-structure-col">
+        <div class="section-label">目录结构</div>
+        <div class="kb-layer-list">
+          <div class="kb-layer-item">
+            <span class="kb-layer-dot dot-amber"></span>
+            <span><code class="kb-layer-code">_raw/</code> 原始资料（不可变，AI 只读）</span>
+          </div>
+          <div class="kb-layer-item">
+            <span class="kb-layer-dot dot-green"></span>
+            <span><code class="kb-layer-code">20_Work/</code> 工作项目 · 阿甘佐 / AIGEO / sylus0418</span>
+          </div>
+          <div class="kb-layer-item">
+            <span class="kb-layer-dot dot-green"></span>
+            <span><code class="kb-layer-code">30_Personal/</code> 个人项目 · 含本网站条目</span>
+          </div>
+          <div class="kb-layer-item">
+            <span class="kb-layer-dot dot-deep"></span>
+            <span><code class="kb-layer-code">CLAUDE.md</code> 维护规范</span>
+          </div>
+        </div>
+      </div>
+      <div class="kb-structure-col">
+        <div class="section-label">活跃项目</div>
+        <ul class="kb-project-list">
+          <li>🛢️ 阿甘佐品牌中心 — 机油官网 + 车型适配 + 知识百科 + AIGEO</li>
+          <li>🧠 AIGEO Workbench — 12 步 SOP 管线 · 12/12 交付</li>
+          <li>🎬 sylus0418 — AI 短剧《锋刃欲擒》· Seedance 2.0</li>
+          <li>🌿 Calm Xeriscape — 本网站 · 清新·个性·舒适</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Calm Xeriscape Entry -->
+    <div class="kb-structure fade-in" style="margin-top: 1.5rem;">
+      <div class="kb-structure-col">
+        <div class="section-label">🌿 本网站条目</div>
+        <div class="kb-layer-list">
+          <div class="kb-layer-item">
+            <span class="kb-layer-dot dot-green"></span>
+            <span>品牌方向：清新 · 个性 · 舒适</span>
+          </div>
+          <div class="kb-layer-item">
+            <span class="kb-layer-dot dot-green"></span>
+            <span>设计语言：Maya Lin — 克制、有机流体、正念美学</span>
+          </div>
+          <div class="kb-layer-item">
+            <span class="kb-layer-dot dot-green"></span>
+            <span>配色：薄荷鼠尾草绿 × 暖沙杏色</span>
+          </div>
+        </div>
+      </div>
+      <div class="kb-structure-col">
+        <div class="section-label">关联项目</div>
+        <ul class="kb-project-list">
+          <li>🔗 与阿甘佐品牌中心 — 审美经验交叉使用</li>
+          <li>🔗 与 AIGEO 短视频矩阵 — 设计语言影响视频视觉</li>
+        </ul>
+        <div class="section-label" style="margin-top: 1.5rem;">最近更新</div>
+        <ul class="kb-project-list">
+          <li>2026-08-12 · 收录短剧剧本格式规范 + 影视工业流程参考</li>
+          <li>2026-08-04 · 工作台「持续学习与运营记忆」优化方向</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- Works -->
+<!-- ============================================ -->
+<section class="section" id="works">
+  <div class="section-wrap">
+    <div class="section-header fade-in">
+      <span class="section-label">作品集</span>
+      <h2>AI 创作与内容项目</h2>
+      <p>AI 短剧、乙女向与 CP 向创作——AI 与情感碰撞的作品集</p>
+    </div>
+
+    <div class="works-grid">
+      <!-- AI 短剧 -->
+      <div class="work-card fade-in">
+        <div class="work-card-icon">🎬</div>
+        <h3>AI 短剧《锋刃欲擒》</h3>
+        <p>基于 Seedance 2.0 的 AI 短剧创作项目——秦彻 Alpha Prime 角色哲学、8 段分镜完整流水线、三场景打光参数卡。独立宣传网站已上线。</p>
+        <div class="tag-row">
+          <span class="tag">AI短剧</span>
+          <span class="tag">Seedance 2.0</span>
+          <span class="tag">分镜流水线</span>
+          <span class="tag accent">已上线</span>
+        </div>
+        <div class="work-links">
+          <a href="https://sylus0418.com/" target="_blank" rel="noopener" class="work-link">🌐 sylus0418.com</a>
+          <a href="https://www.xiaohongshu.com/user/profile/5f6b4ee9000000000101ce66" target="_blank" rel="noopener" class="work-link">📕 小红书作品集</a>
+        </div>
+      </div>
+
+      <!-- 乙女向 -->
+      <div class="work-card fade-in">
+        <div class="work-card-icon">🌸</div>
+        <h3>乙女向 AI 创作</h3>
+        <p>沉浸式女性向 AI 内容——角色设定、剧情生成、视觉叙事。为每个细腻的情感找到属于它的故事，作品集持续更新中。</p>
+        <div class="tag-row">
+          <span class="tag">乙女向</span>
+          <span class="tag">AI剧情</span>
+          <span class="tag">角色设计</span>
+          <span class="tag accent">已上线</span>
+        </div>
+        <div class="work-links">
+          <a href="https://www.xiaohongshu.com/user/profile/5f6b4ee9000000000101ce66" target="_blank" rel="noopener" class="work-link">📕 小红书作品集</a>
+        </div>
+      </div>
+
+      <!-- 明星CP向 -->
+      <div class="work-card fade-in">
+        <div class="work-card-icon">✨</div>
+        <h3>明星 CP 向创作</h3>
+        <p>以 AI 重新演绎那些让人心动的瞬间——CP 向图文、短片、互动内容，让想象在数字世界延续。抖音持续更新中。</p>
+        <div class="tag-row">
+          <span class="tag">CP向</span>
+          <span class="tag">AI图文</span>
+          <span class="tag">短片</span>
+          <span class="tag accent">持续更新</span>
+        </div>
+        <div class="work-links">
+          <a href="https://www.douyin.com/user/CMTYKIMIKK" target="_blank" rel="noopener" class="work-link">🎵 抖音 CMTYKIMIKK</a>
+        </div>
+      </div>
+
+      <!-- 明星CP网站预告 -->
+      <div class="work-card work-card-soon fade-in">
+        <span class="badge-soon">即将上线</span>
+        <div class="work-card-icon">🚀</div>
+        <h3>明星 CP 向网站</h3>
+        <p>专为 CP 内容打造的独立平台——更好的展示方式，更完整的叙事体验。敬请期待。</p>
+        <div class="tag-row">
+          <span class="tag">网站</span>
+          <span class="tag">CP向</span>
+          <span class="tag accent">计划中</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Screenshot Showcase -->
+    <div class="showcase-section fade-in">
+      <span class="section-label">视觉快照</span>
+      <div class="showcase-row">
+        <div class="showcase-card">
+          <img src="小红书图片.png" alt="小红书作品集截图" class="showcase-img" loading="lazy">
+          <div class="showcase-caption">小红书 · 作品集精选</div>
+        </div>
+        <div class="showcase-card mobile">
+          <img src="3.png" alt="乙女网站手机端截图" class="showcase-img" loading="lazy">
+          <div class="showcase-caption">sylus0418.com · 手机端</div>
+        </div>
+      </div>
+      <div class="showcase-row single" style="margin-top: 1.25rem;">
+        <div class="showcase-card">
+          <img src="2.png" alt="乙女网站桌面端截图" class="showcase-img" loading="lazy">
+          <div class="showcase-caption">sylus0418.com · 桌面端</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- Community -->
+<!-- ============================================ -->
+<section class="section section-alt" id="community">
+  <div class="section-wrap">
+    <div class="section-header fade-in">
+      <span class="section-label">同好交流</span>
+      <h2>找到属于你的同频</h2>
+      <p>天蝎 + INTJ 的创作空间——在这里与志同道合的人相遇</p>
+    </div>
+
+    <div class="community-highlight fade-in">
+      <a href="https://space.bilibili.com/6553521?spm_id_from=333.337.0.0" target="_blank" rel="noopener" class="community-card">
+        <div class="platform-icon">📺</div>
+        <span class="platform-name">Bilibili</span>
+        <span class="platform-desc">AI 创作视频 · 日常分享</span>
+      </a>
+      <a href="https://www.xiaohongshu.com/user/profile/5f6b4ee9000000000101ce66" target="_blank" rel="noopener" class="community-card">
+        <div class="platform-icon">📕</div>
+        <span class="platform-name">小红书</span>
+        <span class="platform-desc">作品精选 · 创作笔记</span>
+      </a>
+      <a class="community-card" style="cursor: default;">
+        <div class="platform-icon">💚</div>
+        <span class="platform-name">微信</span>
+        <span class="platform-desc">私域交流 · 深度连接</span>
+      </a>
+      <a href="https://weibo.com/u/3119537657" target="_blank" rel="noopener" class="community-card">
+        <div class="platform-icon">🐦</div>
+        <span class="platform-name">微博</span>
+        <span class="platform-desc">实时动态 · 热点交流</span>
+      </a>
+      <a href="https://v.douyin.com/-PXSQ8X9oos/" target="_blank" rel="noopener" class="community-card">
+        <div class="platform-icon">🎵</div>
+        <span class="platform-name">抖音</span>
+        <span class="platform-desc">AI 短视频 · 创意内容</span>
+      </a>
     </div>
   </div>
 </section>
@@ -1944,7 +848,7 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
 <!-- ============================================ -->
 <!-- About -->
 <!-- ============================================ -->
-<section class="section section-alt" id="about">
+<section class="section" id="about">
   <div class="section-wrap">
     <div class="section-header fade-in">
       <span class="section-label">关于我</span>
@@ -1968,7 +872,7 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
           用冷静的策略思维和炽热的创作欲望，在数字荒漠中构建属于自己的绿洲。
         </p>
         <p>
-          从乙女向 AI 内容到明星 CP 向创作，从品牌网站建设到 AIGEO 探索——
+          从阿甘佐机油品牌官网到 AIGEO 工作台，从 AI 短剧《锋刃欲擒》到乙女向与 CP 向创作——
           每一件事都是对"<span class="highlight-text">AI 能做些什么有趣的事</span>"的回答。
         </p>
         <p>
@@ -2014,21 +918,23 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
     <div class="footer-links">
       <div class="footer-col">
         <h4>作品</h4>
+        <a href="#works">AI 短剧</a>
         <a href="#works">乙女向</a>
         <a href="#works">明星 CP 向</a>
-        <a href="#works">品牌网站</a>
       </div>
       <div class="footer-col">
         <h4>探索</h4>
-        <a href="#kb">知识库</a>
+        <a href="#aganzuo">阿甘佐机油</a>
         <a href="#aigeo">AIGEO</a>
         <a href="#workbench">工作台</a>
+        <a href="#kb">知识库</a>
         <a href="#community">同好圈</a>
         <a href="#about">关于我</a>
       </div>
       <div class="footer-col">
         <h4>联系</h4>
         <a href="mailto:952723391@qq.com">合作咨询</a>
+        <a href="resume.html">简历</a>
       </div>
     </div>
   </div>
