@@ -1,6 +1,6 @@
 # Calm Xeriscape — 个人网站
 
-清新 · 个性 · 舒适。AI 创作者的静谧绿洲，薄荷鼠尾草绿 × 暖沙杏色，参考 Maya Lin 的克制有机流体美学。
+清新 · 个性 · 舒适。AI 创作者的静谧绿洲。**编辑风**版式（参考 Han 单页简历），奶油纸底 × 降饱和墨绿 × 暖橙。
 
 ## 页面
 
@@ -12,7 +12,7 @@
 
 - 阿甘佐机油品牌中心 — http://aganzol.com
 - AIGEO Workbench — 12 步 SOP 内容管线工作台（12/12 交付）
-- sylus0418 — AI 短剧《锋刃欲擒》 — https://sylus0418.com
+- sylus0418 — AI 短剧 — https://sylus0418.com
 
 ## 部署
 

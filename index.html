@@ -4,10 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Calm Xeriscape — AI Creator · AIGEO Explorer · 阿甘佐机油数字化</title>
-<meta name="description" content="个人网站 · AI 创作 · AIGEO 实践 · 机油品牌数字化 — 阿甘佐机油官网 (aganzol.com) 与 AIGEO 工作台，AI 短剧《锋刃欲擒》与同好创作社区">
-<meta name="keywords" content="阿甘佐,机油,aganzol,AIGEO,AI创作,AI短剧,锋刃欲擒,个人网站,Calm Xeriscape,工作台">
+<meta name="description" content="个人网站 · AI 创作 · AIGEO 实践 · 机油品牌数字化 — 阿甘佐机油官网 (aganzol.com) 与 AIGEO 工作台，AI 短剧与同好创作社区">
+<meta name="keywords" content="阿甘佐,机油,aganzol,AIGEO,AI创作,AI短剧,个人网站,Calm Xeriscape,工作台">
 <meta name="author" content="Calm Xeriscape">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+<meta name="theme-color" content="#F7F0E4">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2336473A'/><path d='M50 22l6 20 20 8-20 8-6 20-6-20-20-8 20-8z' fill='%23E9A93C'/></svg>">
 
 <!-- Open Graph -->
 <meta property="og:title" content="Calm Xeriscape — AI Creator · AIGEO Explorer · 阿甘佐机油数字化">
@@ -24,136 +25,158 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Instrument+Sans:ital,wght@0,400..700;1,400..600&family=Noto+Serif+SC:wght@400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="portrait.webp" type="image/webp">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<a class="skip-link" href="#hero">跳到主内容</a>
 
 <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题" title="切换主题">
   <span class="icon-moon">🌙</span>
   <span class="icon-sun">☀️</span>
 </button>
 
-<nav class="nav" id="nav">
+<nav class="nav nav-over-cover" id="nav">
   <a href="#hero" class="nav-brand">Calm Xeriscape</a>
+  <a href="resume.html" class="nav-cta">简历</a>
   <a href="#aganzuo">阿甘佐机油</a>
   <a href="#aigeo">AIGEO</a>
   <a href="#workbench">工作台</a>
+  <a href="#studio">geo-studio</a>
   <a href="#kb">知识库</a>
   <a href="#works">作品</a>
   <a href="#community">同好</a>
   <a href="#about">关于</a>
-  <a href="resume.html">简历</a>
 </nav>
 
 <!-- ============================================ -->
-<!-- Hero -->
+<!-- Cover -->
 <!-- ============================================ -->
-<section class="hero" id="hero">
-  <div class="hero-organic">
-    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
-      <defs>
-        <filter id="fluidFilter" x="-20%" y="-20%" width="140%" height="140%">
-          <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="4" seed="3" result="noise"/>
-          <feDisplacementMap in="SourceGraphic" in2="noise" scale="40" xChannelSelector="R" yChannelSelector="G"/>
-        </filter>
-        <linearGradient id="blobGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#7FAF9A" stop-opacity="var(--blob-opacity-1)"/>
-          <stop offset="100%" stop-color="#C9A87C" stop-opacity="var(--blob-opacity-2)"/>
-        </linearGradient>
-        <linearGradient id="blobGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#C9A87C" stop-opacity="var(--blob-opacity-2)"/>
-          <stop offset="100%" stop-color="#B8D5C8" stop-opacity="var(--blob-opacity-1)"/>
-        </linearGradient>
-        <linearGradient id="blobGrad3" x1="0%" y1="100%" x2="50%" y2="0%">
-          <stop offset="0%" stop-color="#7FAF9A" stop-opacity="var(--blob-opacity-3)"/>
-          <stop offset="100%" stop-color="#E8D5C4" stop-opacity="var(--blob-opacity-2)"/>
-        </linearGradient>
-      </defs>
-      <circle class="blob" cx="15%" cy="25%" r="260" fill="url(#blobGrad1)" filter="url(#fluidFilter)"/>
-      <circle class="blob" cx="75%" cy="65%" r="320" fill="url(#blobGrad2)" filter="url(#fluidFilter)"/>
-      <ellipse class="blob" cx="55%" cy="20%" rx="200" ry="160" fill="url(#blobGrad3)" filter="url(#fluidFilter)"/>
-      <circle class="blob" cx="85%" cy="15%" r="140" fill="url(#blobGrad1)" filter="url(#fluidFilter)"/>
-    </svg>
-  </div>
+<div class="cover-wrap">
+<section class="cover" id="hero">
+  <h1 class="cover-word">
+    <span class="solid">CALM</span>
+    <span class="hollow">XERISCAPE</span>
+    <span class="hollow" aria-hidden="true">XERISCAPE</span>
+  </h1>
 
-  <div class="hero-content fade-in">
-    <p class="hero-eyebrow">Personal AI Creator · AIGEO Explorer · 机油品牌数字化</p>
-    <h1>Calm <span class="italic">Xeriscape</span></h1>
-    <p class="hero-tagline">
-      在 AI 的边界种一片绿洲。<br>
-      阿甘佐机油官网 · AIGEO 工作台 · AI 短剧与同好创作。
-    </p>
-    <div class="hero-actions">
-      <a href="http://aganzol.com/" target="_blank" rel="noopener" class="btn btn-primary">阿甘佐机油官网 →</a>
-      <a href="#workbench" class="btn btn-ghost">AIGEO 工作台</a>
+  <svg class="spark" style="top:17%;left:7%;width:26px" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z" fill="currentColor"/></svg>
+  <svg class="spark" style="top:62%;right:8%;width:18px;animation-delay:1.5s" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z" fill="currentColor"/></svg>
+  <svg class="spark" style="top:37%;left:47%;width:13px;animation-delay:2.7s" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z" fill="currentColor"/></svg>
+
+  <!-- 抠图贴纸 + 手绘圈 + 手写签名（替掉原来那层"幽灵暖雾"） -->
+  <div class="cover-figure">
+    <svg class="scribble" viewBox="0 0 420 400" fill="none" aria-hidden="true">
+      <path d="M226 42C312 46 384 108 388 200C392 292 322 362 214 366C104 370 30 300 28 202C26 108 106 40 214 38"
+            stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/>
+      <path d="M252 46C332 58 394 122 394 206C394 300 320 372 210 374"
+            stroke="currentColor" stroke-width="2.3" stroke-linecap="round" opacity=".65"/>
+    </svg>
+
+    <img class="cover-sticker" src="portrait-sticker.webp" alt="Calm Xeriscape"
+         width="900" height="1551" fetchpriority="high">
+
+    <div class="cover-sign">
+      <svg class="hand-arrow" viewBox="0 0 160 90" fill="none" aria-hidden="true">
+        <path d="M6 66C44 22 94 8 146 26" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        <path d="M130 11L151 27L128 37" stroke="currentColor" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="hand">Cao&nbsp;Xue</span>
     </div>
   </div>
 
-  <div class="hero-scroll-hint">
-    <span>探索</span>
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v8M4 8l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="cover-foot">
+    <div class="cover-note">
+      <p class="eyebrow">Personal AI Creator · AIGEO Explorer</p>
+      <p>在 AI 的边界种一片绿洲。阿甘佐机油品牌数字化 · AIGEO 内容工作台 · AI 短剧与同好创作。</p>
+      <div class="hero-actions">
+        <a href="resume.html" class="btn btn-primary btn-arrow">查看简历</a>
+        <a href="#workbench" class="btn btn-ghost">AIGEO 工作台</a>
+        <a href="http://aganzol.com/" target="_blank" rel="noopener" class="btn btn-ghost">阿甘佐官网</a>
+      </div>
+    </div>
+    <ul class="cover-social">
+      <li><a href="https://space.bilibili.com/6553521?spm_id_from=333.337.0.0" target="_blank" rel="noopener">Bilibili</a></li>
+      <li><a href="https://www.xiaohongshu.com/user/profile/5f6b4ee9000000000101ce66" target="_blank" rel="noopener">小红书</a></li>
+      <li><a href="https://weibo.com/u/3119537657" target="_blank" rel="noopener">微博</a></li>
+      <li><a href="https://v.douyin.com/-PXSQ8X9oos/" target="_blank" rel="noopener">抖音</a></li>
+    </ul>
   </div>
 </section>
-
-<!-- Organic Wave Divider -->
-<div class="wave-divider">
-  <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-    <path d="M0 40 C 240 80, 480 0, 720 30 C 960 60, 1200 10, 1440 40 L 1440 80 L 0 80 Z" fill="var(--bg-alt)" opacity="0.5"/>
-  </svg>
+<a class="scroll-badge" href="#featured">Scroll<br>down</a>
 </div>
 
 <!-- ============================================ -->
 <!-- Featured Projects -->
 <!-- ============================================ -->
 <section class="section" id="featured">
-  <div class="section-header fade-in">
-    <span class="section-label">重点项目 · Featured</span>
-    <h2>正在做的事</h2>
-    <p>阿甘佐机油官网与 AIGEO 工作台是当前的核心实践，AI 短剧与同好创作是持续的创作线。</p>
-  </div>
-
-  <div class="featured-grid">
-    <!-- 阿甘佐机油品牌中心 -->
-    <div class="featured-card oil fade-in">
-      <div class="featured-icon">🛢️</div>
-      <h3>阿甘佐机油品牌中心</h3>
-      <p>纯 4+5 类全合成机油品牌官网——车型适配、知识百科、认证数据全结构化。让 AI 搜索真正读懂「真全合成」。</p>
-      <div class="featured-stats">
-        <div class="featured-stat"><b>4+5类</b><span>PAO + 酯 · 0% 三类油</span></div>
-        <div class="featured-stat"><b>-66°C</b><span>倾点 USP</span></div>
-        <div class="featured-stat"><b>28省</b><span>120+ 城市渠道</span></div>
-      </div>
-      <a href="http://aganzol.com/" target="_blank" rel="noopener" class="btn btn-primary">访问官网 aganzol.com →</a>
+  <div class="section-wrap">
+    <div class="section-header fade-in">
+      <span class="section-label">重点项目 · Featured</span>
+      <h2>正在做的事</h2>
+      <p>阿甘佐机油官网与 AIGEO 工作台是当前的核心实践，AI 短剧与同好创作是持续的创作线。</p>
     </div>
 
-    <!-- AIGEO -->
-    <div class="featured-card fade-in">
-      <div class="featured-icon">🧠</div>
-      <h3>AIGEO 品牌可见度</h3>
-      <p>官网结构化数据 + 多平台内容矩阵双轨并行，让品牌在 ChatGPT、DeepSeek、Kimi、豆包等 AI 引擎中被准确引用。</p>
-      <div class="featured-stats">
-        <div class="featured-stat"><b>11</b><span>类 Schema 覆盖</span></div>
-        <div class="featured-stat"><b>464</b><span>车型适配条目</span></div>
-        <div class="featured-stat"><b>7</b><span>大 AI 来源监测</span></div>
+    <div class="featured-grid">
+      <!-- 阿甘佐机油品牌中心 -->
+      <div class="featured-card oil fade-in">
+        <div class="featured-icon">🛢️</div>
+        <h3>阿甘佐机油品牌中心</h3>
+        <p>纯 4+5 类全合成机油品牌官网——车型适配、知识百科、认证数据全结构化。让 AI 搜索真正读懂「真全合成」。</p>
+        <div class="featured-stats">
+          <div class="featured-stat"><b>4+5类</b><span>PAO + 酯 · 0% 三类油</span></div>
+          <div class="featured-stat"><b>-66°C</b><span>倾点 USP</span></div>
+          <div class="featured-stat"><b>28省</b><span>120+ 城市渠道</span></div>
+        </div>
+        <a href="http://aganzol.com/" target="_blank" rel="noopener" class="btn btn-primary btn-arrow">访问官网 aganzol.com</a>
       </div>
-      <a href="#aigeo" class="btn btn-ghost">了解更多 →</a>
-    </div>
 
-    <!-- AIGEO Workbench -->
-    <div class="featured-card fade-in">
-      <div class="featured-icon">🛠️</div>
-      <h3>AIGEO Workbench</h3>
-      <p>12 步 SOP 内容管线工作台：调研、选词、创作、合规、9 平台自动发布、AI 引用监测——全流程已交付。</p>
-      <div class="featured-stats">
-        <div class="featured-stat"><b>12/12</b><span>SOP 步骤完成</span></div>
-        <div class="featured-stat"><b>36</b><span>项自动化测试</span></div>
-        <div class="featured-stat"><b>9</b><span>平台自动发布</span></div>
+      <!-- AIGEO -->
+      <div class="featured-card fade-in">
+        <div class="featured-icon">🧠</div>
+        <h3>AIGEO 品牌可见度</h3>
+        <p>官网结构化数据 + 多平台内容矩阵双轨并行，让品牌在 ChatGPT、DeepSeek、Kimi、豆包等 AI 引擎中被准确引用。</p>
+        <div class="featured-stats">
+          <div class="featured-stat"><b>11</b><span>类 Schema 覆盖</span></div>
+          <div class="featured-stat"><b>464</b><span>车型适配条目</span></div>
+          <div class="featured-stat"><b>8</b><span>个 AI 平台监测</span></div>
+        </div>
+        <a href="#aigeo" class="btn btn-ghost btn-arrow">了解更多</a>
       </div>
-      <a href="#workbench" class="btn btn-ghost">查看工作台 →</a>
+
+      <!-- AIGEO Workbench -->
+      <div class="featured-card fade-in">
+        <div class="featured-icon">🛠️</div>
+        <h3>AIGEO Workbench</h3>
+        <p>12 步 SOP 内容管线工作台：调研、选词、创作、合规、8 平台发布、AI 引用监测——全流程已交付。</p>
+        <div class="featured-stats">
+          <div class="featured-stat"><b>12/12</b><span>SOP 步骤完成</span></div>
+          <div class="featured-stat"><b>67</b><span>项自动化测试</span></div>
+          <div class="featured-stat"><b>8</b><span>平台发布引擎</span></div>
+        </div>
+        <a href="#workbench" class="btn btn-ghost btn-arrow">查看工作台</a>
+      </div>
+
+      <!-- geo-studio -->
+      <div class="featured-card fade-in">
+        <div class="featured-icon">✍️</div>
+        <h3>geo-studio</h3>
+        <p>批量文案生产工具：146 条文案骨架 × 18,006 条知识库零件，把一条选题铺成多平台文案，审核走飞书多维表格。</p>
+        <div class="featured-stats">
+          <div class="featured-stat"><b>18,006</b><span>知识库零件</span></div>
+          <div class="featured-stat"><b>5</b><span>步生产动线</span></div>
+          <div class="featured-stat"><b>¥0.62</b><span>75 篇文案 API 成本</span></div>
+        </div>
+        <a href="#studio" class="btn btn-ghost btn-arrow">了解 studio</a>
+      </div>
     </div>
   </div>
 </section>
+
+<hr class="rule rule-inset">
 
 <!-- ============================================ -->
 <!-- Aganzuo · 机油品牌中心 -->
@@ -177,7 +200,7 @@
           <span>📍 中国 · 大连</span>
         </div>
       </div>
-      <a href="http://aganzol.com/" target="_blank" rel="noopener" class="btn btn-primary">访问官网 →</a>
+      <a href="http://aganzol.com/" target="_blank" rel="noopener" class="btn btn-primary btn-arrow">访问官网</a>
     </div>
 
     <!-- 技术护城河 -->
@@ -208,14 +231,14 @@
         <div class="stat-desc">120+ 城市线下门店 · 5 大电商平台全渠道</div>
       </div>
       <div class="aigeo-stat-card fade-in">
-        <div class="stat-number">15000km</div>
+        <div class="stat-number">15000<span style="font-size:.45em">km</span></div>
         <div class="stat-label">换油周期</div>
         <div class="stat-desc">长效养护，蒸发损失 NOACK &lt;8%</div>
       </div>
     </div>
 
     <!-- 认证体系 -->
-    <div class="fade-in" style="margin-top: 2.5rem;">
+    <div class="fade-in mt-lg">
       <div class="section-label">认证体系</div>
       <div class="cert-row">
         <span class="cert-badge">API SP</span>
@@ -252,7 +275,7 @@
     </div>
 
     <!-- 数字化现状 -->
-    <div class="aigeo-layout fade-in" style="margin-top: 3rem;">
+    <div class="aigeo-layout mt-lg fade-in">
       <div class="aigeo-content">
         <span class="section-label">数字化现状</span>
         <h2>官网是权威锚点，矩阵是触达面</h2>
@@ -263,38 +286,38 @@
           <li>知识百科 50+ 术语页，DefinedTermSet 语义标注</li>
           <li>AI 视频矩阵 95+ 条跨平台内容，多源一致性强化品牌实体</li>
         </ul>
-        <a href="http://aganzol.com/" target="_blank" rel="noopener" class="btn btn-primary">查看完整案例 →</a>
+        <a href="http://aganzol.com/" target="_blank" rel="noopener" class="btn btn-primary btn-arrow">查看完整案例</a>
       </div>
       <div class="aigeo-visual fade-in">
-        <svg viewBox="0 0 200 200">
-          <circle cx="100" cy="100" r="12" fill="var(--primary)" opacity="0.9"/>
+        <svg viewBox="0 0 200 200" aria-hidden="true">
+          <circle cx="100" cy="100" r="12" fill="var(--orange)" opacity="0.9"/>
           <circle class="flow-circle" cx="100" cy="100" r="30"/>
           <circle class="flow-circle" cx="100" cy="100" r="50"/>
           <circle class="flow-circle" cx="100" cy="100" r="70"/>
-          <circle cx="100" cy="30" r="5" fill="var(--accent-warm)" opacity="0.8">
+          <circle cx="100" cy="30" r="5" fill="var(--amber)" opacity="0.85">
             <animate attributeName="cy" values="30;28;30" dur="3s" repeatCount="indefinite"/>
           </circle>
-          <circle cx="155" cy="55" r="4.5" fill="var(--primary)" opacity="0.7">
+          <circle cx="155" cy="55" r="4.5" fill="var(--forest)" opacity="0.7">
             <animate attributeName="cy" values="55;53;55" dur="3.5s" repeatCount="indefinite"/>
           </circle>
-          <circle cx="155" cy="145" r="5" fill="var(--accent-warm)" opacity="0.8">
+          <circle cx="155" cy="145" r="5" fill="var(--amber)" opacity="0.8">
             <animate attributeName="cy" values="145;143;145" dur="4s" repeatCount="indefinite"/>
           </circle>
-          <circle cx="100" cy="170" r="4" fill="var(--primary)" opacity="0.7">
+          <circle cx="100" cy="170" r="4" fill="var(--forest)" opacity="0.7">
             <animate attributeName="cy" values="170;168;170" dur="3.2s" repeatCount="indefinite"/>
           </circle>
-          <circle cx="45" cy="145" r="5" fill="var(--accent-warm)" opacity="0.8">
+          <circle cx="45" cy="145" r="5" fill="var(--amber)" opacity="0.8">
             <animate attributeName="cy" values="145;143;145" dur="3.8s" repeatCount="indefinite"/>
           </circle>
-          <circle cx="45" cy="55" r="4.5" fill="var(--primary)" opacity="0.7">
+          <circle cx="45" cy="55" r="4.5" fill="var(--forest)" opacity="0.7">
             <animate attributeName="cy" values="55;53;55" dur="3.3s" repeatCount="indefinite"/>
           </circle>
-          <line x1="100" y1="88" x2="100" y2="35" stroke="var(--border-strong)" stroke-width="0.8" opacity="0.5"/>
-          <line x1="112" y1="88" x2="150" y2="58" stroke="var(--border-strong)" stroke-width="0.8" opacity="0.5"/>
-          <line x1="112" y1="112" x2="150" y2="142" stroke="var(--border-strong)" stroke-width="0.8" opacity="0.5"/>
-          <line x1="100" y1="112" x2="100" y2="165" stroke="var(--border-strong)" stroke-width="0.8" opacity="0.5"/>
-          <line x1="88" y1="112" x2="50" y2="142" stroke="var(--border-strong)" stroke-width="0.8" opacity="0.5"/>
-          <line x1="88" y1="88" x2="50" y2="58" stroke="var(--border-strong)" stroke-width="0.8" opacity="0.5"/>
+          <line x1="100" y1="88" x2="100" y2="35" stroke="var(--rule-2)" stroke-width="0.8" opacity="0.6"/>
+          <line x1="112" y1="88" x2="150" y2="58" stroke="var(--rule-2)" stroke-width="0.8" opacity="0.6"/>
+          <line x1="112" y1="112" x2="150" y2="142" stroke="var(--rule-2)" stroke-width="0.8" opacity="0.6"/>
+          <line x1="100" y1="112" x2="100" y2="165" stroke="var(--rule-2)" stroke-width="0.8" opacity="0.6"/>
+          <line x1="88" y1="112" x2="50" y2="142" stroke="var(--rule-2)" stroke-width="0.8" opacity="0.6"/>
+          <line x1="88" y1="88" x2="50" y2="58" stroke="var(--rule-2)" stroke-width="0.8" opacity="0.6"/>
         </svg>
       </div>
     </div>
@@ -305,143 +328,145 @@
 <!-- AIGEO -->
 <!-- ============================================ -->
 <section class="section" id="aigeo">
-  <div class="aigeo-layout">
-    <div class="aigeo-visual fade-in">
-      <svg viewBox="0 0 200 200">
-        <circle cx="100" cy="100" r="12" fill="var(--primary)" opacity="0.9"/>
-        <circle class="flow-circle" cx="100" cy="100" r="30"/>
-        <circle class="flow-circle" cx="100" cy="100" r="50"/>
-        <circle class="flow-circle" cx="100" cy="100" r="70"/>
-        <circle cx="100" cy="30" r="5" fill="var(--accent-warm)" opacity="0.8">
-          <animate attributeName="cy" values="30;28;30" dur="3s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="155" cy="55" r="4.5" fill="var(--primary)" opacity="0.7">
-          <animate attributeName="cy" values="55;53;55" dur="3.5s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="155" cy="145" r="5" fill="var(--accent-warm)" opacity="0.8">
-          <animate attributeName="cy" values="145;143;145" dur="4s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="100" cy="170" r="4" fill="var(--primary)" opacity="0.7">
-          <animate attributeName="cy" values="170;168;170" dur="3.2s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="45" cy="145" r="5" fill="var(--accent-warm)" opacity="0.8">
-          <animate attributeName="cy" values="145;143;145" dur="3.8s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="45" cy="55" r="4.5" fill="var(--primary)" opacity="0.7">
-          <animate attributeName="cy" values="55;53;55" dur="3.3s" repeatCount="indefinite"/>
-        </circle>
-        <line x1="100" y1="88" x2="100" y2="35" stroke="var(--border-strong)" stroke-width="0.8" opacity="0.5"/>
-        <line x1="112" y1="88" x2="150" y2="58" stroke="var(--border-strong)" stroke-width="0.8" opacity="0.5"/>
-        <line x1="112" y1="112" x2="150" y2="142" stroke="var(--border-strong)" stroke-width="0.8" opacity="0.5"/>
-        <line x1="100" y1="112" x2="100" y2="165" stroke="var(--border-strong)" stroke-width="0.8" opacity="0.5"/>
-        <line x1="88" y1="112" x2="50" y2="142" stroke="var(--border-strong)" stroke-width="0.8" opacity="0.5"/>
-        <line x1="88" y1="88" x2="50" y2="58" stroke="var(--border-strong)" stroke-width="0.8" opacity="0.5"/>
-      </svg>
+  <div class="section-wrap">
+    <div class="aigeo-layout">
+      <div class="aigeo-visual fade-in">
+        <svg viewBox="0 0 200 200" aria-hidden="true">
+          <circle cx="100" cy="100" r="12" fill="var(--forest)" opacity="0.9"/>
+          <circle class="flow-circle" cx="100" cy="100" r="30"/>
+          <circle class="flow-circle" cx="100" cy="100" r="50"/>
+          <circle class="flow-circle" cx="100" cy="100" r="70"/>
+          <circle cx="100" cy="30" r="5" fill="var(--orange)" opacity="0.85">
+            <animate attributeName="cy" values="30;28;30" dur="3s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="155" cy="55" r="4.5" fill="var(--forest)" opacity="0.7">
+            <animate attributeName="cy" values="55;53;55" dur="3.5s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="155" cy="145" r="5" fill="var(--orange)" opacity="0.8">
+            <animate attributeName="cy" values="145;143;145" dur="4s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="100" cy="170" r="4" fill="var(--forest)" opacity="0.7">
+            <animate attributeName="cy" values="170;168;170" dur="3.2s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="45" cy="145" r="5" fill="var(--orange)" opacity="0.8">
+            <animate attributeName="cy" values="145;143;145" dur="3.8s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="45" cy="55" r="4.5" fill="var(--forest)" opacity="0.7">
+            <animate attributeName="cy" values="55;53;55" dur="3.3s" repeatCount="indefinite"/>
+          </circle>
+          <line x1="100" y1="88" x2="100" y2="35" stroke="var(--rule-2)" stroke-width="0.8" opacity="0.6"/>
+          <line x1="112" y1="88" x2="150" y2="58" stroke="var(--rule-2)" stroke-width="0.8" opacity="0.6"/>
+          <line x1="112" y1="112" x2="150" y2="142" stroke="var(--rule-2)" stroke-width="0.8" opacity="0.6"/>
+          <line x1="100" y1="112" x2="100" y2="165" stroke="var(--rule-2)" stroke-width="0.8" opacity="0.6"/>
+          <line x1="88" y1="112" x2="50" y2="142" stroke="var(--rule-2)" stroke-width="0.8" opacity="0.6"/>
+          <line x1="88" y1="88" x2="50" y2="58" stroke="var(--rule-2)" stroke-width="0.8" opacity="0.6"/>
+        </svg>
+      </div>
+
+      <div class="aigeo-content fade-in">
+        <span class="section-label">AIGEO</span>
+        <h2>AI 时代的品牌可见度建设</h2>
+        <p>AIGEO（AI Generated Engine Optimization）是面向 AI 搜索引擎的品牌可见度体系——通过<strong>官网结构化数据</strong>与<strong>多平台内容矩阵</strong>双轨并行，让品牌在 ChatGPT、DeepSeek、Kimi、豆包等 AI 引擎中被准确引用和推荐。</p>
+        <ul class="aigeo-list">
+          <li>官网 Schema.org 结构化数据 —— 让 AI 读懂品牌语义</li>
+          <li>6 平台矩阵号内容分发 —— 抖音 / B站 / 小红书 / 视频号 / 快手 / 官网</li>
+          <li>8 个 AI 平台收录监测（7 个已实装）—— 量化 AIGEO 建设成效</li>
+        </ul>
+        <a href="http://aganzol.com/" target="_blank" rel="noopener" class="btn btn-primary btn-arrow">访问 AIGEO 官网</a>
+      </div>
     </div>
 
-    <div class="aigeo-content fade-in">
-      <span class="section-label">AIGEO</span>
-      <h2>AI 时代的品牌可见度建设</h2>
-      <p>AIGEO（AI Generated Engine Optimization）是面向 AI 搜索引擎的品牌可见度体系——通过<strong>官网结构化数据</strong>与<strong>多平台内容矩阵</strong>双轨并行，让品牌在 ChatGPT、DeepSeek、Kimi、豆包等 AI 引擎中被准确引用和推荐。</p>
-      <ul class="aigeo-list">
-        <li>官网 Schema.org 结构化数据 —— 让 AI 读懂品牌语义</li>
-        <li>6 平台矩阵号内容分发 —— 抖音 / B站 / 小红书 / 视频号 / 快手 / 官网</li>
-        <li>7 大 AI 来源监测追踪 —— 量化 AIGEO 建设成效</li>
-      </ul>
-      <a href="http://aganzol.com/" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top: 0.5rem;">访问 AIGEO 官网 →</a>
+    <!-- Core Advantages — Stats Row -->
+    <div class="aigeo-stats-row">
+      <div class="aigeo-stat-card fade-in">
+        <div class="stat-number">11/13</div>
+        <div class="stat-label">Schema 类型覆盖</div>
+        <div class="stat-desc">已部署 11 类结构化数据，行业领先，远超平均 2–3 种</div>
+      </div>
+      <div class="aigeo-stat-card fade-in">
+        <div class="stat-number">64+</div>
+        <div class="stat-label">SSG 官网页面</div>
+        <div class="stat-desc">JSON 数据层驱动，内容扩展效率高，全站结构化输出</div>
+      </div>
+      <div class="aigeo-stat-card fade-in">
+        <div class="stat-number">75+</div>
+        <div class="stat-label">产品 SKU 全参数化</div>
+        <div class="stat-desc">Product + PropertyValue Schema，每个产品独立语义标注</div>
+      </div>
+      <div class="aigeo-stat-card fade-in">
+        <div class="stat-number">464</div>
+        <div class="stat-label">车型适配条目</div>
+        <div class="stat-desc">Car Schema 覆盖，命中「XX车用什么机油」AI 长尾查询</div>
+      </div>
+      <div class="aigeo-stat-card fade-in">
+        <div class="stat-number">10</div>
+        <div class="stat-label">AI 视频素材就绪</div>
+        <div class="stat-desc">10 支视频 → 6 平台分发 → 95+ 条跨平台内容，品牌词全域覆盖</div>
+      </div>
+      <div class="aigeo-stat-card fade-in">
+        <div class="stat-number">8</div>
+        <div class="stat-label">AI 平台收录监测</div>
+        <div class="stat-desc">DeepSeek / 豆包 / 腾讯元宝 / 通义千问 / 文心一言 / Kimi / 智谱清言 / 纳米AI</div>
+      </div>
     </div>
-  </div>
 
-  <!-- Core Advantages — Stats Row -->
-  <div class="aigeo-stats-row">
-    <div class="aigeo-stat-card fade-in">
-      <div class="stat-number">11/13</div>
-      <div class="stat-label">Schema 类型覆盖</div>
-      <div class="stat-desc">已部署 11 类结构化数据，行业领先，远超平均 2–3 种</div>
+    <!-- Distinctive Features -->
+    <div class="aigeo-feature-grid">
+      <div class="aigeo-feature-card fade-in">
+        <div class="feature-icon">🏗️</div>
+        <h4>双轨并行策略</h4>
+        <p><strong>轨道 A · 官网基建：</strong>Schema.org 结构化数据 + 知识图谱 + SEO 技术基础，构建 AI 可读的品牌权威锚点。<br><strong>轨道 B · 矩阵号分发：</strong>抖音/B站/小红书/视频号/快手/百度 6 平台内容矩阵，让 AI 从多源发现品牌。</p>
+      </div>
+      <div class="aigeo-feature-card fade-in">
+        <div class="feature-icon">🔄</div>
+        <h4>多平台内容飞轮</h4>
+        <p>10 支 AI 视频作为种子内容 → 各平台二次创作（图文笔记 / 长视频 / 公众号文章 / 问答）→ 95+ 条跨平台内容。多源一致性信号强化品牌实体在 AI 中的认知权重。</p>
+      </div>
+      <div class="aigeo-feature-card fade-in">
+        <div class="feature-icon">🎯</div>
+        <h4>竞品对比页精准截获</h4>
+        <p>对美孚1号、嘉实多极护、壳牌超凡喜力等主流产品建立结构化对比页，Table + Article + FAQPage 三 Schema 组合，精准命中「XX vs XX 机油」类 AI 长尾查询。</p>
+      </div>
+      <div class="aigeo-feature-card fade-in">
+        <div class="feature-icon">🔗</div>
+        <h4>跨平台实体链接</h4>
+        <p>各平台内容统一指向官网，通过 sameAs 属性建立品牌实体互认。视频中心页 → 产品详情页 → 车型适配页 → 知识百科页四向互链，碎片在各平台、权威在官网。</p>
+      </div>
+      <div class="aigeo-feature-card fade-in">
+        <div class="feature-icon">📊</div>
+        <h4>AITracker 数据闭环</h4>
+        <p>自建 GEO 监测框架，可识别多个 AI 来源的引用情况。管理端仪表盘实时追踪品牌词提及率、品类词引用率、AI 来源流量占比，量化每一次 AIGEO 优化的实际效果。</p>
+      </div>
+      <div class="aigeo-feature-card fade-in">
+        <div class="feature-icon">🚗</div>
+        <h4>车型适配长尾覆盖</h4>
+        <p>464 条车型适配数据（汉兰达/凯美瑞/迈腾/A6/雅阁/CR-V 等热门车型），每个车型页独立 Car Schema 标注，命中「XX车用什么机油」这类高意图 AI 搜索查询。</p>
+      </div>
     </div>
-    <div class="aigeo-stat-card fade-in">
-      <div class="stat-number">64+</div>
-      <div class="stat-label">SSG 官网页面</div>
-      <div class="stat-desc">JSON 数据层驱动，内容扩展效率高，全站结构化输出</div>
-    </div>
-    <div class="aigeo-stat-card fade-in">
-      <div class="stat-number">75+</div>
-      <div class="stat-label">产品 SKU 全参数化</div>
-      <div class="stat-desc">Product + PropertyValue Schema，每个产品独立语义标注</div>
-    </div>
-    <div class="aigeo-stat-card fade-in">
-      <div class="stat-number">464</div>
-      <div class="stat-label">车型适配条目</div>
-      <div class="stat-desc">Car Schema 覆盖，命中「XX车用什么机油」AI 长尾查询</div>
-    </div>
-    <div class="aigeo-stat-card fade-in">
-      <div class="stat-number">10</div>
-      <div class="stat-label">AI 视频素材就绪</div>
-      <div class="stat-desc">10 支视频 → 6 平台分发 → 95+ 条跨平台内容，品牌词全域覆盖</div>
-    </div>
-    <div class="aigeo-stat-card fade-in">
-      <div class="stat-number">7</div>
-      <div class="stat-label">AI 来源追踪</div>
-      <div class="stat-desc">ChatGPT / DeepSeek / Kimi / 豆包 / 文心 / 通义 / Perplexity 全监测</div>
-    </div>
-  </div>
 
-  <!-- Distinctive Features -->
-  <div class="aigeo-feature-grid">
-    <div class="aigeo-feature-card fade-in">
-      <div class="feature-icon">🏗️</div>
-      <h4>双轨并行策略</h4>
-      <p><strong>轨道 A · 官网基建：</strong>Schema.org 结构化数据 + 知识图谱 + SEO 技术基础，构建 AI 可读的品牌权威锚点。<br><strong>轨道 B · 矩阵号分发：</strong>抖音/B站/小红书/视频号/快手/百度 6 平台内容矩阵，让 AI 从多源发现品牌。</p>
-    </div>
-    <div class="aigeo-feature-card fade-in">
-      <div class="feature-icon">🔄</div>
-      <h4>多平台内容飞轮</h4>
-      <p>10 支 AI 视频作为种子内容 → 各平台二次创作（图文笔记 / 长视频 / 公众号文章 / 问答）→ 95+ 条跨平台内容。多源一致性信号强化品牌实体在 AI 中的认知权重。</p>
-    </div>
-    <div class="aigeo-feature-card fade-in">
-      <div class="feature-icon">🎯</div>
-      <h4>竞品对比页精准截获</h4>
-      <p>对美孚1号、嘉实多极护、壳牌超凡喜力等主流产品建立结构化对比页，Table + Article + FAQPage 三 Schema 组合，精准命中「XX vs XX 机油」类 AI 长尾查询。</p>
-    </div>
-    <div class="aigeo-feature-card fade-in">
-      <div class="feature-icon">🔗</div>
-      <h4>跨平台实体链接</h4>
-      <p>各平台内容统一指向官网，通过 sameAs 属性建立品牌实体互认。视频中心页 → 产品详情页 → 车型适配页 → 知识百科页四向互链，碎片在各平台、权威在官网。</p>
-    </div>
-    <div class="aigeo-feature-card fade-in">
-      <div class="feature-icon">📊</div>
-      <h4>AITracker 数据闭环</h4>
-      <p>自建 GEO 监测框架，可识别 7 个 AI 来源的引用情况。管理端仪表盘实时追踪品牌词提及率、品类词引用率、AI 来源流量占比，量化每一次 AIGEO 优化的实际效果。</p>
-    </div>
-    <div class="aigeo-feature-card fade-in">
-      <div class="feature-icon">🚗</div>
-      <h4>车型适配长尾覆盖</h4>
-      <p>464 条车型适配数据（汉兰达/凯美瑞/迈腾/A6/雅阁/CR-V 等热门车型），每个车型页独立 Car Schema 标注，命中「XX车用什么机油」这类高意图 AI 搜索查询。</p>
-    </div>
-  </div>
-
-  <!-- Schema Achievement Showcase -->
-  <div class="aigeo-schema-showcase fade-in">
-    <h3>Schema.org 结构化数据覆盖矩阵</h3>
-    <p class="schema-subtitle">Schema 是 AI 搜索引擎理解页面语义的核心协议。已部署 11 种类型，覆盖率在同行业中处于领先位置。</p>
-    <div class="schema-tags">
-      <span class="schema-tag">FAQPage · 46条问答</span>
-      <span class="schema-tag">Organization + WebSite</span>
-      <span class="schema-tag">BreadcrumbList · 全站</span>
-      <span class="schema-tag">Product + PropertyValue</span>
-      <span class="schema-tag">Article · 知识页</span>
-      <span class="schema-tag">HowTo · 养护步骤</span>
-      <span class="schema-tag">DefinedTermSet · 50+术语</span>
-      <span class="schema-tag">Dataset · 检测报告库</span>
-      <span class="schema-tag">Table · 竞品对比</span>
-      <span class="schema-tag">Car · 车型适配</span>
-      <span class="schema-tag">Review / ItemList</span>
-      <span class="schema-tag soon">VideoObject · 即将上线</span>
-      <span class="schema-tag soon">AggregateRating · 规划中</span>
-    </div>
-    <div class="aigeo-cta-row">
-      <a href="http://aganzol.com/" target="_blank" rel="noopener" class="btn btn-primary">查看完整案例 →</a>
-      <span class="aigeo-cta-note">aganzol.com · 24 周 6 阶段 · 从基建到规模化</span>
+    <!-- Schema Achievement Showcase -->
+    <div class="aigeo-schema-showcase fade-in">
+      <h3>Schema.org 结构化数据覆盖矩阵</h3>
+      <p class="schema-subtitle">Schema 是 AI 搜索引擎理解页面语义的核心协议。已部署 11 种类型，覆盖率在同行业中处于领先位置。</p>
+      <div class="schema-tags">
+        <span class="schema-tag">FAQPage · 46条问答</span>
+        <span class="schema-tag">Organization + WebSite</span>
+        <span class="schema-tag">BreadcrumbList · 全站</span>
+        <span class="schema-tag">Product + PropertyValue</span>
+        <span class="schema-tag">Article · 知识页</span>
+        <span class="schema-tag">HowTo · 养护步骤</span>
+        <span class="schema-tag">DefinedTermSet · 50+术语</span>
+        <span class="schema-tag">Dataset · 检测报告库</span>
+        <span class="schema-tag">Table · 竞品对比</span>
+        <span class="schema-tag">Car · 车型适配</span>
+        <span class="schema-tag">Review / ItemList</span>
+        <span class="schema-tag soon">VideoObject · 即将上线</span>
+        <span class="schema-tag soon">AggregateRating · 规划中</span>
+      </div>
+      <div class="aigeo-cta-row">
+        <a href="http://aganzol.com/" target="_blank" rel="noopener" class="btn btn-primary btn-arrow">查看完整案例</a>
+        <span class="aigeo-cta-note">aganzol.com · 24 周 6 阶段 · 从基建到规模化</span>
+      </div>
     </div>
   </div>
 </section>
@@ -449,7 +474,8 @@
 <!-- ============================================ -->
 <!-- AIGEO Workbench -->
 <!-- ============================================ -->
-<section class="section" id="workbench">
+<section class="section section-dark" id="workbench">
+  <div class="watermark on-dark" aria-hidden="true">WORKBENCH WORKBENCH</div>
   <div class="section-wrap">
     <div class="section-header fade-in">
       <span class="section-label">AIGEO Workbench</span>
@@ -461,24 +487,12 @@
     <div class="wb-showcase fade-in">
       <div class="section-label wb-showcase-title">界面预览 · 6 屏工作台</div>
       <div class="wb-showcase-grid">
-        <figure class="wb-shot">
-          <img src="工作台1.png" alt="AIGEO Workbench 截图 1" loading="lazy">
-        </figure>
-        <figure class="wb-shot">
-          <img src="工作台2.png" alt="AIGEO Workbench 截图 2" loading="lazy">
-        </figure>
-        <figure class="wb-shot">
-          <img src="工作台3.png" alt="AIGEO Workbench 截图 3" loading="lazy">
-        </figure>
-        <figure class="wb-shot">
-          <img src="工作台4.png" alt="AIGEO Workbench 截图 4" loading="lazy">
-        </figure>
-        <figure class="wb-shot">
-          <img src="工作台5.png" alt="AIGEO Workbench 截图 5" loading="lazy">
-        </figure>
-        <figure class="wb-shot">
-          <img src="工作台6.png" alt="AIGEO Workbench 截图 6" loading="lazy">
-        </figure>
+        <figure class="wb-shot"><img src="工作台1.png" alt="AIGEO Workbench 截图 1" loading="lazy"></figure>
+        <figure class="wb-shot"><img src="工作台2.png" alt="AIGEO Workbench 截图 2" loading="lazy"></figure>
+        <figure class="wb-shot"><img src="工作台3.png" alt="AIGEO Workbench 截图 3" loading="lazy"></figure>
+        <figure class="wb-shot"><img src="工作台4.png" alt="AIGEO Workbench 截图 4" loading="lazy"></figure>
+        <figure class="wb-shot"><img src="工作台5.png" alt="AIGEO Workbench 截图 5" loading="lazy"></figure>
+        <figure class="wb-shot"><img src="工作台6.png" alt="AIGEO Workbench 截图 6" loading="lazy"></figure>
       </div>
     </div>
 
@@ -487,27 +501,27 @@
       <div class="aigeo-feature-card">
         <div class="feature-icon">🔍</div>
         <h4>多引擎调研</h4>
-        <p>8 大 AI 引擎交叉查询（ChatGPT / DeepSeek / Kimi / 豆包等），信源分析 + 竞品对比 + 企业微信告警配置，调研结论直接进入选词环节。</p>
+        <p>Playwright 驱动 7 个 AI 平台真实网页端交叉查询（DeepSeek / 豆包 / Kimi / 通义 / 元宝 / 文心 / 智谱），信源分析 + 竞品对比 + 企业微信告警配置，调研结论直接进入选词环节。</p>
       </div>
       <div class="aigeo-feature-card">
         <div class="feature-icon">✍️</div>
         <h4>四层 Prompt 创作</h4>
-        <p>7 套文章模板 × 四层 Prompt 结构，知识库条目拼装 + 指纹过期检测，云端/本地标识别，创作与品牌 profile 全局联动。</p>
+        <p>11 套文章模板 × 四层 Prompt 结构，知识库条目拼装 + 指纹过期检测，云端/本地标识别，创作与品牌 profile 全局联动。</p>
       </div>
       <div class="aigeo-feature-card">
         <div class="feature-icon">✅</div>
         <h4>合规自动扫描 v2</h4>
-        <p>7 维度检查：夸大表述、禁词、平台敏感词、标题正文一致性、段落与标题长度、平台字数适配。违规红黄即时标注，确认即流转。</p>
+        <p>7 维度检查（规则引擎，非模型判定，不会幻觉）：夸大表述、禁词、平台敏感词、标题正文一致性、段落与标题长度、平台字数适配。违规红黄即时标注，确认即流转。</p>
       </div>
       <div class="aigeo-feature-card">
         <div class="feature-icon">🚀</div>
         <h4>一键批量发布</h4>
-        <p>Playwright 9 平台自动发布引擎，小红书 / 抖音 / 快手 / 视频号 Skill 格式化，3 状态卡片 + 定时发布 + 复制按钮，配图与视频渲染一体化。</p>
+        <p>Playwright 8 平台发布引擎（公众号全自动，其余 7 平台自动填表 + 人工确认发布），小红书 / 抖音 / 快手 / 视频号 Skill 格式化，3 状态卡片 + 定时发布 + 复制按钮，配图与视频渲染一体化。</p>
       </div>
       <div class="aigeo-feature-card">
         <div class="feature-icon">📡</div>
         <h4>收录监测告警</h4>
-        <p>浏览器逐平台查询收录，2 小时自动监控，企业微信告警触发，查询历史持久化（loginStatus），收录结果反哺知识库。</p>
+        <p>浏览器逐平台查询收录，2 小时自动监控，企业微信告警触发，查询历史持久化（loginStatus），收录结果进入报表与趋势看板。</p>
       </div>
       <div class="aigeo-feature-card">
         <div class="feature-icon">📈</div>
@@ -537,12 +551,12 @@
 
     <!-- Learning & Ops Memory -->
     <div class="wb-learning fade-in">
-      <div class="section-label wb-learning-title">持续学习与运营记忆 · 2026-08 更新</div>
+      <div class="section-label wb-learning-title">持续学习与运营记忆</div>
       <div class="wb-learning-grid">
         <div class="wb-learning-card">
-          <div class="feature-icon">🔁</div>
-          <h4>收录回流</h4>
-          <p>步骤⑪收录结果关联文章用过的知识条目，累计引用贡献分，反哺步骤⑧按权重拼装 Prompt。</p>
+          <div class="feature-icon">📡</div>
+          <h4>收录监测告警</h4>
+          <p>步骤⑪逐平台查询收录结果，2 小时自动监控，异常触发企业微信告警；收录率与平台排名进入报表与趋势看板，驱动下一轮选题。</p>
         </div>
         <div class="wb-learning-card">
           <div class="feature-icon">🧠</div>
@@ -552,17 +566,17 @@
         <div class="wb-learning-card">
           <div class="feature-icon">📚</div>
           <h4>信源入库</h4>
-          <p>步骤⑫引用信源一键纳入知识库权威来源模块，数据资产随内容生产持续积累。</p>
+          <p>步骤②调研到的权威信源一键纳入知识库「权威来源」模块，幂等去重，数据资产随内容生产持续积累。</p>
         </div>
         <div class="wb-learning-card">
           <div class="feature-icon">☁️</div>
           <h4>状态上云</h4>
-          <p>localStorage 进度 / 选中态 / 草案迁移至 Supabase，短期上下文与永久记忆分层。</p>
+          <p>进度 / 选中态 / 草案迁移至 Supabase，短期上下文与永久记忆分层。</p>
         </div>
         <div class="wb-learning-card">
-          <div class="feature-icon">🛡️</div>
-          <h4>知识保鲜</h4>
-          <p>条目级过期 / 冲突扫描，pgvector 检索结合收录反馈做 rerank，知识库保持新鲜。</p>
+          <div class="feature-icon">🧾</div>
+          <h4>发布流水账</h4>
+          <p>步骤⑩每篇文章的发布平台、时间、链接、状态全量记账，本地与云端双写，支持按批次与平台回溯核对。</p>
         </div>
       </div>
     </div>
@@ -576,18 +590,18 @@
       </div>
       <div class="wb-metric-card">
         <div class="wb-metric-label">自动化测试</div>
-        <div class="wb-metric-value val-primary">36</div>
-        <div class="wb-metric-desc">Vitest · 5 个测试套件全绿</div>
+        <div class="wb-metric-value val-primary">67</div>
+        <div class="wb-metric-desc">Vitest · 10 个测试文件</div>
       </div>
       <div class="wb-metric-card">
         <div class="wb-metric-label">自动发布引擎</div>
-        <div class="wb-metric-value">9</div>
-        <div class="wb-metric-desc">Playwright · 9 平台批量自动发布</div>
+        <div class="wb-metric-value">8</div>
+        <div class="wb-metric-desc">Playwright · 公众号全自动 + 7 平台半自动</div>
       </div>
       <div class="wb-metric-card">
-        <div class="wb-metric-label">AI 来源监测</div>
-        <div class="wb-metric-value val-primary">7</div>
-        <div class="wb-metric-desc">ChatGPT · DeepSeek · Kimi · 豆包 · 通义 · 文心 · 智谱</div>
+        <div class="wb-metric-label">AI 平台收录监测</div>
+        <div class="wb-metric-value val-primary">8</div>
+        <div class="wb-metric-desc">DeepSeek · 豆包 · 腾讯元宝 · 通义千问 · 文心一言 · Kimi · 智谱清言 · 纳米AI</div>
       </div>
     </div>
 
@@ -609,6 +623,123 @@
 </section>
 
 <!-- ============================================ -->
+<!-- geo-studio -->
+<!-- ============================================ -->
+<section class="section" id="studio">
+  <div class="watermark" aria-hidden="true">GEO STUDIO</div>
+  <div class="section-wrap">
+    <div class="section-header fade-in">
+      <span class="section-label">geo-studio · 2026 新作</span>
+      <h2>把一条选题，铺成多个平台的文案</h2>
+      <p>
+        geo-studio 是 AIGEO 工作台之后的<strong>窄化重写</strong>：同样是一个人用，但只做一件事——
+        把「一条选题」批量铺成「多个平台的文案」。素材来自客户既有的 <strong>146 条文案骨架</strong>
+        与 <strong>18,006 条厂商知识库零件</strong>，产出直接进飞书多维表格做人工审核；
+        经理改过的每一处都会被回读、比对、归纳，反过来喂给下一轮提示词。
+      </p>
+    </div>
+
+    <!-- 5 步生产动线 -->
+    <div class="wb-pipeline fade-in">
+      <div class="section-label wb-pipeline-title">5 步生产动线 · 一屏走完</div>
+      <div class="wb-pipeline-grid">
+        <div class="wb-step done"><div class="wb-step-mark">✓</div>① 选客户</div>
+        <div class="wb-step done"><div class="wb-step-mark">✓</div>② 出什么</div>
+        <div class="wb-step done"><div class="wb-step-mark">✓</div>③ 选选题</div>
+        <div class="wb-step done"><div class="wb-step-mark">✓</div>④ 生成</div>
+        <div class="wb-step done"><div class="wb-step-mark">✓</div>⑤ 推飞书审核</div>
+      </div>
+    </div>
+
+    <!-- 技术亮点 -->
+    <div class="aigeo-feature-grid fade-in">
+      <div class="aigeo-feature-card">
+        <div class="feature-icon">🔤</div>
+        <h4>中文检索</h4>
+        <p>jieba 真分词 + 词性过滤 + 内存倒排索引 + IDF，按用途配额召回。11.4 万字/秒，900 万字索引 0.8 秒建完。</p>
+      </div>
+      <div class="aigeo-feature-card">
+        <div class="feature-icon">🗂️</div>
+        <h4>本地单文件库</h4>
+        <p>用 Node 内置 <code>node:sqlite</code> 取代 better-sqlite3，零原生编译；WAL + 外键约束；14 张表覆盖客户 / 订单 / 骨架 / 零件 / 选题 / 平台版本 / 审核 / 花费。</p>
+      </div>
+      <div class="aigeo-feature-card">
+        <div class="feature-icon">🧾</div>
+        <h4>零依赖 .docx</h4>
+        <p>手写 OOXML + fflate 直接生成 Word 交付包，不引任何文档库；四类「打不开」的坑各配一条回归测试，并用自研解析器回读校验。</p>
+      </div>
+      <div class="aigeo-feature-card">
+        <div class="feature-icon">💰</div>
+        <h4>成本台账</h4>
+        <p>每次调用落一行账，且<strong>先落开始时间再跑</strong>——中途中断也不丢账。生成前先给「几条 × 几平台 ≈ 多少钱」的估算，确认才跑。</p>
+      </div>
+      <div class="aigeo-feature-card">
+        <div class="feature-icon">🔁</div>
+        <h4>改动即数据</h4>
+        <p>回读经理在飞书里的改动 → 字符级 LCS diff → 15% 阈值判定 → 把成对改动片段（剔除主观批注）喂给模型归纳修改原因，写回飞书供迭代。</p>
+      </div>
+      <div class="aigeo-feature-card">
+        <div class="feature-icon">🔌</div>
+        <h4>飞书集成</h4>
+        <p>REST 直调不引 SDK：token 提前 5 分钟刷新、wiki 权限位单独解析、批量 100 条/批，并处理过「500 是一页而不是全部」的分页陷阱。</p>
+      </div>
+    </div>
+
+    <!-- 设计取舍 -->
+    <blockquote class="pullquote fade-in">
+      把「不做」的那半张表钉住，比做完另外半张更重要。
+    </blockquote>
+
+    <!-- 数字 -->
+    <div class="aigeo-stats-row">
+      <div class="aigeo-stat-card fade-in">
+        <div class="stat-number">18,006</div>
+        <div class="stat-label">知识库零件</div>
+        <div class="stat-desc">厂商技术资料切块入库，检索时按用途配额召回</div>
+      </div>
+      <div class="aigeo-stat-card fade-in">
+        <div class="stat-number">146</div>
+        <div class="stat-label">文案骨架</div>
+        <div class="stat-desc">客户既有成稿，作为风格与结构基线</div>
+      </div>
+      <div class="aigeo-stat-card fade-in">
+        <div class="stat-number">14</div>
+        <div class="stat-label">数据表</div>
+        <div class="stat-desc">客户 / 订单 / 骨架 / 零件 / 选题 / 平台版本 / 审核 / 花费</div>
+      </div>
+      <div class="aigeo-stat-card fade-in">
+        <div class="stat-number">≈190</div>
+        <div class="stat-label">单元测试</div>
+        <div class="stat-desc">Vitest · 9 个测试文件</div>
+      </div>
+      <div class="aigeo-stat-card fade-in">
+        <div class="stat-number">¥0.62</div>
+        <div class="stat-label">一批 75 篇的 API 成本</div>
+        <div class="stat-desc">台账实测，非估算</div>
+      </div>
+      <div class="aigeo-stat-card fade-in">
+        <div class="stat-number">1</div>
+        <div class="stat-label">人完成全流程</div>
+        <div class="stat-desc">需求 → 设计 → 开发 → 测试 → 交付</div>
+      </div>
+    </div>
+
+    <div class="wb-tech-row fade-in">
+      <span class="tag">Next.js 16</span>
+      <span class="tag">React 19</span>
+      <span class="tag">TypeScript</span>
+      <span class="tag">node:sqlite</span>
+      <span class="tag">jieba</span>
+      <span class="tag">DeepSeek</span>
+      <span class="tag">飞书多维表格</span>
+      <span class="tag">fflate</span>
+      <span class="tag">Vitest</span>
+      <span class="tag accent">零原生编译</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
 <!-- Knowledge Base -->
 <!-- ============================================ -->
 <section class="section section-alt" id="kb">
@@ -616,7 +747,7 @@
     <div class="section-header fade-in">
       <span class="section-label">知识库 · Hanako KB</span>
       <h2>由 AI 维护的持久化 Wiki</h2>
-      <p>基于 LLM Wiki 方法论——AI 在每次对话后增量地把信息编译进 Wiki，而不是每次查询时重新推理。</p>
+      <p>基于 LLM Wiki 方法论——AI 在每次对话后增量地把信息编译进 Wiki，而不是每次查询时重新推理。4 个月沉淀 60+ 页面、23 篇方法论、156 条操作日志。</p>
     </div>
 
     <div class="kb-arch">
@@ -665,41 +796,8 @@
         <ul class="kb-project-list">
           <li>🛢️ 阿甘佐品牌中心 — 机油官网 + 车型适配 + 知识百科 + AIGEO</li>
           <li>🧠 AIGEO Workbench — 12 步 SOP 管线 · 12/12 交付</li>
-          <li>🎬 sylus0418 — AI 短剧《锋刃欲擒》· Seedance 2.0</li>
+          <li>🎬 sylus0418 — AI 短剧 · Seedance 2.0</li>
           <li>🌿 Calm Xeriscape — 本网站 · 清新·个性·舒适</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Calm Xeriscape Entry -->
-    <div class="kb-structure fade-in" style="margin-top: 1.5rem;">
-      <div class="kb-structure-col">
-        <div class="section-label">🌿 本网站条目</div>
-        <div class="kb-layer-list">
-          <div class="kb-layer-item">
-            <span class="kb-layer-dot dot-green"></span>
-            <span>品牌方向：清新 · 个性 · 舒适</span>
-          </div>
-          <div class="kb-layer-item">
-            <span class="kb-layer-dot dot-green"></span>
-            <span>设计语言：Maya Lin — 克制、有机流体、正念美学</span>
-          </div>
-          <div class="kb-layer-item">
-            <span class="kb-layer-dot dot-green"></span>
-            <span>配色：薄荷鼠尾草绿 × 暖沙杏色</span>
-          </div>
-        </div>
-      </div>
-      <div class="kb-structure-col">
-        <div class="section-label">关联项目</div>
-        <ul class="kb-project-list">
-          <li>🔗 与阿甘佐品牌中心 — 审美经验交叉使用</li>
-          <li>🔗 与 AIGEO 短视频矩阵 — 设计语言影响视频视觉</li>
-        </ul>
-        <div class="section-label" style="margin-top: 1.5rem;">最近更新</div>
-        <ul class="kb-project-list">
-          <li>2026-08-12 · 收录短剧剧本格式规范 + 影视工业流程参考</li>
-          <li>2026-08-04 · 工作台「持续学习与运营记忆」优化方向</li>
         </ul>
       </div>
     </div>
@@ -709,20 +807,21 @@
 <!-- ============================================ -->
 <!-- Works -->
 <!-- ============================================ -->
-<section class="section" id="works">
+<section class="section section-amber" id="works">
+  <div class="watermark" aria-hidden="true">SELECTED WORK</div>
   <div class="section-wrap">
     <div class="section-header fade-in">
-      <span class="section-label">作品集</span>
+      <span class="section-label">作品集 · Selected Work</span>
       <h2>AI 创作与内容项目</h2>
       <p>AI 短剧、乙女向与 CP 向创作——AI 与情感碰撞的作品集</p>
     </div>
 
     <div class="works-grid">
       <!-- AI 短剧 -->
-      <div class="work-card fade-in">
+      <div class="work-card fade-in" data-num="01">
         <div class="work-card-icon">🎬</div>
-        <h3>AI 短剧《锋刃欲擒》</h3>
-        <p>基于 Seedance 2.0 的 AI 短剧创作项目——秦彻 Alpha Prime 角色哲学、8 段分镜完整流水线、三场景打光参数卡。独立宣传网站已上线。</p>
+        <h3>AI 短剧</h3>
+        <p>基于 Seedance 2.0 的 AI 短剧创作项目——秦彻 Alpha Prime 角色哲学、完整分镜流水线、三场景打光参数卡。独立宣传网站已上线。</p>
         <div class="tag-row">
           <span class="tag">AI短剧</span>
           <span class="tag">Seedance 2.0</span>
@@ -736,7 +835,7 @@
       </div>
 
       <!-- 乙女向 -->
-      <div class="work-card fade-in">
+      <div class="work-card fade-in" data-num="02">
         <div class="work-card-icon">🌸</div>
         <h3>乙女向 AI 创作</h3>
         <p>沉浸式女性向 AI 内容——角色设定、剧情生成、视觉叙事。为每个细腻的情感找到属于它的故事，作品集持续更新中。</p>
@@ -752,7 +851,7 @@
       </div>
 
       <!-- 明星CP向 -->
-      <div class="work-card fade-in">
+      <div class="work-card fade-in" data-num="03">
         <div class="work-card-icon">✨</div>
         <h3>明星 CP 向创作</h3>
         <p>以 AI 重新演绎那些让人心动的瞬间——CP 向图文、短片、互动内容，让想象在数字世界延续。抖音持续更新中。</p>
@@ -768,7 +867,7 @@
       </div>
 
       <!-- 明星CP网站预告 -->
-      <div class="work-card work-card-soon fade-in">
+      <div class="work-card work-card-soon fade-in" data-num="04">
         <span class="badge-soon">即将上线</span>
         <div class="work-card-icon">🚀</div>
         <h3>明星 CP 向网站</h3>
@@ -794,7 +893,7 @@
           <div class="showcase-caption">sylus0418.com · 手机端</div>
         </div>
       </div>
-      <div class="showcase-row single" style="margin-top: 1.25rem;">
+      <div class="showcase-row single" style="margin-top:1.6rem;">
         <div class="showcase-card">
           <img src="2.png" alt="乙女网站桌面端截图" class="showcase-img" loading="lazy">
           <div class="showcase-caption">sylus0418.com · 桌面端</div>
@@ -807,7 +906,8 @@
 <!-- ============================================ -->
 <!-- Community -->
 <!-- ============================================ -->
-<section class="section section-alt" id="community">
+<section class="section section-dark" id="community">
+  <div class="watermark on-dark" aria-hidden="true">COMMUNITY</div>
   <div class="section-wrap">
     <div class="section-header fade-in">
       <span class="section-label">同好交流</span>
@@ -852,17 +952,37 @@
   <div class="section-wrap">
     <div class="section-header fade-in">
       <span class="section-label">关于我</span>
-      <h2>Calm & Focused</h2>
+      <h2>Calm &amp; Focused</h2>
     </div>
 
     <div class="about-layout">
-      <div class="about-avatar-area fade-in">
-        <div class="about-avatar">♏</div>
-        <div class="about-badges">
-          <span class="about-badge highlight">天蝎座</span>
-          <span class="about-badge">INTJ</span>
-          <span class="about-badge">93年</span>
+      <div class="about-collage fade-in">
+        <div class="polaroid">
+          <picture>
+            <source type="image/webp" sizes="(min-width:900px) 380px, 82vw"
+                    srcset="portrait-sm.webp 440w, portrait.webp 880w">
+            <img src="portrait-sm.jpg" alt="Calm Xeriscape 本人"
+                 srcset="portrait-sm.jpg 440w, portrait.jpg 880w"
+                 sizes="(min-width:900px) 380px, 82vw"
+                 width="440" height="815" loading="lazy">
+          </picture>
+
+          <svg class="paperclip" viewBox="0 0 34 84" fill="none" aria-hidden="true">
+            <path d="M17 6c-6.6 0-12 5.4-12 12v46c0 5.5 3.6 9 8 9s8-3.5 8-9V24c0-3.3-2.2-5.6-5-5.6s-5 2.3-5 5.6v38"
+                  stroke="#B9BEC4" stroke-width="3.6" stroke-linecap="round"/>
+          </svg>
+          <span class="tape t-left" aria-hidden="true"></span>
+          <span class="tape t-right" aria-hidden="true"></span>
+
+          <span class="hand-caption">Cao Xue · Dalian</span>
         </div>
+
+        <svg class="star-badge" style="top:-16px;right:3%;width:32px" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 .8l3.1 7.1 7.7.7-5.8 5.1 1.7 7.6L12 17.5 5.3 21.3l1.7-7.6L1.2 8.6l7.7-.7z" fill="currentColor"/>
+        </svg>
+        <svg class="star-badge" style="bottom:15%;left:2px;width:21px" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 .8l3.1 7.1 7.7.7-5.8 5.1 1.7 7.6L12 17.5 5.3 21.3l1.7-7.6L1.2 8.6l7.7-.7z" fill="currentColor"/>
+        </svg>
       </div>
 
       <div class="about-text fade-in">
@@ -872,25 +992,35 @@
           用冷静的策略思维和炽热的创作欲望，在数字荒漠中构建属于自己的绿洲。
         </p>
         <p>
-          从阿甘佐机油品牌官网到 AIGEO 工作台，从 AI 短剧《锋刃欲擒》到乙女向与 CP 向创作——
+          从阿甘佐机油品牌官网到 AIGEO 工作台，从 AI 短剧到乙女向与 CP 向创作——
           每一件事都是对"<span class="highlight-text">AI 能做些什么有趣的事</span>"的回答。
         </p>
+
+        <blockquote class="pullquote">
+          重复两次以上的操作，就写成 SOP。
+        </blockquote>
+
         <p>
-          如果你也喜欢这些方向，欢迎来同好圈子里聊聊天。
+          工科出身、国画八级，8 年 IT 从业——把工程流程做成有审美的东西，
+          是我这几年唯一没变过的方法论。
         </p>
 
         <div class="about-stats">
           <div class="about-stat">
-            <div class="stat-num">∞</div>
-            <div class="stat-label">好奇心</div>
+            <div class="stat-num">8<span style="font-size:.6em">年</span></div>
+            <div class="stat-label">IT 从业</div>
           </div>
           <div class="about-stat">
             <div class="stat-num">AI</div>
             <div class="stat-label">创作方式</div>
           </div>
           <div class="about-stat">
-            <div class="stat-num">93'</div>
-            <div class="stat-label">天蝎INTJ</div>
+            <div class="stat-num">8<span style="font-size:.6em">级</span></div>
+            <div class="stat-label">国画功底</div>
+          </div>
+          <div class="about-stat">
+            <div class="stat-num">60+</div>
+            <div class="stat-label">知识库页面</div>
           </div>
         </div>
       </div>
@@ -902,16 +1032,17 @@
 <!-- Footer -->
 <!-- ============================================ -->
 <footer class="footer" id="contact">
+  <div class="watermark on-dark" aria-hidden="true">CALM XERISCAPE</div>
   <div class="footer-inner">
     <div class="footer-brand">
-      <h3>Calm Xeriscape</h3>
+      <h3>Let's make<br>something <span class="italic">useful.</span></h3>
       <p>AI 创作者的静谧绿洲 — 同好相聚，灵感生长</p>
       <div class="footer-social">
         <a href="https://space.bilibili.com/6553521?spm_id_from=333.337.0.0" target="_blank" rel="noopener" aria-label="Bilibili" title="Bilibili">📺</a>
         <a href="https://www.xiaohongshu.com/user/profile/5f6b4ee9000000000101ce66" target="_blank" rel="noopener" aria-label="小红书" title="小红书">📕</a>
-        <a href="#" aria-label="微信" title="微信">💚</a>
         <a href="https://weibo.com/u/3119537657" target="_blank" rel="noopener" aria-label="微博" title="微博">🐦</a>
-        <a href="#" aria-label="Email" title="Email">✉️</a>
+        <a href="https://v.douyin.com/-PXSQ8X9oos/" target="_blank" rel="noopener" aria-label="抖音" title="抖音">🎵</a>
+        <a href="mailto:952723391@qq.com" aria-label="Email" title="Email">✉️</a>
       </div>
     </div>
 
@@ -928,19 +1059,19 @@
         <a href="#aigeo">AIGEO</a>
         <a href="#workbench">工作台</a>
         <a href="#kb">知识库</a>
-        <a href="#community">同好圈</a>
-        <a href="#about">关于我</a>
       </div>
       <div class="footer-col">
         <h4>联系</h4>
         <a href="mailto:952723391@qq.com">合作咨询</a>
         <a href="resume.html">简历</a>
+        <a href="http://aganzol.com/" target="_blank" rel="noopener">aganzol.com</a>
       </div>
     </div>
   </div>
 
   <div class="footer-bottom">
     <p>&copy; 2026 Calm Xeriscape. Built with calm focus.</p>
+    <p>大连 · 天蝎 INTJ</p>
   </div>
 </footer>
 
@@ -948,17 +1079,19 @@
 <!-- Scripts -->
 <!-- ============================================ -->
 <script>
-// Theme Toggle
-function toggleTheme() {
-  const html = document.documentElement;
-  const current = html.getAttribute('data-theme');
-  const next = current === 'light' ? 'dark' : 'light';
-  html.setAttribute('data-theme', next);
-  localStorage.setItem('theme', next);
+// Theme: ?theme=light|dark 优先，其次本地记忆，最后跟随系统
+function applyTheme(t) {
+  document.documentElement.setAttribute('data-theme', t);
+  localStorage.setItem('theme', t);
 }
-
-// Load saved theme
-(function() {
+function toggleTheme() {
+  applyTheme(document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
+}
+(function () {
+  const q = new URLSearchParams(location.search);
+  if (q.has('shot')) document.documentElement.classList.add('shot');
+  const t = q.get('theme');
+  if (t === 'light' || t === 'dark') { applyTheme(t); return; }
   const saved = localStorage.getItem('theme');
   if (saved) {
     document.documentElement.setAttribute('data-theme', saved);
@@ -968,24 +1101,31 @@ function toggleTheme() {
 })();
 
 // Navigation scroll effect
+// 首页封面是深绿：导航要等封面快滚完才切成奶白底，否则会在绿底上出现一条奶白栏
 const nav = document.getElementById('nav');
+const navOverCover = nav.classList.contains('nav-over-cover');
+let navTick = false;
 window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 80);
-});
+  if (navTick) return;
+  navTick = true;
+  requestAnimationFrame(() => {
+    const threshold = navOverCover ? window.innerHeight * 0.78 : 60;
+    nav.classList.toggle('scrolled', window.scrollY > threshold);
+    navTick = false;
+  });
+}, { passive: true });
 
-// Scroll-triggered fade-in animations
+// Scroll-triggered reveals
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+}, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
 
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-// Make hero visible immediately
-document.querySelector('.hero-content').classList.add('visible');
 </script>
 
 </body>

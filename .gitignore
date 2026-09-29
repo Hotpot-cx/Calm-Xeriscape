@@ -1,7 +1,16 @@
-.stitch/
-.claude/
-node_modules/
+﻿# 系统与编辑器
 .DS_Store
 Thumbs.db
+desktop.ini
 *.log
-*.zip
+
+# 本地备份与草稿（不进仓库）
+_backup_*/
+*.bak
+*.bak-*
+
+# 工具缓存
+.claude/
+.obsidian/
+node_modules/
+.stitch/
