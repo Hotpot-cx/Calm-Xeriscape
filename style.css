@@ -43,6 +43,9 @@
   --ink-3:        #8E968A;
   --on-dark:      #F3EDE0;
   --on-dark-2:    #AEBAA9;
+  /* 封面永远是深绿底 → 它的文字必须是固定奶白。
+     不要用 --paper / --on-dark 这类会随主题翻转的 token，否则深色主题下会变成深字压深绿。 */
+  --on-cover:     #F6EFDD;
 
   /* —— 线条 —— */
   --rule:         rgba(54, 71, 58, .16);
@@ -508,9 +511,9 @@ em, .italic {
   -webkit-backdrop-filter: none;
   border-bottom-color: transparent;
 }
-.nav.nav-over-cover .nav-brand { color: var(--paper); }
+.nav.nav-over-cover .nav-brand { color: var(--on-cover); }
 .nav.nav-over-cover > a:not(.nav-brand) { color: rgba(246,239,221,.76); }
-.nav.nav-over-cover > a:not(.nav-brand):hover { color: var(--paper); }
+.nav.nav-over-cover > a:not(.nav-brand):hover { color: var(--on-cover); }
 .nav.nav-over-cover.scrolled {
   background: color-mix(in srgb, var(--paper) 90%, transparent);
   backdrop-filter: saturate(150%) blur(14px);
@@ -772,7 +775,7 @@ em, .italic {
   user-select: none;
 }
 .cover-word span { display: block; white-space: nowrap; }
-.cover-word .solid { color: var(--paper); }
+.cover-word .solid { color: var(--on-cover); }
 .cover-word .hollow {
   color: transparent;
   -webkit-text-stroke: 1.2px rgba(246,239,221,.4);
@@ -851,7 +854,7 @@ em, .italic {
   line-height: 1.74;
   margin-bottom: 1.5rem;
 }
-.cover .btn-ghost { color: var(--paper); border-color: rgba(246,239,221,.34); }
+.cover .btn-ghost { color: var(--on-cover); border-color: rgba(246,239,221,.34); }
 .cover .btn-ghost:hover { background: rgba(246,239,221,.11); border-color: var(--amber); }
 
 .cover-social {
